@@ -53,20 +53,20 @@ html {
 .draggable {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-    border-radius: 8px;
     position: absolute;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header {
-    padding: 10px;
-    cursor: move;
-    background-color: #f1f1f1;
-    color: #333;
-    border-radius: 8px 8px 0 0;
+    background-color: #000080;
+    color: #FFF;
     display: flex;
     justify-content: space-between;
+    padding: 2px;
     align-items: center;
+
+    cursor: move;
+    justify-content: space-between;
 }
 
 .close-btn {
@@ -74,12 +74,9 @@ html {
     border: none;
     background: none;
     font-size: 16px;
-    color: #333;
+    color: #FFF;
 }
 
-.content {
-    padding: 10px;
-}
 
 #blazor-error-ui {
     background: lightyellow;
