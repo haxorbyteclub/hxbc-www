@@ -2,65 +2,65 @@
 @inherits AppBase
 
 <div class="app-component draggable" id="@AppId">
-    <div class="header">
-        <span>Drag Me</span>
-        <button class="close-btn" @onclick="Remove">&times;</button>
-    </div>
-    <div class="content">
-        <div class="media-player">
-            <!--
-            <div class="title-bar">
-                <span class="title">WinPlay3</span>
-                <div class="window-controls">
-                    <span class="minimize">_</span>
-                    <span class="maximize">[]</span>
-                    <span class="close">X</span>
-                </div>
-            </div>
-            <div class="menu-bar">
-                <span class="menu-item">File</span>
-                <span class="menu-item">Options</span>
-                <span class="menu-item">Help</span>
-            </div>
-            -->
-            <div class="display">
-                <div class="track-info">
-                    <span>TRACK</span>
-                    <span>MIN</span>
-                    <span>SEC</span>
-                    <span>MODE</span>
-                </div>
-                <div class="track-details">
-                    <span>1</span>
-                    <span>0:43</span>
-                    <span>44 kHz</span>
-                    <span>96 kBit/s</span>
-                </div>
-            </div>
-            <div class="controls">
-                <button class="btn prev">◄◄</button>
-                <button class="btn play">►</button>
-                <button class="btn pause">||</button>
-                <button class="btn stop">■</button>
-                <button class="btn next">►►</button>
-            </div>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-            <div class="track-list">
-                <div class="track">Track 1</div>
-                <div class="track">Track 2</div>
-                <div class="track">Track 3</div>
-                <div class="track">Track 4</div>
-                <div class="track">Track 5</div>
-                <div class="track">Track 6</div>
-                <div class="track">Track 7</div>
-                <div class="track">Track 8</div>
-                <div class="track">Track 9</div>
-                <div class="track">Track 10</div>
-            </div>
-        </div>
-    </div>
+	<div class="header">
+		<span>Audio Player</span>
+		<button class="close-btn" @onclick="Remove">&times;</button>
+	</div>
+	<div class="content">
+		<div class="media-player">
+			<!--
+			<div class="title-bar">
+				<span class="title">WinPlay3</span>
+				<div class="window-controls">
+					<span class="minimize">_</span>
+					<span class="maximize">[]</span>
+					<span class="close">X</span>
+				</div>
+			</div>
+			<div class="menu-bar">
+				<span class="menu-item">File</span>
+				<span class="menu-item">Options</span>
+				<span class="menu-item">Help</span>
+			</div>
+			-->
+			<div class="display">
+				<div class="track-info">
+					<span>TRACK</span>
+					<span>MIN</span>
+					<span>SEC</span>
+					<span>MODE</span>
+				</div>
+				<div class="track-details">
+					<span>1</span>
+					<span>0:43</span>
+					<span>44 kHz</span>
+					<span>96 kBit/s</span>
+				</div>
+			</div>
+			<div class="controls">
+				<button class="btn prev">◄◄</button>
+				<button class="btn play">►</button>
+				<button class="btn pause">||</button>
+				<button class="btn stop">■</button>
+				<button class="btn next">►►</button>
+			</div>
+			<div class="progress-bar">
+				<div class="progress"></div>
+			</div>
+			<div class="track-list">
+				<div class="track">Track 1</div>
+				<div class="track">Track 2</div>
+				<div class="track">Track 3</div>
+				<div class="track">Track 4</div>
+				<div class="track">Track 5</div>
+				<div class="track">Track 6</div>
+				<div class="track">Track 7</div>
+				<div class="track">Track 8</div>
+				<div class="track">Track 9</div>
+				<div class="track">Track 10</div>
+			</div>
+		</div>
+	</div>
 </div>
 @code {
 }

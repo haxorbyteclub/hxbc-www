@@ -71,8 +71,8 @@
 	{
 		if (_apps.Any(a => a is AudioPlayer))
 		{
-			var audioPlayer = _apps.FirstOrDefault(a => a is AudioPlayer);
-			BringToFront(audioPlayer.AppId).SafeFireAndForget();
+			var app = _apps.FirstOrDefault(a => a is AudioPlayer);
+			BringToFront(app.AppId).SafeFireAndForget();
 		}
 		else
 		{
@@ -84,8 +84,8 @@
 	{
 		if (_apps.Any(a => a is ContactForm))
 		{
-			var audioPlayer = _apps.FirstOrDefault(a => a is ContactForm);
-			BringToFront(audioPlayer.AppId).SafeFireAndForget();
+			var app = _apps.FirstOrDefault(a => a is ContactForm);
+			BringToFront(app.AppId).SafeFireAndForget();
 		}
 		else
 		{
