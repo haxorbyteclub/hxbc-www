@@ -66,6 +66,11 @@ window.setupDragElement = function (id) {
 	}
 }
 
+window.bringToFront = function (id) {
+	const elmnt = document.getElementById(id);
+	elmnt.style.zIndex = zIndex++;
+}
+
 // Additionally, to bring a window to front when clicked, not just when dragged
 document.addEventListener('click', function (e) {
 	if (e.target.classList.contains('draggable') || e.target.closest('.draggable')) {

@@ -1,5 +1,4 @@
 ﻿@page "/"
-@using CommunityToolkit.Mvvm.Messaging
 @using HaxorByteClub.Apps
 @inject IJSRuntime _js
 
@@ -19,7 +18,12 @@
 		<div class="current-date" id="currentDate"></div>
 	</div>
 </div>
-<button id="addButton" @onclick="AddWindow">Add New Window</button>
+<div class="desktop-icons">
+	<div class="desktop-icon" @onclick="ToggleAudioPlayer">
+		<img src="img/player-icon.png" alt="player icon">
+		<span>Audio Player</span>
+	</div>
+</div>
 
 @foreach (var app in _apps)
 {
@@ -55,27 +59,23 @@
 		WeakReferenceMessenger.Default.Register<RemoveAppMessage>(this, OnRemoveApp);
 	}
 
-	void AddWindow()
+	void ToggleAudioPlayer()
 	{
-		if (Random.Shared.NextDouble() > 0.33 && Random.Shared.NextDouble() < 0.66)
+		if (_apps.Any(a => a is AudioPlayer))
 		{
-			var welcome = new Welcome()
-				{
-					AppId = Guid.NewGuid().ToString("N")
-				};
-
-			_apps.Add(welcome);
+			var audioPlayer = _apps.FirstOrDefault(a => a is AudioPlayer);
+			BringToFront(audioPlayer.AppId).SafeFireAndForget();
 		}
 		else
 		{
-			var audioPlayer = new AudioPlayer()
-				{
-					AppId = Guid.NewGuid().ToString("N")
-				};
-			_apps.Add(audioPlayer);
+			_apps.Add(new AudioPlayer() { AppId = Guid.NewGuid().ToString() });
 		}
+	}
 
-		StateHasChanged();
+
+	async Task BringToFront(string id)
+	{
+		await _js.InvokeVoidAsync("bringToFront", id);
 	}
 
 	void OnRemoveApp(object sender, RemoveAppMessage message)
@@ -84,7 +84,7 @@
 		if (app != null)
 		{
 			_apps.Remove(app);
-			StateHasChanged();
+			//StateHasChanged();
 		}
 	}
 }

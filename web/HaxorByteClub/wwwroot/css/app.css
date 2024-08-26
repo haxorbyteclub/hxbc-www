@@ -78,6 +78,30 @@ html {
 }
 
 
+.desktop-icons {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.desktop-icon img {
+    max-height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+.desktop-icon span {
+    font-size: 12px;
+    text-align: center;
+    font-family: monospace;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
