@@ -21,15 +21,19 @@
 </div>
 <button id="addButton" @onclick="AddWindow">Add New Window</button>
 
-@foreach(var app in _apps)
+@foreach (var app in _apps)
 {
 	@if (app is Welcome welcome)
 	{
-		<Welcome />
+		<Welcome AppId="@app.AppId" />
 	}
 	else if (app is Default d)
 	{
-		<Default />
+		<Default AppId="@app.AppId" />
+	}
+	else if (app is AudioPlayer audioPlayer)
+	{
+		<AudioPlayer AppId="@app.AppId" />
 	}
 }
 
@@ -39,7 +43,7 @@
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
-		if(firstRender)
+		if (firstRender)
 		{
 			await _js.InvokeVoidAsync("setupClock");
 		}
@@ -53,22 +57,25 @@
 
 	void AddWindow()
 	{
-		if (Random.Shared.NextDouble() > 0.5)
+		if (Random.Shared.NextDouble() > 0.33 && Random.Shared.NextDouble() < 0.66)
 		{
 			var welcome = new Welcome()
 				{
 					AppId = Guid.NewGuid().ToString("N")
 				};
+
 			_apps.Add(welcome);
 		}
 		else
 		{
-			var d = new Default()
+			var audioPlayer = new AudioPlayer()
 				{
 					AppId = Guid.NewGuid().ToString("N")
 				};
-			_apps.Add(d);
+			_apps.Add(audioPlayer);
 		}
+
+		StateHasChanged();
 	}
 
 	void OnRemoveApp(object sender, RemoveAppMessage message)

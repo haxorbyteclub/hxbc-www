@@ -1,0 +1,95 @@
+﻿.media-player {
+    width: 300px;
+    background-color: #C0C0C0;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.title-bar {
+    background-color: #000080;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    align-items: center;
+}
+
+.title-bar .title {
+    margin-left: 5px;
+}
+
+.window-controls span {
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    background-color: #D3D3D3;
+    display: flex;
+    justify-content: start;
+    padding: 2px;
+}
+
+.menu-item {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.display {
+    background-color: #000;
+    color: #0F0;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.track-info,
+.track-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #D3D3D3;
+    border: 1px solid #000;
+    margin: 0 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    background-color: #FFF;
+    border: 1px solid #000;
+    height: 10px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.progress {
+    background-color: #000080;
+    height: 100%;
+    width: 50%;
+}
+
+.track-list {
+    background-color: #FFF;
+    border: 1px solid #000;
+    height: 100px;
+    overflow-y: auto;
+    margin: 10px;
+    padding: 5px;
+}
+
+.track {
+    padding: 5px;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+.track:last-child {
+    border-bottom: none;
+}

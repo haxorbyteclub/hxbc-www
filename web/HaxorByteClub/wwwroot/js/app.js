@@ -1,19 +1,28 @@
 ﻿let zIndex = 100; // Start with an arbitrary value for z-index
 
 
-window.setupDragElement = function(id){
+window.setupDragElement = function (id) {
 	var elmnt = document.getElementById(id);
 	var startX = 0, startY = 0, initialX = 0, initialY = 0;
 	var header = elmnt.querySelector('.header');
 	header.onmousedown = dragMouseDown;
+
+	header.addEventListener('touchstart', dragMouseDown);
+	header.addEventListener('touchmove', elementDrag);
+	header.addEventListener('touchend', closeDragElement);
 
 	function dragMouseDown(e) {
 		e.preventDefault();
 		// Bring the current window to the front
 		elmnt.style.zIndex = zIndex++;
 
-		startX = e.clientX;
-		startY = e.clientY;
+		if (e.type === 'touchstart') {
+			startX = e.touches[0].clientX;
+			startY = e.touches[0].clientY;
+		} else {
+			startX = e.clientX;
+			startY = e.clientY;
+		}
 
 		let transform = getComputedStyle(elmnt).transform;
 		if (transform !== 'none') {
@@ -28,8 +37,17 @@ window.setupDragElement = function(id){
 
 	function elementDrag(e) {
 		e.preventDefault();
-		let deltaX = e.clientX - startX;
-		let deltaY = e.clientY - startY;
+		let clientX, clientY;
+		if (e.type === 'touchmove') {
+			clientX = e.touches[0].clientX;
+			clientY = e.touches[0].clientY;
+		} else {
+			clientX = e.clientX;
+			clientY = e.clientY;
+		}
+
+		let deltaX = clientX - startX;
+		let deltaY = clientY - startY;
 
 		let newX = initialX + deltaX;
 		let newY = initialY + deltaY;
@@ -43,6 +61,8 @@ window.setupDragElement = function(id){
 	function closeDragElement() {
 		document.onmouseup = null;
 		document.onmousemove = null;
+		document.ontouchend = null;
+		document.ontouchmove = null;
 	}
 }
 

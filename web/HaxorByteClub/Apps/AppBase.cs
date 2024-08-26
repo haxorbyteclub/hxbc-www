@@ -5,16 +5,12 @@ using Microsoft.JSInterop;
 namespace HaxorByteClub.Apps;
 
 //base component
-public class AppBase : ComponentBase
+public abstract class AppBase : ComponentBase
 {
 	[Inject]
 	public IJSRuntime _js { get; set; }
+	[Parameter]
 	public string AppId { get; set; }
-
-	public AppBase()
-	{
-		//initialize
-	}
 
 	protected void Remove()
 	{
@@ -24,7 +20,7 @@ public class AppBase : ComponentBase
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
-		if(firstRender)
+		if (firstRender)
 		{
 			await _js.InvokeVoidAsync("setupDragElement", AppId);
 		}
