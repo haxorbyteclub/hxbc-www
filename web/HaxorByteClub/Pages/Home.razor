@@ -23,6 +23,10 @@
 		<img src="img/player-icon.png" alt="player icon">
 		<span>Audio Player</span>
 	</div>
+	<div class="desktop-icon" @onclick="ToggleContactForm">
+		<img src="img/contact-icon.png" alt="contact form icon">
+		<span>Contact Us</span>
+	</div>
 </div>
 
 @foreach (var app in _apps)
@@ -38,6 +42,10 @@
 	else if (app is AudioPlayer audioPlayer)
 	{
 		<AudioPlayer AppId="@app.AppId" />
+	}
+	else if (app is ContactForm contact)
+	{
+		<ContactForm AppId="@app.AppId" />
 	}
 }
 
@@ -72,6 +80,19 @@
 		}
 	}
 
+	void ToggleContactForm()
+	{
+		if (_apps.Any(a => a is ContactForm))
+		{
+			var audioPlayer = _apps.FirstOrDefault(a => a is ContactForm);
+			BringToFront(audioPlayer.AppId).SafeFireAndForget();
+		}
+		else
+		{
+			_apps.Add(new ContactForm() { AppId = Guid.NewGuid().ToString() });
+		}
+	}
+
 
 	async Task BringToFront(string id)
 	{
@@ -84,7 +105,7 @@
 		if (app != null)
 		{
 			_apps.Remove(app);
-			//StateHasChanged();
+			StateHasChanged();
 		}
 	}
 }

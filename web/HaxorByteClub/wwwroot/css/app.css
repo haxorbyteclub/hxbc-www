@@ -96,8 +96,11 @@ html {
 
 .desktop-icons {
 	position: absolute;
-	right: 12px;
-	bottom: 12px;
+	right: 24px;
+	bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
 }
 
 .desktop-icon {
