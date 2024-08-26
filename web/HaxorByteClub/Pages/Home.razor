@@ -1,0 +1,83 @@
+﻿@page "/"
+@using CommunityToolkit.Mvvm.Messaging
+@using HaxorByteClub.Apps
+@inject IJSRuntime _js
+
+<PageTitle>Home</PageTitle>
+
+<div class="top-bar">
+	<div class="logo-and-menu">
+		<img src="logo.png" alt="Logo" class="logo">
+		<select class="dropdown-menu">
+			<option value="option1">Option 1</option>
+			<option value="option2">Option 2</option>
+			<option value="option3">Option 3</option>
+		</select>
+	</div>
+	<div class="date-time">
+		<div class="current-time" id="currentTime"></div>
+		<div class="current-date" id="currentDate"></div>
+	</div>
+</div>
+<button id="addButton" @onclick="AddWindow">Add New Window</button>
+
+@foreach(var app in _apps)
+{
+	@if (app is Welcome welcome)
+	{
+		<Welcome />
+	}
+	else if (app is Default d)
+	{
+		<Default />
+	}
+}
+
+@code
+{
+	List<AppBase> _apps = new();
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if(firstRender)
+		{
+			await _js.InvokeVoidAsync("setupClock");
+		}
+	}
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		WeakReferenceMessenger.Default.Register<RemoveAppMessage>(this, OnRemoveApp);
+	}
+
+	void AddWindow()
+	{
+		if (Random.Shared.NextDouble() > 0.5)
+		{
+			var welcome = new Welcome()
+				{
+					AppId = Guid.NewGuid().ToString("N")
+				};
+			_apps.Add(welcome);
+		}
+		else
+		{
+			var d = new Default()
+				{
+					AppId = Guid.NewGuid().ToString("N")
+				};
+			_apps.Add(d);
+		}
+	}
+
+	void OnRemoveApp(object sender, RemoveAppMessage message)
+	{
+		var app = _apps.FirstOrDefault(a => a.AppId == message.AppId);
+		if (app != null)
+		{
+			_apps.Remove(app);
+			StateHasChanged();
+		}
+	}
+}
