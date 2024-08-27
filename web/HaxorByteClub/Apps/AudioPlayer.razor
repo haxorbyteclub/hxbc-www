@@ -1,4 +1,4 @@
-﻿@inject IJSRuntime _jjss
+﻿@inject IJSRuntime _js
 @inherits AppBase
 
 <div class="app-component draggable" id="@AppId">
@@ -14,7 +14,7 @@
 			<i></i>
 			<i></i>
 		</span>
-		<button class="close-btn" @onclick="Remove">&times;</button>
+		<button class="close-btn" @onclick="Remove">x</button>
 	</div>
 	<div class="content">
 		<div class="media-player">
@@ -48,27 +48,87 @@
 				</div>
 			</div>
 			<div class="controls">
-				<button class="btn prev">◄◄</button>
-				<button class="btn play">►</button>
-				<button class="btn next">||</button>
+				<button class="btn prev" @onclick="PlayPrevious">
+					<img src="img/prev.svg" />
+				</button>
+				<button class="btn play" @onclick="PlayPause">
+					<img src="img/play.svg" />
+				</button>
+				<button class="btn next" @onclick="PlayNext">
+					<img src="img/next.svg" />
+				</button>
 			</div>
 			<div class="progress-bar">
 				<div class="progress"></div>
 			</div>
 			<div class="track-list">
-				<div class="track">Track 1</div>
-				<div class="track">Track 2</div>
-				<div class="track">Track 3</div>
-				<div class="track">Track 4</div>
-				<div class="track">Track 5</div>
-				<div class="track">Track 6</div>
-				<div class="track">Track 7</div>
-				<div class="track">Track 8</div>
-				<div class="track">Track 9</div>
-				<div class="track">Track 10</div>
+
+				@foreach (var track in _tracks)
+				{
+					<div class="track">@track.Name</div>
+				}
 			</div>
 		</div>
 	</div>
 </div>
 @code {
+	List<Track> _tracks = new List<Track>()
+{
+new Track("0", "Blood Dragon Theme (Reprise)", "Power Glove",
+171,"https://cf-hls-media.sndcdn.com/media/159660/0/31762/3ZbHlbtgG3xC.128.mp3"),
+new Track("1", "Another Synthwave Song", "Awesome Artist", 0,
+"https://cf-hls-media.sndcdn.com/media/159660/0/31762/3ZbHlbtgG3xC.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL21lZGlhLzE1OTY2MC8qLyovM1piSGxidGdHM3hDLjEyOC5tcDMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQ3NTU3NzJ9fX1dfQ__&Signature=INxohjn1Hj2VEi1hz4Psg-7o4zk2ojg8F7839def~iFQesODOpCri9aCTsWaIWcaXzqq3XWjGIwzbf2Brz9ydE5I-97fNmqxIP7canP-UvkMrQOqQ7HfTHRjco5LgEBHWmvxwN0BsyghSUZ9wxExwRogINrb7PtBUW6oiNEWN2wUC0ave8MuZS3ZZN6DT4kFd-bZ2SHJtwR3jEEbKHc8LaQiOFjjVuf1HsHnaa72gR3-kynQzsCEASKp3fZmgfjbfZwR4AL7q37neeXEt2YI30JdnBdbGWb1uRxvy~EZsipGQl3u1MqWrmj8S7YZNtRzTsSraa1q29~RWdWiqiQKKg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ"),
+
+};
+
+	Track? _currentTrack = null;
+
+	void PlayPause()
+	{
+		if (_currentTrack == null)
+		{
+			_currentTrack = _tracks[0];
+			_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+		}
+		else
+		{
+			_js.InvokeVoidAsync("playPauseAudio");
+		}
+	}
+
+	void PlayNext()
+	{
+		if (_currentTrack == null)
+		{
+			_currentTrack = _tracks[0];
+			_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+		}
+		else
+		{
+			var currentIndex = _tracks.IndexOf(_currentTrack);
+			if (currentIndex < _tracks.Count - 1)
+			{
+				_currentTrack = _tracks[currentIndex + 1];
+				_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+			}
+		}
+	}
+
+	void PlayPrevious()
+	{
+		if (_currentTrack == null)
+		{
+			_currentTrack = _tracks[0];
+			_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+		}
+		else
+		{
+			var currentIndex = _tracks.IndexOf(_currentTrack);
+			if (currentIndex > 0)
+			{
+				_currentTrack = _tracks[currentIndex - 1];
+				_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+			}
+		}
+	}
 }

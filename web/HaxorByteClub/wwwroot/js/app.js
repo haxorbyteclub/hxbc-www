@@ -93,3 +93,17 @@ window.setupClock = function () {
 	setInterval(updateTimeAndDate, 1000); // Update the date and time every second
 	updateTimeAndDate(); // Initial call to display the date and time
 }
+
+window.playAudio = function (url) {
+	var audio = new Audio(url);
+	audio.play();
+}
+
+window.playPauseAudio = function () {
+	var audio = document.querySelector('audio');
+	if (audio.paused) {
+		audio.play();
+	} else {
+		audio.pause();
+	}
+}

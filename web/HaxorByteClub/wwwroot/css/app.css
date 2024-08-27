@@ -134,10 +134,11 @@ html {
 
 .close-btn {
 	cursor: pointer;
-	border: none;
+	border: 1px solid black;
 	background: none;
-	font-size: 16px;
+	font-size: 9px;
 	color: #000;
+	font-family: 'arial-pixel';
 }
 
 
