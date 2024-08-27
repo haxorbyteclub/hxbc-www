@@ -23,6 +23,20 @@ html {
 	image-rendering: pixelated;
 }
 
+#app {
+	height: 100%;
+}
+
+#app::before {
+	content: "";
+	background-image: url("../img/chitz.png");
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: -1;
+	opacity: 0.7;
+}
+
 
 .top-bar {
 	display: flex;
@@ -68,7 +82,7 @@ html {
 
 .draggable {
 	background-color: #f9f9f9;
-	border: 1px solid #ddd;
+	border: 1px solid black;
 	position: absolute;
 	box-shadow: inset -1px -1px 0 0 rgba(0, 0, 0, 0.144), inset 1px 1px 0 0 #fff, 5px 5px 0 rgba(0, 0, 0, 0.066);
 }
@@ -90,6 +104,11 @@ html {
 	text-align: center;
 	font-family: 'arial-pixel-bold';
 	font-size: 10px;
+}
+
+.header span {
+	width: 100%;
+	text-align: center;
 }
 
 .close-btn {
@@ -118,16 +137,16 @@ html {
 }
 
 .desktop-icon img {
-	max-height: 35px;
+	max-height: 38px;
 	width: auto;
 	object-fit: contain;
 }
 
 .desktop-icon span {
-	font-size: 8.3px;
+	font-size: 8.5px;
 	text-align: center;
 	font-family: 'arial-pixel';
-
+	background-color: white;
 }
 
 #blazor-error-ui {
