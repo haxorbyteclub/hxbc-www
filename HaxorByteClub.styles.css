@@ -1,0 +1,214 @@
+/* /Apps/AudioPlayer.razor.rz.scp.css */
+.media-player[b-c8zjyqt9ej] {
+	width: 320px;
+	background-color: #C0C0C0;
+	border: 2px solid #000;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.title-bar[b-c8zjyqt9ej] {
+	background-color: #4e7bab;
+	color: #FFF;
+	display: flex;
+	justify-content: space-between;
+	padding: 2px;
+	align-items: center;
+}
+
+.title-bar .title[b-c8zjyqt9ej] {
+	margin-left: 5px;
+}
+
+.window-controls span[b-c8zjyqt9ej] {
+	cursor: pointer;
+}
+
+.menu-bar[b-c8zjyqt9ej] {
+	background-color: #D3D3D3;
+	display: flex;
+	justify-content: start;
+	padding: 2px;
+}
+
+.menu-item[b-c8zjyqt9ej] {
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.display[b-c8zjyqt9ej] {
+	background-color: #000;
+	color: #0F0;
+	padding: 10px;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.track-info[b-c8zjyqt9ej],
+.track-details[b-c8zjyqt9ej] {
+	display: flex;
+	justify-content: space-between;
+}
+
+.controls[b-c8zjyqt9ej] {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0;
+}
+
+.controls img[b-c8zjyqt9ej] {
+	height: 9px;
+}
+
+.btn[b-c8zjyqt9ej] {
+	background-color: #D3D3D3;
+	border: 1px solid #000;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.progress-bar[b-c8zjyqt9ej] {
+	background-color: #FFF;
+	border: 1px solid #000;
+	height: 10px;
+	margin: 0 10px;
+	position: relative;
+}
+
+.progress[b-c8zjyqt9ej] {
+	background-color: #000080;
+	height: 100%;
+	width: 50%;
+}
+
+.track-list[b-c8zjyqt9ej] {
+	background-color: #FFF;
+	border: 1px solid #000;
+	height: 100px;
+	overflow-y: auto;
+	margin: 10px;
+	padding: 5px;
+	font-family: 'arial-pixel';
+	font-size: 10px;
+}
+
+.track[b-c8zjyqt9ej] {
+	padding: 5px;
+	border-bottom: 1px solid #D3D3D3;
+}
+
+.track:last-child[b-c8zjyqt9ej] {
+	border-bottom: none;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+[b-c8zjyqt9ej]::-webkit-scrollbar {
+	width: 16px;
+	/* Width of the scrollbar */
+	height: 16px;
+	/* Height of the scrollbar if horizontal */
+}
+
+[b-c8zjyqt9ej]::-webkit-scrollbar-track {
+	background: #c0c0c0;
+	/* Light gray background */
+	border: 2px solid #a0a0a0;
+	/* Darker gray border */
+}
+
+[b-c8zjyqt9ej]::-webkit-scrollbar-thumb {
+	background: #808080;
+	/* Dark gray thumb */
+	border: 2px solid #606060;
+	/* Darker gray border */
+	border-radius: 0;
+	/* Square corners for a classic look */
+	position: relative;
+	/* Position relative to add pseudo-elements */
+}
+
+[b-c8zjyqt9ej]::-webkit-scrollbar-thumb:before,
+[b-c8zjyqt9ej]::-webkit-scrollbar-thumb:after {
+	content: '';
+	display: block;
+	width: 80%;
+	/* Width of the marker lines */
+	height: 2px;
+	/* Height of the marker lines */
+	background: #ffffff;
+	/* Color of the marker lines */
+	position: absolute;
+	left: 10%;
+	/* Center horizontally with some padding */
+}
+
+[b-c8zjyqt9ej]::-webkit-scrollbar-thumb:before {
+	top: 40%;
+	/* Position the first line */
+}
+
+[b-c8zjyqt9ej]::-webkit-scrollbar-thumb:after {
+	top: 60%;
+	/* Position the second line */
+}
+
+/* For Firefox */
+html[b-c8zjyqt9ej] {
+	scrollbar-width: thin;
+	/* Thin scrollbar */
+	scrollbar-color: #808080 #c0c0c0;
+	/* Thumb color and track color */
+}
+
+body[b-c8zjyqt9ej] {
+	scrollbar-color: #808080 #c0c0c0;
+	/* Thumb color and track color */
+	scrollbar-width: thin;
+	/* Thin scrollbar */
+}
+
+/* Additional styling for Firefox (not as customizable as WebKit) */
+body[b-c8zjyqt9ej]::-webkit-scrollbar-thumb::before,
+body[b-c8zjyqt9ej]::-webkit-scrollbar-thumb::after {
+	content: '';
+	display: block;
+	width: 80%;
+	/* Width of the marker lines */
+	height: 2px;
+	/* Height of the marker lines */
+	background: #ffffff;
+	/* Color of the marker lines */
+	position: absolute;
+	left: 10%;
+	/* Center horizontally with some padding */
+}
+
+body[b-c8zjyqt9ej]::-webkit-scrollbar-thumb::before {
+	top: 40%;
+	/* Position the first line */
+}
+
+body[b-c8zjyqt9ej]::-webkit-scrollbar-thumb::after {
+	top: 60%;
+	/* Position the second line */
+}
+/* /Apps/ContactForm.razor.rz.scp.css */
+.content[b-u4ohh11vgb] {
+	max-width: 400px;
+}
+/* /Apps/Default.razor.rz.scp.css */
+.default-content[b-uewotx0epo] {
+	max-width: 400px;
+}
+/* /Apps/Welcome.razor.rz.scp.css */
+.content[b-878u4gjg4v] {
+	width: 400px;
+	height: 460px;
+	padding: 6px;
+	font-family: 'arial-pixel';
+	font-size: 10px;
+}
+
+.content img[b-878u4gjg4v] {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
