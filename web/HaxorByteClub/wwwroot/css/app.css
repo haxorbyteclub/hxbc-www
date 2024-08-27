@@ -104,6 +104,7 @@ html {
 	text-align: center;
 	font-family: 'arial-pixel-bold';
 	font-size: 10px;
+	border-bottom: 1.3px ridge black;
 }
 
 .header span {
