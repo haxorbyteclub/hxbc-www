@@ -84,7 +84,7 @@ html {
 	background-color: #f9f9f9;
 	border: 1px solid black;
 	position: absolute;
-	box-shadow: inset -1px -1px 0 0 rgba(0, 0, 0, 0.144), inset 1px 1px 0 0 #fff, 5px 5px 0 rgba(0, 0, 0, 0.066);
+	box-shadow: inset -1px -1px 0 0 rgba(0, 0, 0, 0.144), inset 1px 1px 0 0 #fff, 5px 5px 0 rgb(128 128 128 / 69%);
 }
 
 .header {
@@ -162,6 +162,7 @@ html {
 	max-height: 38px;
 	width: auto;
 	object-fit: contain;
+	margin-bottom: 6px;
 }
 
 .desktop-icon span {
