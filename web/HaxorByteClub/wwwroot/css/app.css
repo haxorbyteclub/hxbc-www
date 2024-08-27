@@ -107,12 +107,14 @@ html {
 	border-bottom: 1.3px ridge black;
 }
 
-.header span {
-	width: 100%;
+.header-title {
+	width: -moz-fit-content;
+	width: fit-content;
 	text-align: center;
 	color: black;
 	word-break: keep-all;
 	text-wrap: nowrap;
+	margin: 0 2px;
 }
 
 .header .spacer {
@@ -120,6 +122,7 @@ html {
 	flex-direction: column;
 	gap: 2px;
 	margin: 0 2px;
+	width: 100%;
 }
 
 .header .spacer i {

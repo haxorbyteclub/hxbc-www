@@ -19,7 +19,6 @@
 }
 
 .window-controls span {
-	margin: 0 2px;
 	cursor: pointer;
 }
 
@@ -57,7 +56,6 @@
 .btn {
 	background-color: #D3D3D3;
 	border: 1px solid #000;
-	margin: 0 2px;
 	padding: 5px;
 	cursor: pointer;
 }
@@ -83,6 +81,8 @@
 	overflow-y: auto;
 	margin: 10px;
 	padding: 5px;
+	font-family: 'arial-pixel';
+	font-size: 10px;
 }
 
 .track {
@@ -92,4 +92,96 @@
 
 .track:last-child {
 	border-bottom: none;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+	width: 16px;
+	/* Width of the scrollbar */
+	height: 16px;
+	/* Height of the scrollbar if horizontal */
+}
+
+::-webkit-scrollbar-track {
+	background: #c0c0c0;
+	/* Light gray background */
+	border: 2px solid #a0a0a0;
+	/* Darker gray border */
+}
+
+::-webkit-scrollbar-thumb {
+	background: #808080;
+	/* Dark gray thumb */
+	border: 2px solid #606060;
+	/* Darker gray border */
+	border-radius: 0;
+	/* Square corners for a classic look */
+	position: relative;
+	/* Position relative to add pseudo-elements */
+}
+
+::-webkit-scrollbar-thumb:before,
+::-webkit-scrollbar-thumb:after {
+	content: '';
+	display: block;
+	width: 80%;
+	/* Width of the marker lines */
+	height: 2px;
+	/* Height of the marker lines */
+	background: #ffffff;
+	/* Color of the marker lines */
+	position: absolute;
+	left: 10%;
+	/* Center horizontally with some padding */
+}
+
+::-webkit-scrollbar-thumb:before {
+	top: 40%;
+	/* Position the first line */
+}
+
+::-webkit-scrollbar-thumb:after {
+	top: 60%;
+	/* Position the second line */
+}
+
+/* For Firefox */
+html {
+	scrollbar-width: thin;
+	/* Thin scrollbar */
+	scrollbar-color: #808080 #c0c0c0;
+	/* Thumb color and track color */
+}
+
+body {
+	scrollbar-color: #808080 #c0c0c0;
+	/* Thumb color and track color */
+	scrollbar-width: thin;
+	/* Thin scrollbar */
+}
+
+/* Additional styling for Firefox (not as customizable as WebKit) */
+body::-webkit-scrollbar-thumb::before,
+body::-webkit-scrollbar-thumb::after {
+	content: '';
+	display: block;
+	width: 80%;
+	/* Width of the marker lines */
+	height: 2px;
+	/* Height of the marker lines */
+	background: #ffffff;
+	/* Color of the marker lines */
+	position: absolute;
+	left: 10%;
+	/* Center horizontally with some padding */
+}
+
+body::-webkit-scrollbar-thumb::before {
+	top: 40%;
+	/* Position the first line */
+}
+
+body::-webkit-scrollbar-thumb::after {
+	top: 60%;
+	/* Position the second line */
 }
