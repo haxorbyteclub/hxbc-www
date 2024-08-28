@@ -1,6 +1,6 @@
 /* /Apps/AudioPlayer.razor.rz.scp.css */
 .media-player[b-c8zjyqt9ej] {
-	width: 270px;
+	width: 290px;
 	background-color: #C0C0C0;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 	padding-bottom: 10px;
@@ -40,12 +40,36 @@
 	color: #0F0;
 	padding: 10px;
 	font-family: 'Courier New', Courier, monospace;
+	display: flex;
+	place-content: space-between;
+}
+
+.equalizer[b-c8zjyqt9ej] {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	align-items: self-end;
 }
 
 .track-info[b-c8zjyqt9ej],
 .track-details[b-c8zjyqt9ej] {
 	display: flex;
 	justify-content: space-between;
+}
+
+.track-info span[b-c8zjyqt9ej] {
+	text-wrap: nowrap;
+	max-width: 230px;
+	text-wrap: nowrap;
+	max-width: 205px;
+	font-size: 13px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.audio-current-time[b-c8zjyqt9ej] {
+	font-family: 'digital-7';
+	font-size: 32px;
 }
 
 .controls[b-c8zjyqt9ej] {
@@ -63,6 +87,7 @@
 	border: 1px solid #000;
 	padding: 5px;
 	cursor: pointer;
+	width: 20%;
 }
 
 .progress-bar[b-c8zjyqt9ej] {
@@ -74,9 +99,17 @@
 }
 
 .progress[b-c8zjyqt9ej] {
-	background-color: #000080;
+	background-color: #0000ff;
 	height: 100%;
 	width: 0%;
+}
+
+/* equalizer bar - height animated by js */
+.bar[b-c8zjyqt9ej] {
+	background-color: #0000ff;
+	height: 0%;
+	width: 7px;
+	transition: height 0.1s linear;
 }
 
 .track-list[b-c8zjyqt9ej] {
