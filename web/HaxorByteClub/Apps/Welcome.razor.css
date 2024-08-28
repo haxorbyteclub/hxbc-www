@@ -1,6 +1,6 @@
 ﻿.content {
 	width: 400px;
-	height: 460px;
+	height: auto;
 	padding: 6px;
 	font-family: 'arial-pixel';
 	font-size: 10px;
@@ -10,4 +10,10 @@
 	width: 100%;
 	height: auto;
 	object-fit: contain;
+}
+
+@media screen and (max-width: 600px) {
+	.content {
+		max-width: 290px;
+	}
 }

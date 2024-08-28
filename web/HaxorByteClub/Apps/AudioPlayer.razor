@@ -1,4 +1,5 @@
 ﻿@inject IJSRuntime _js
+@inject YoutubeService _youtube
 @inherits AppBase
 
 <div class="app-component draggable" id="@AppId">
@@ -18,21 +19,6 @@
 	</div>
 	<div class="content">
 		<div class="media-player">
-			<!--
-			<div class="title-bar">
-				<span class="title">WinPlay3</span>
-				<div class="window-controls">
-					<span class="minimize">_</span>
-					<span class="maximize">[]</span>
-					<span class="close">X</span>
-				</div>
-			</div>
-			<div class="menu-bar">
-				<span class="menu-item">File</span>
-				<span class="menu-item">Options</span>
-				<span class="menu-item">Help</span>
-			</div>
-			-->
 			<div class="display">
 				<div class="track-info">
 					<span>TRACK</span>
@@ -65,23 +51,33 @@
 
 				@foreach (var track in _tracks)
 				{
-					<div class="track">@track.Name</div>
+					@if (_currentTrack == track)
+					{
+						<div class="track selected">@track.GetName()</div>
+					}
+					else
+					{
+						<div class="track" @onclick="() => SelectTrack(track)">@track.GetName()</div>
+					}
 				}
 			</div>
 		</div>
 	</div>
 </div>
 @code {
-	List<Track> _tracks = new List<Track>()
-{
-new Track("0", "Blood Dragon Theme (Reprise)", "Power Glove",
-171,"https://cf-hls-media.sndcdn.com/media/159660/0/31762/3ZbHlbtgG3xC.128.mp3"),
-new Track("1", "Another Synthwave Song", "Awesome Artist", 0,
-"https://cf-hls-media.sndcdn.com/media/159660/0/31762/3ZbHlbtgG3xC.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL21lZGlhLzE1OTY2MC8qLyovM1piSGxidGdHM3hDLjEyOC5tcDMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQ3NTU3NzJ9fX1dfQ__&Signature=INxohjn1Hj2VEi1hz4Psg-7o4zk2ojg8F7839def~iFQesODOpCri9aCTsWaIWcaXzqq3XWjGIwzbf2Brz9ydE5I-97fNmqxIP7canP-UvkMrQOqQ7HfTHRjco5LgEBHWmvxwN0BsyghSUZ9wxExwRogINrb7PtBUW6oiNEWN2wUC0ave8MuZS3ZZN6DT4kFd-bZ2SHJtwR3jEEbKHc8LaQiOFjjVuf1HsHnaa72gR3-kynQzsCEASKp3fZmgfjbfZwR4AL7q37neeXEt2YI30JdnBdbGWb1uRxvy~EZsipGQl3u1MqWrmj8S7YZNtRzTsSraa1q29~RWdWiqiQKKg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ"),
-
-};
+	List<Track> _tracks = new();
 
 	Track? _currentTrack = null;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var tracks = await _youtube.GetTracks();
+		foreach (var track in tracks.Shuffle())
+		{
+			Console.WriteLine(track.ToString());
+			_tracks.Add(track);
+		}
+	}
 
 	void PlayPause()
 	{
@@ -89,10 +85,12 @@ new Track("1", "Another Synthwave Song", "Awesome Artist", 0,
 		{
 			_currentTrack = _tracks[0];
 			_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+
 		}
 		else
 		{
 			_js.InvokeVoidAsync("playPauseAudio");
+
 		}
 	}
 
@@ -112,6 +110,12 @@ new Track("1", "Another Synthwave Song", "Awesome Artist", 0,
 				_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
 			}
 		}
+	}
+
+	void SelectTrack(Track track)
+	{
+		_currentTrack = track;
+		_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
 	}
 
 	void PlayPrevious()

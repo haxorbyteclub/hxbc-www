@@ -1,3 +1,9 @@
 ﻿.content {
 	max-width: 400px;
 }
+
+@media screen and (max-width: 600px) {
+	.content {
+		max-width: 290px;
+	}
+}
