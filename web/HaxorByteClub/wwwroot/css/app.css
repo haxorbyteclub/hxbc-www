@@ -12,6 +12,21 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'digital-7';
+	src: url('../fonts/digital-7.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'digital-7-italic';
+	src: url('../fonts/digital-7-it.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 body,
 html {
 	height: 100%;

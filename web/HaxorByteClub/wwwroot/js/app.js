@@ -7,6 +7,13 @@ window.setupDragElement = function (id) {
 	var header = elmnt.querySelector('.header');
 	header.onmousedown = dragMouseDown;
 
+	const maxX = window.innerWidth - 400; // Assuming the width of the window is 300px
+	const maxY = window.innerHeight - 400; // Assuming a rough height for the window
+	const randomX = Math.floor(Math.random() * Math.max(1, maxX));
+	const randomY = Math.floor(Math.random() * Math.max(1, maxY));
+
+	elmnt.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
 	header.addEventListener('touchstart', dragMouseDown);
 	header.addEventListener('touchmove', elementDrag);
 	header.addEventListener('touchend', closeDragElement);
@@ -95,7 +102,7 @@ window.setupClock = function () {
 }
 
 window.playAudio = function (url) {
-
+	stopEqualizer();
 	if (document.querySelector('audio')) {
 		document.querySelector('audio').remove();
 	}
@@ -113,19 +120,65 @@ window.playAudio = function (url) {
 		if (audio.currentTime > 0) {
 			value = Math.floor((100 / audio.duration) * audio.currentTime);
 		}
+		var currentTimeSpan = document.querySelector('.audio-current-time');
+		if (currentTimeSpan) {
+			currentTimeSpan.textContent = ('0' + Math.floor(audio.currentTime / 60)).slice(-2) + ':' + ('0' + Math.floor(audio.currentTime % 60)).slice(-2);
+		}
 		progress.style.width = value + '%';
 	});
+	//start with delay
+	setTimeout(function () {
+		animateEqualizer();
+	}, 500);
 
+}
+
+window.stopAudio = function () {
+	stopEqualizer();
+	if (document.querySelector('audio')) {
+		document.querySelector('audio').remove();
+	}
 }
 
 window.playPauseAudio = function () {
 	var audio = document.querySelector('audio');
 	if (audio.paused) {
 		audio.play();
+		animateEqualizer();
+
 	} else {
 		audio.pause();
+		stopEqualizer();
 	}
 }
+
+var intervalIds = [];
+
+function animateEqualizer() {
+	// Clear existing intervals
+	intervalIds.forEach(clearInterval);
+	intervalIds = [];
+
+	var bars = document.querySelectorAll('.bar');
+	bars.forEach(function (bar) {
+		var intervalId = setInterval(function () {
+			bar.style.height = Math.floor(Math.random() * 100) + '%';
+		}, Math.floor(Math.random() * 800));
+		intervalIds.push(intervalId);
+	});
+}
+
+function stopEqualizer() {
+	console.log('Stopping equalizer');
+	intervalIds.forEach(clearInterval);
+	intervalIds = [];
+	var bars = document.querySelectorAll('.bar');
+	bars.forEach(function (bar) {
+		bar.style.height = '0%';
+	});
+}
+
+
 
 // Handle window resize
 window.addEventListener('resize', function () {

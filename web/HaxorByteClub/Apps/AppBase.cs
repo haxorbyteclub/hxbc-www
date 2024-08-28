@@ -14,7 +14,7 @@ public abstract class AppBase : ComponentBase
 	[Parameter]
 	public string AppId { get; set; }
 
-	protected void Remove()
+	protected virtual void Remove()
 	{
 		WeakReferenceMessenger.Default.Send(new RemoveAppMessage(AppId));
 

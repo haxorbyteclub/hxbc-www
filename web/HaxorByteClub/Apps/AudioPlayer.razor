@@ -20,17 +20,21 @@
 	<div class="content">
 		<div class="media-player">
 			<div class="display">
-				<div class="track-info">
-					<span>TRACK</span>
-					<span>MIN</span>
-					<span>SEC</span>
-					<span>MODE</span>
+				<div>
+					<div class="track-info">
+						<span>@_currentTrack?.Name</span>
+					</div>
+					<div class="track-details">
+						<span class="audio-current-time">00:00</span>
+					</div>
 				</div>
-				<div class="track-details">
-					<span>1</span>
-					<span>0:43</span>
-					<span>44 kHz</span>
-					<span>96 kBit/s</span>
+				<!-- 4 random euqalizer bars -->
+				<div class="equalizer">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
 				</div>
 			</div>
 			<div class="controls">
@@ -69,13 +73,22 @@
 
 	Track? _currentTrack = null;
 
-	protected override async Task OnInitializedAsync()
+	override protected async Task OnAfterRenderAsync(bool firstRender)
 	{
-		var tracks = await _youtube.GetTracks();
-		foreach (var track in tracks.Shuffle())
+		await base.OnAfterRenderAsync(firstRender);
+		if (firstRender)
 		{
-			Console.WriteLine(track.ToString());
-			_tracks.Add(track);
+			var tracks = await _youtube.GetTracks();
+			foreach (var track in tracks.Shuffle())
+			{
+				_tracks.Add(track);
+			}
+			_currentTrack = _tracks[0];
+			StateHasChanged();
+			if (_currentTrack is not null)
+			{
+				await _js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+			}
 		}
 	}
 
@@ -90,7 +103,6 @@
 		else
 		{
 			_js.InvokeVoidAsync("playPauseAudio");
-
 		}
 	}
 
@@ -134,5 +146,11 @@
 				_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
 			}
 		}
+	}
+
+	protected async override void Remove()
+	{
+		await _js.InvokeVoidAsync("stopAudio");
+		base.Remove();
 	}
 }
