@@ -176,6 +176,12 @@ html {
 	width: fit-content;
 }
 
+
+.desktop-icon:active span {
+	background-color: black;
+	color: white;
+}
+
 #blazor-error-ui {
 	background: lightyellow;
 	bottom: 0;

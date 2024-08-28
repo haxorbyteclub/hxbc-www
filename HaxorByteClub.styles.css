@@ -1,9 +1,9 @@
 /* /Apps/AudioPlayer.razor.rz.scp.css */
 .media-player[b-c8zjyqt9ej] {
-	width: 320px;
+	width: 270px;
 	background-color: #C0C0C0;
-	border: 2px solid #000;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	padding-bottom: 10px;
 }
 
 .title-bar[b-c8zjyqt9ej] {
@@ -76,15 +76,17 @@
 .progress[b-c8zjyqt9ej] {
 	background-color: #000080;
 	height: 100%;
-	width: 50%;
+	width: 0%;
 }
 
 .track-list[b-c8zjyqt9ej] {
 	background-color: #FFF;
 	border: 1px solid #000;
-	height: 100px;
+	height: 132px;
 	overflow-y: auto;
-	margin: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
 	padding: 5px;
 	font-family: 'arial-pixel';
 	font-size: 10px;
@@ -93,6 +95,11 @@
 .track[b-c8zjyqt9ej] {
 	padding: 5px;
 	border-bottom: 1px solid #D3D3D3;
+}
+
+.selected[b-c8zjyqt9ej] {
+	background-color: black;
+	color: white;
 }
 
 .track:last-child[b-c8zjyqt9ej] {
@@ -194,6 +201,12 @@ body[b-c8zjyqt9ej]::-webkit-scrollbar-thumb::after {
 .content[b-u4ohh11vgb] {
 	max-width: 400px;
 }
+
+@media screen and (max-width: 600px) {
+	.content[b-u4ohh11vgb] {
+		max-width: 290px;
+	}
+}
 /* /Apps/Default.razor.rz.scp.css */
 .default-content[b-uewotx0epo] {
 	max-width: 400px;
@@ -201,7 +214,7 @@ body[b-c8zjyqt9ej]::-webkit-scrollbar-thumb::after {
 /* /Apps/Welcome.razor.rz.scp.css */
 .content[b-878u4gjg4v] {
 	width: 400px;
-	height: 460px;
+	height: auto;
 	padding: 6px;
 	font-family: 'arial-pixel';
 	font-size: 10px;
@@ -211,4 +224,10 @@ body[b-c8zjyqt9ej]::-webkit-scrollbar-thumb::after {
 	width: 100%;
 	height: auto;
 	object-fit: contain;
+}
+
+@media screen and (max-width: 600px) {
+	.content[b-878u4gjg4v] {
+		max-width: 290px;
+	}
 }
