@@ -1,13 +1,13 @@
 {
   "mainAssemblyName": "HaxorByteClub",
   "resources": {
-    "hash": "sha256-5Ha6EVQU3YBGZrpIfLVeR2jy5AvH66lKIvPKYufDB6k=",
+    "hash": "sha256-G22yOYbCQF3A+4gK6tPln7ToVoW4BJkXb9+qX2pMvms=",
     "fingerprinting": {
       "AngleSharp.xjfp703riv.wasm": "AngleSharp.wasm",
       "AsyncAwaitBestPractices.MVVM.y0dsaeyn3e.wasm": "AsyncAwaitBestPractices.MVVM.wasm",
       "AsyncAwaitBestPractices.0gkmdzms1i.wasm": "AsyncAwaitBestPractices.wasm",
       "CommunityToolkit.Mvvm.2p6yr15ies.wasm": "CommunityToolkit.Mvvm.wasm",
-      "HaxorByteClub.62wpll2eoh.wasm": "HaxorByteClub.wasm",
+      "HaxorByteClub.7fl82qbl6g.wasm": "HaxorByteClub.wasm",
       "Microsoft.AspNetCore.Components.o212plyrdj.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.z37olshey0.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.br8m9yh8lm.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
@@ -82,7 +82,7 @@
       "AsyncAwaitBestPractices.MVVM.y0dsaeyn3e.wasm": "sha256-8lJcucys6gw4Jn38ouI7FKfGy93lPGdWuL76kRalefQ=",
       "AsyncAwaitBestPractices.0gkmdzms1i.wasm": "sha256-AAoFKb5GRXYEjENaq5DdzL5a+ewJB50YprTC8zU+7TE=",
       "CommunityToolkit.Mvvm.2p6yr15ies.wasm": "sha256-ZsXgkI1+DV4suflU4i+O30O88+RgBGRcDEJ+PQjFufc=",
-      "HaxorByteClub.62wpll2eoh.wasm": "sha256-jrctF4tKZeApRDyzn8kHYwC239JUflotOpxr8VTpPnc=",
+      "HaxorByteClub.7fl82qbl6g.wasm": "sha256-c/gkFcpawXMfIejkMNGtVphu8Y2Z/yL+1jGKZyXklfg=",
       "Microsoft.AspNetCore.Components.o212plyrdj.wasm": "sha256-EIGkUXq27nGK94w/AO5qW72Z+0VtGDIBUDYiSSy0O5E=",
       "Microsoft.AspNetCore.Components.Web.z37olshey0.wasm": "sha256-ARFxXTky8J7gjzx8GWrqel8TCzgrnDi1fojPSmGJE3M=",
       "Microsoft.AspNetCore.Components.WebAssembly.br8m9yh8lm.wasm": "sha256-KamAYcuacI7kUSTyqvtwduaUwRmsDYrZNFxyqCt0C9M=",

@@ -1,4 +1,4 @@
-/* Manifest version: MiRcsICV */
+/* Manifest version: sAfn3o+p */
 // Caution! Be sure you understand the caveats before publishing an application with
 // offline support. See https://aka.ms/blazor-offline-considerations
 
