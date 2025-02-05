@@ -31,7 +31,7 @@ body,
 html {
 	height: 100%;
 	margin: 0;
-	font-family: Arial, sans-serif;
+	font-size: 10px;
 	overflow: hidden;
 	-webkit-user-select: none;
 	user-select: none;
@@ -59,7 +59,6 @@ html {
 	align-items: center;
 	background-color: #f1f1f1;
 	border: 1px solid black;
-	font-family: 'arial-pixel-bold';
 }
 
 .logo-and-menu {
@@ -74,7 +73,6 @@ html {
 
 .dropdown-menu {
 	font-size: 10px;
-	font-family: 'arial-pixel-bold';
 
 }
 
@@ -117,7 +115,6 @@ html {
 	cursor: move;
 	justify-content: space-between;
 	text-align: center;
-	font-family: 'arial-pixel-bold';
 	font-size: 10px;
 	border-bottom: 1.3px ridge black;
 }
@@ -130,6 +127,15 @@ html {
 	word-break: keep-all;
 	text-wrap: nowrap;
 	margin: 0 2px;
+}
+
+.window {
+	margin: 0;
+}
+
+.window-pane {
+	height: fit-content;
+	overflow: auto;
 }
 
 .header .spacer {
