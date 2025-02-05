@@ -3,21 +3,52 @@
 @inject IJSRuntime _js
 
 <PageTitle>Home</PageTitle>
-
-<div class="top-bar">
-	<div class="logo-and-menu">
+<ul role="menu-bar">
+	<li aria-haspopup="false">
 		<img src="img/logo-temp.png" alt="Logo" class="logo">
-		<select class="dropdown-menu">
-			<option value="option1">Option 1</option>
-			<option value="option2">Option 2</option>
-			<option value="option3">Option 3</option>
-		</select>
-	</div>
-	<div class="date-time">
-		<div class="current-time" id="currentTime"></div>
-		<div class="current-date" id="currentDate"></div>
-	</div>
-</div>
+	</li>
+	<li role="menu-item" tabindex="0" aria-haspopup="true">
+		File
+		<ul role="menu">
+			<li role="menu-item"><a href="#menu">Action</a></li>
+			<li role="menu-item"><a href="#menu">Another Action</a></li>
+			<li role="menu-item" class="divider"><a href="#menu">Something else here</a></li>
+			<li role="menu-item"><a href="https://twitter.com/sakofchit">sakun's twitter</a></li>
+		</ul>
+	</li>
+	<li role="menu-item" tabindex="0" aria-haspopup="true">
+		Edit
+		<ul role="menu">
+			<li role="menu-item"><a href="#menu">Action</a></li>
+			<li role="menu-item"><a href="#menu">Another Action</a></li>
+			<li role="menu-item" class="divider"><a href="#menu">Something else here</a></li>
+			<li role="menu-item"><a href="https://sakun.co">sakun's projects</a></li>
+		</ul>
+	</li>
+	<li role="menu-item" tabindex="0" aria-haspopup="true">
+		View
+		<ul role="menu">
+			<li role="menu-item"><a href="#menu">Action</a></li>
+			<li role="menu-item"><a href="#menu">Another Action</a></li>
+			<li role="menu-item"><a href="#menu">Something else here</a></li>
+		</ul>
+	</li>
+	<li role="menu-item" tabindex="0" aria-haspopup="true">
+		Special
+		<ul role="menu">
+			<li role="menu-item"><a href="#menu">You</a></li>
+			<li role="menu-item"><a href="#menu">Get the</a></li>
+			<li role="menu-item"><a href="#menu">Idea</a></li>
+		</ul>
+	</li>
+	<li tabindex="0" aria-haspopup="true">
+		<div class="date-time">
+			<div class="current-time" id="currentTime"></div>
+			<div class="current-date" id="currentDate"></div>
+		</div>
+		</li>
+</ul>
+
 <div class="desktop-icons">
 	<div class="desktop-icon" @onclick="ToggleAudioPlayer">
 		<img src="img/player-icon.png" alt="player icon">

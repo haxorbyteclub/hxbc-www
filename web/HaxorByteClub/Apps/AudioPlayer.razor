@@ -2,68 +2,63 @@
 @inject YoutubeService _youtube
 @inherits AppBase
 
-<div class="app-component draggable" id="@AppId">
-	<div class="header">
-		<span class="spacer">
-			<i></i>
-			<i></i>
-			<i></i>
-		</span>
-		<span class="header-title">Audio Player</span>
-		<span class="spacer">
-			<i></i>
-			<i></i>
-			<i></i>
-		</span>
-		<button class="close-btn" @onclick="Remove">x</button>
+<div class="window app-component draggable" id="@AppId">
+	<div class="title-bar">
+		<button aria-label="Close" class="close" @onclick="Remove"></button>
+		<h1 class="title">System.css</h1>
+		<button aria-label="Resize" class="resize"></button>
 	</div>
-	<div class="content">
-		<div class="media-player">
-			<div class="display">
-				<div>
-					<div class="track-info">
-						<span>@_currentTrack?.Name</span>
-					</div>
-					<div class="track-details">
-						<span class="audio-current-time">00:00</span>
-					</div>
-				</div>
-				<!-- 4 random euqalizer bars -->
-				<div class="equalizer">
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
-				</div>
-			</div>
-			<div class="controls">
-				<button class="btn prev" @onclick="PlayPrevious">
-					<img src="img/prev.svg" />
-				</button>
-				<button class="btn play" @onclick="PlayPause">
-					<img src="img/play.svg" />
-				</button>
-				<button class="btn next" @onclick="PlayNext">
-					<img src="img/next.svg" />
-				</button>
-			</div>
-			<div class="progress-bar">
-				<div class="progress"></div>
-			</div>
-			<div class="track-list">
+	<div class="separator"></div>
+	<div class="window-pane">
 
-				@foreach (var track in _tracks)
-				{
-					@if (_currentTrack == track)
+		<div class="content">
+			<div class="media-player">
+				<div class="display">
+					<div>
+						<div class="track-info">
+							<span>@_currentTrack?.Name</span>
+						</div>
+						<div class="track-details">
+							<span class="audio-current-time">00:00</span>
+						</div>
+					</div>
+					<!-- 4 random euqalizer bars -->
+					<div class="equalizer">
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+					</div>
+				</div>
+				<div class="controls">
+					<button class="btn prev" @onclick="PlayPrevious">
+						<img src="img/prev.svg" />
+					</button>
+					<button class="btn play" @onclick="PlayPause">
+						<img src="img/play.svg" />
+					</button>
+					<button class="btn next" @onclick="PlayNext">
+						<img src="img/next.svg" />
+					</button>
+				</div>
+				<div class="progress-bar">
+					<div class="progress"></div>
+				</div>
+				<div class="track-list">
+
+					@foreach (var track in _tracks)
 					{
-						<div class="track selected">@track.GetName()</div>
+						@if (_currentTrack == track)
+						{
+							<div class="track selected">@track.GetName()</div>
+						}
+						else
+						{
+							<div class="track" @onclick="() => SelectTrack(track)">@track.GetName()</div>
+						}
 					}
-					else
-					{
-						<div class="track" @onclick="() => SelectTrack(track)">@track.GetName()</div>
-					}
-				}
+				</div>
 			</div>
 		</div>
 	</div>

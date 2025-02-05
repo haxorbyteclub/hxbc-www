@@ -1,4 +1,9 @@
-﻿.media-player {
+﻿.window {
+	height: 360px;
+	width: 290px;
+}
+
+.media-player {
 	width: 290px;
 	background-color: #C0C0C0;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);

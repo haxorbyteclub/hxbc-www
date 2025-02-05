@@ -1,9 +1,43 @@
-﻿.content {
-	max-width: 400px;
+﻿.window {
+	height: 360px;
+	width: 290px;
+}
+
+.content {
+	width: 260px;
 }
 
 @media screen and (max-width: 600px) {
 	.content {
-		max-width: 290px;
+		max-width: 180px;
 	}
+}
+
+.info-box {
+	background-color: #c0c0c0;
+	width: 200px;
+	margin: 0 auto;
+	outline: 1px solid #8a8a8a;
+	background-color: rgba(227, 227, 227, 0.5);
+	border-width: 2px;
+	font-size: 0.8rem;
+	border-style: solid;
+	border-color: #fff #8a8a8a #8a8a8a #fff;
+	padding: 2px;
+	display: block;
+	position: relative;
+	bottom: 0;
+	text-transform: uppercase;
+	color: black;
+	border-radius: 0px;
+	margin-top: 6px;
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
 }

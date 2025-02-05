@@ -4,7 +4,7 @@
 window.setupDragElement = function (id) {
 	var elmnt = document.getElementById(id);
 	var startX = 0, startY = 0, initialX = 0, initialY = 0;
-	var header = elmnt.querySelector('.header');
+	var header = elmnt.querySelector('.title-bar');
 	header.onmousedown = dragMouseDown;
 
 	const maxX = window.innerWidth - 400; // Assuming the width of the window is 300px

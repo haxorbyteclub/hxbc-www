@@ -1,31 +1,49 @@
 ﻿@inject IJSRuntime _js
 @inherits AppBase
 
-<div class="app-component draggable" id="@AppId">
-	<div class="header">
-		<span class="spacer">
-			<i></i>
-			<i></i>
-			<i></i>
-		</span>
-		<span class="header-title">Contact</span>
-		<span class="spacer">
-			<i></i>
-			<i></i>
-			<i></i>
-		</span>
-		<button class="close-btn" @onclick="Remove">x</button>
+
+<div class="window app-component draggable" id="@AppId">
+	<div class="title-bar">
+		<button aria-label="Close" class="close" @onclick="Remove"></button>
+		<h1 class="title">System.css</h1>
+		<button aria-label="Resize" class="resize"></button>
 	</div>
-	<div class="content">
-		<p>
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-			industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-			scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-			electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-			Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-			Aldus PageMaker including versions of Lorem Ipsum.
-		</p>
+	<div class="separator"></div>
+	<div class="window-pane">
+
+		<div class="content">
+			<!-- info box -->
+			<div class="info-box">
+				<div class="info-box-header">
+					<h3>Get in touch</h3>
+				</div>
+				<div class="info-box-content">
+					<p>Have a question or want to get in touch? Fill out the form below and we'll get back to you as
+						soon as
+						possible.</p>
+				</div>
+			</div>
+			<!-- nickname entry -->
+			<div class="form-group">
+				<label for="nickname">Nickname</label>
+				<input type="text" id="nickname" name="nickname" placeholder="Nickname" />
+			</div>
+			<!-- message entry-->
+			<div class="form-group">
+				<label for="message">Message</label>
+				<textarea id="message" name="message" placeholder="Message"></textarea>
+			</div>
+			<!-- submit button -->
+			<div class="form-group">
+				<button class="submit-btn" @onclick="Submit">Send it!</button>
+			</div>
+		</div>
 	</div>
 </div>
 @code {
+
+	private async Task Submit()
+	{
+		await _js.InvokeVoidAsync("alert", "Message sent!");
+	}
 }

@@ -1,27 +1,21 @@
 ﻿@inject IJSRuntime _js
 @inherits AppBase
 
-<div class="app-component draggable" id="@AppId">
-	<div class="header">
-		<span class="spacer">
-			<i></i>
-			<i></i>
-			<i></i>
-		</span>
-		<span class="header-title">About</span>
-		<span class="spacer">
-			<i></i>
-			<i></i>
-			<i></i>
-		</span>
-		<button class="close-btn" @onclick="Remove">x</button>
+
+<div class="window app-component draggable" id="@AppId">
+	<div class="title-bar">
+		<button aria-label="Close" class="close" @onclick="Remove"></button>
+		<h1 class="title">Search</h1>
+		<button aria-label="Resize" disabled class="hidden"></button>
 	</div>
-	<div class="content">
-		<img src="img/welcome.png" alt="Welcome" <p>
+	<div class="separator"></div>
+	<div class="window-pane">
+		<img class="welcome-image" src="img/welcome.png" alt="Welcome" <p>
 		Welcome! Grab a seat, launch your editor, and start coding. We have a lot of exciting things in store for you.
 		Stay tuned!
 		</p>
 	</div>
 </div>
+
 @code {
 }
