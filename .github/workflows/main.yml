@@ -23,11 +23,11 @@ jobs:
         run: |
           sed -i 's/<base href="\/" \/>/<base href="\/haxorbyteclub-www\/" \/>/g' web/HaxorByteClub/wwwroot/index.html
 
-      # - name: build Tailwind minified CSS
-      #   run: |
-      #     cd PromptMachine
-      #     npm install -D tailwindcss
-      #     npx tailwindcss -i ./wwwroot/css/tw.css -o ./wwwroot/css/tw.min.css
+      - name: build Tailwind minified CSS
+        run: |
+          cd PromptMachine
+          npm install -D tailwindcss
+          npx tailwindcss -i ./wwwroot/css/tw.css -o ./wwwroot/css/tw.min.css
 
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
