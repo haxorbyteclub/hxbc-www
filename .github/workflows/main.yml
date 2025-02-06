@@ -25,7 +25,8 @@ jobs:
 
       - name: build Tailwind minified CSS
         run: |
-          cd PromptMachine
+          cd web
+          cd HaxorByteClub
           npm install -D tailwindcss
           npx tailwindcss -i ./wwwroot/css/tw.css -o ./wwwroot/css/tw.min.css
 
