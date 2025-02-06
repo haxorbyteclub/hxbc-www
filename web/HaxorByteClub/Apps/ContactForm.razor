@@ -5,38 +5,29 @@
 <div class="window app-component draggable" id="@AppId">
 	<div class="title-bar">
 		<button aria-label="Close" class="close" @onclick="Remove"></button>
-		<h1 class="title">System.css</h1>
-		<button aria-label="Resize" class="resize"></button>
+		<h1 class="title">Send love!
+		</h1>
 	</div>
 	<div class="separator"></div>
-	<div class="window-pane">
+	<div class=" text-sm window-pane">
 
-		<div class="content">
-			<!-- info box -->
-			<div class="info-box">
-				<div class="info-box-header">
-					<h3>Get in touch</h3>
+		<div class="content flex flex-col gap-3">
+
+			<div class="standard-dialog center scale-down text-xs w-9/12 mx-auto">
+				<h1 class="dialog-text uppercase font-black">Get in touch</h1>
+				<p class="dialog-text">Let's talk! Your messages are collected in our guestbook.</p>
+			</div>
+
+
+			<form class="message-form">
+				<div class="flex flex-col">
+					<label for="text_email">Nickname</label>
+					<input id="text_email" type="text" class="w-full" placeholder="Elliot Alderson" />
+					<label class="mt-2" for="text_message">Message</label>
+					<textarea id="text_message" type="text" class="w-full" placeholder="hello world..." />
+					<button class="btn mt-2" @onclick="Submit">Send it!</button>
 				</div>
-				<div class="info-box-content">
-					<p>Have a question or want to get in touch? Fill out the form below and we'll get back to you as
-						soon as
-						possible.</p>
-				</div>
-			</div>
-			<!-- nickname entry -->
-			<div class="form-group">
-				<label for="nickname">Nickname</label>
-				<input type="text" id="nickname" name="nickname" placeholder="Nickname" />
-			</div>
-			<!-- message entry-->
-			<div class="form-group">
-				<label for="message">Message</label>
-				<textarea id="message" name="message" placeholder="Message"></textarea>
-			</div>
-			<!-- submit button -->
-			<div class="form-group">
-				<button class="submit-btn" @onclick="Submit">Send it!</button>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>
