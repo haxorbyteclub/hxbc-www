@@ -31,7 +31,6 @@ body,
 html {
 	height: 100%;
 	margin: 0;
-	font-size: 10px;
 	overflow: hidden;
 	-webkit-user-select: none;
 	user-select: none;
@@ -76,9 +75,14 @@ html {
 
 }
 
+.date-time-container {
+	display: flex;
+	width: 100%;
+	justify-content: right;
+	padding-right: 10px;
+}
 
 .date-time {
-	font-size: 10px;
 	display: flex;
 	align-items: center;
 }
@@ -162,6 +166,16 @@ html {
 	font-family: 'arial-pixel';
 }
 
+.logo-container {
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+.title-bar .title {
+	font-size: 1.3rem;
+}
 
 .desktop-icons {
 	position: absolute;
