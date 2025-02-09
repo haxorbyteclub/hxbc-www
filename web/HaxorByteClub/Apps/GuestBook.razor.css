@@ -1,0 +1,39 @@
+﻿.window {
+	width: 290px;
+}
+
+.window-pane {
+	height: auto;
+	max-height: 500px;
+}
+
+textarea {
+	border: 1.5px solid #000;
+	height: 160px;
+}
+
+.info-box {
+	background-color: #c0c0c0;
+	outline: 1px solid #8a8a8a;
+	background-color: rgba(227, 227, 227, 0.5);
+	border-width: 2px;
+	font-size: 0.8rem;
+	border-style: solid;
+	border-color: #fff #8a8a8a #8a8a8a #fff;
+	padding: 2px;
+	display: block;
+	position: relative;
+	bottom: 0;
+	color: black;
+	border-radius: 0px;
+	margin-top: 6px;
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
