@@ -1,13 +1,13 @@
 {
   "mainAssemblyName": "HaxorByteClub",
   "resources": {
-    "hash": "sha256-R7kBzDbckvFGniXCIrIfqUXDV3Wb2wMn4yqjRa8UJ68=",
+    "hash": "sha256-x1060uQ95hIX44FOhOPKlkxqr5pww1/annfckXwomws=",
     "fingerprinting": {
       "AngleSharp.up7648hgwu.wasm": "AngleSharp.wasm",
       "AsyncAwaitBestPractices.vjycdyzqwn.wasm": "AsyncAwaitBestPractices.wasm",
       "CommunityToolkit.Mvvm.xp9imvzwfl.wasm": "CommunityToolkit.Mvvm.wasm",
-      "HaxorByteClub.rz83tndn87.wasm": "HaxorByteClub.wasm",
-      "Microsoft.AspNetCore.Components.n0sd50qnud.wasm": "Microsoft.AspNetCore.Components.wasm",
+      "HaxorByteClub.gexvlcvllv.wasm": "HaxorByteClub.wasm",
+      "Microsoft.AspNetCore.Components.bwoe0y8mrl.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.tx885whulx.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.ojjbeuchn6.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
       "Microsoft.Extensions.Configuration.Abstractions.79qfazjlcu.wasm": "Microsoft.Extensions.Configuration.Abstractions.wasm",
@@ -38,7 +38,7 @@
       "System.Net.Requests.ak7tgy04d3.wasm": "System.Net.Requests.wasm",
       "System.Net.ServicePoint.zy1okdwds7.wasm": "System.Net.ServicePoint.wasm",
       "System.Net.WebHeaderCollection.yf9ypyaz5o.wasm": "System.Net.WebHeaderCollection.wasm",
-      "System.Private.CoreLib.4qw48dw34a.wasm": "System.Private.CoreLib.wasm",
+      "System.Private.CoreLib.pntofgpntj.wasm": "System.Private.CoreLib.wasm",
       "System.Private.Uri.pxqrfz02de.wasm": "System.Private.Uri.wasm",
       "System.Runtime.InteropServices.JavaScript.gr73skhjil.wasm": "System.Runtime.InteropServices.JavaScript.wasm",
       "System.Runtime.o43t7rtfb9.wasm": "System.Runtime.wasm",
@@ -71,15 +71,15 @@
       "icudt_no_CJK.lfu7j35m59.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "coreAssembly": {
-      "System.Private.CoreLib.4qw48dw34a.wasm": "sha256-VGVMMMZdpS321jRHl/nNHnv52Elay4JouRYoLaqfYGc=",
+      "System.Private.CoreLib.pntofgpntj.wasm": "sha256-21SKfNFAkreTQB3EIYjJ+MevshlWmbrQAawwSgiw0Io=",
       "System.Runtime.InteropServices.JavaScript.gr73skhjil.wasm": "sha256-DIZZQ6VsUec1Pfplu09jx3HbOcNosppsi7Hn8cKN5Mg="
     },
     "assembly": {
       "AngleSharp.up7648hgwu.wasm": "sha256-kiD87S/tghFUydyHWNfGo1G3AnugOsqK5Y55LSHS43w=",
       "AsyncAwaitBestPractices.vjycdyzqwn.wasm": "sha256-6959FJZIU0MCR+qKkaUX8FYtdrVjQ7rBmyvR4/XKxlU=",
       "CommunityToolkit.Mvvm.xp9imvzwfl.wasm": "sha256-SxybjbCDKpaHGSQHz7Hny3A9sE2wIfzjmATkDziadcY=",
-      "HaxorByteClub.rz83tndn87.wasm": "sha256-uSaimMX7c1bzyBdzhF50qnfl7ozjcXcwWvw5jY4rOCU=",
-      "Microsoft.AspNetCore.Components.n0sd50qnud.wasm": "sha256-F1Q7xzgE15tNTYeeSqzGd/DlroGeCJ8ZNOB3s8fmjUA=",
+      "HaxorByteClub.gexvlcvllv.wasm": "sha256-KDBQB76Mjdv7NT/gFPBuiBgTdk1CqdFARkcaA2/IzXI=",
+      "Microsoft.AspNetCore.Components.bwoe0y8mrl.wasm": "sha256-iz11SWOPLVRj9I4breuTY0VdXGuqJ0c3DFg/d4UWk+A=",
       "Microsoft.AspNetCore.Components.Web.tx885whulx.wasm": "sha256-v+uwBWlsF4iCHG6B9ZA8x3jlos/84zEJCWdcqZNu3Sk=",
       "Microsoft.AspNetCore.Components.WebAssembly.ojjbeuchn6.wasm": "sha256-TMJrwxmh7raq50FXlf8OFb9/PXWC0dJ48IVhshQE3jE=",
       "Microsoft.Extensions.Configuration.Abstractions.79qfazjlcu.wasm": "sha256-Vaey6KNbQjvV5f4sgTb9Z7DpC7i8fKGaG8HGFaV0O8k=",
