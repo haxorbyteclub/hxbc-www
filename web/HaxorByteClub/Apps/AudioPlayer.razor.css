@@ -3,24 +3,10 @@
 	width: 290px;
 }
 
-.media-player {
-	width: 290px;
-	background-color: #C0C0C0;
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-	padding-bottom: 10px;
-}
+.media-player {}
 
-.title-bar {
-	background-color: #4e7bab;
-	color: #FFF;
-	display: flex;
-	justify-content: space-between;
-	padding: 2px;
-	align-items: center;
-}
-
-.title-bar .title {
-	margin-left: 5px;
+.window-pane {
+	padding: 0;
 }
 
 .window-controls span {
@@ -28,7 +14,7 @@
 }
 
 .menu-bar {
-	background-color: #D3D3D3;
+	background-color: white;
 	display: flex;
 	justify-content: start;
 	padding: 2px;
@@ -86,12 +72,9 @@
 	height: 9px;
 }
 
-.btn {
-	background-color: #D3D3D3;
-	border: 1px solid #000;
-	padding: 5px;
-	cursor: pointer;
-	width: 20%;
+/* btn active should make the svg inside white */
+.btn:active svg {
+	fill: white;
 }
 
 .progress-bar {
@@ -119,7 +102,7 @@
 .track-list {
 	background-color: #FFF;
 	border: 1px solid #000;
-	height: 132px;
+	max-height: 182px;
 	overflow-y: auto;
 	margin-top: 10px;
 	margin-right: 10px;
@@ -131,7 +114,7 @@
 
 .track {
 	padding: 5px;
-	border-bottom: 1px solid #D3D3D3;
+	border-bottom: 1px solid white;
 }
 
 .selected {
@@ -141,96 +124,4 @@
 
 .track:last-child {
 	border-bottom: none;
-}
-
-/* For WebKit browsers (Chrome, Safari) */
-::-webkit-scrollbar {
-	width: 16px;
-	/* Width of the scrollbar */
-	height: 16px;
-	/* Height of the scrollbar if horizontal */
-}
-
-::-webkit-scrollbar-track {
-	background: #c0c0c0;
-	/* Light gray background */
-	border: 2px solid #a0a0a0;
-	/* Darker gray border */
-}
-
-::-webkit-scrollbar-thumb {
-	background: #808080;
-	/* Dark gray thumb */
-	border: 2px solid #606060;
-	/* Darker gray border */
-	border-radius: 0;
-	/* Square corners for a classic look */
-	position: relative;
-	/* Position relative to add pseudo-elements */
-}
-
-::-webkit-scrollbar-thumb:before,
-::-webkit-scrollbar-thumb:after {
-	content: '';
-	display: block;
-	width: 80%;
-	/* Width of the marker lines */
-	height: 2px;
-	/* Height of the marker lines */
-	background: #ffffff;
-	/* Color of the marker lines */
-	position: absolute;
-	left: 10%;
-	/* Center horizontally with some padding */
-}
-
-::-webkit-scrollbar-thumb:before {
-	top: 40%;
-	/* Position the first line */
-}
-
-::-webkit-scrollbar-thumb:after {
-	top: 60%;
-	/* Position the second line */
-}
-
-/* For Firefox */
-html {
-	scrollbar-width: thin;
-	/* Thin scrollbar */
-	scrollbar-color: #808080 #c0c0c0;
-	/* Thumb color and track color */
-}
-
-body {
-	scrollbar-color: #808080 #c0c0c0;
-	/* Thumb color and track color */
-	scrollbar-width: thin;
-	/* Thin scrollbar */
-}
-
-/* Additional styling for Firefox (not as customizable as WebKit) */
-body::-webkit-scrollbar-thumb::before,
-body::-webkit-scrollbar-thumb::after {
-	content: '';
-	display: block;
-	width: 80%;
-	/* Width of the marker lines */
-	height: 2px;
-	/* Height of the marker lines */
-	background: #ffffff;
-	/* Color of the marker lines */
-	position: absolute;
-	left: 10%;
-	/* Center horizontally with some padding */
-}
-
-body::-webkit-scrollbar-thumb::before {
-	top: 40%;
-	/* Position the first line */
-}
-
-body::-webkit-scrollbar-thumb::after {
-	top: 60%;
-	/* Position the second line */
 }
