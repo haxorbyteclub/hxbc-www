@@ -319,6 +319,10 @@ textarea[b-rvka4hpuv4] {
 	flex-direction: column;
 	gap: 6px;
 }
+
+.window-pane[b-rvka4hpuv4] {
+	padding: 0;
+}
 /* /Apps/Welcome.razor.rz.scp.css */
 .window[b-878u4gjg4v] {
 	width: 400px;

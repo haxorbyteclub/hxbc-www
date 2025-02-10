@@ -175,6 +175,7 @@ html {
 
 .title-bar .title {
 	font-size: 1.3rem;
+	font-weight: 100;
 }
 
 .desktop-icons {
@@ -209,6 +210,13 @@ html {
 	padding: 1px 3px;
 	width: -moz-fit-content;
 	width: fit-content;
+}
+
+textarea {
+	border: 1.5px solid #000;
+	font-family: Chicago_12;
+	font-size: 18px;
+	padding-left: 5px;
 }
 
 
