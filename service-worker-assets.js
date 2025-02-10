@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "YMCuDO2F",
+  "version": "TnlzfAd4",
   "assets": [
     {
-      "hash": "sha256-qS2kvUD70ukLXTudaBnWoM6zCcgs6nAfeXx8TEjCkOE=",
+      "hash": "sha256-wUwTWuO6oosexBGcEbRcEBDRaEE65M+9lc2rKt0jQy0=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-GfK1kJzxNXQhdc84T9HOI0UDNyYTvBfFwpFaZtU2oqY=",
-      "url": "_framework/HaxorByteClub.9sq2uo4ad7.wasm"
+      "hash": "sha256-pBwmGYIXincTuJ7reGxFTVmYAwrAlX/ksDU4sCwvQZE=",
+      "url": "_framework/HaxorByteClub.oze3q52kpc.wasm"
     },
     {
       "hash": "sha256-v+uwBWlsF4iCHG6B9ZA8x3jlos/84zEJCWdcqZNu3Sk=",
@@ -190,7 +190,7 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.ndyan79x3n.wasm"
     },
     {
-      "hash": "sha256-7Wyp8eN2yMue2uX0sxQ16vVXmrduHynmEBY+IXd9hwY=",
+      "hash": "sha256-Q17M+ytSqX1OqrnxICVkqHMkQhPXBMZXzQBS19dRkgE=",
       "url": "_framework/blazor.boot.json"
     },
     {
