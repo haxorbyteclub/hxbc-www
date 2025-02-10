@@ -20,7 +20,7 @@
 			</div>
 
 
-			<form class="message-form">
+			<div class="message-form">
 				<div class="flex flex-col">
 					<label for="text_email">Nickname</label>
 					<input id="text_email" type="text" class="w-full" placeholder="Elliot Alderson" @bind="Nickname" />
@@ -29,7 +29,7 @@
 						@bind="Message" />
 					<button class="btn mt-2" @onclick="Submit">Send it!</button>
 				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 </div>
@@ -46,5 +46,7 @@
 			Text = Message,
 			Date = DateTime.Now
 		});
+		Nickname = string.Empty;
+		Message = string.Empty;
 	}
 }

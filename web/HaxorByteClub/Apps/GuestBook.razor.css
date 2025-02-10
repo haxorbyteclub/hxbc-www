@@ -37,3 +37,7 @@ textarea {
 	flex-direction: column;
 	gap: 6px;
 }
+
+.window-pane {
+	padding: 0;
+}

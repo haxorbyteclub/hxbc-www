@@ -1,9 +1,19 @@
+
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using HaxorByteClub.Models;
+
 namespace HaxorByteClub.Services;
 
 public class GuestBookService
 {
-	private readonly List<Message> _messages = new List<Message>();
+	private readonly ObservableCollection<Message> _messages = new ObservableCollection<Message>();
+
+	public event NotifyCollectionChangedEventHandler MessagesChanged
+	{
+		add { _messages.CollectionChanged += value; }
+		remove { _messages.CollectionChanged -= value; }
+	}
 
 	public void AddMessage(Message message)
 	{
@@ -37,19 +47,19 @@ public class GuestBookService
 		});
 
 		//with more text
-		_messages.Add(new Message 
+		_messages.Add(new Message
 		{
-			Text = "Hello World! This is a longer message to test the layout of the guest book. It should wrap around and look good on the page. Let's see how it goes!", 
-			User = "Eve", 
-			Date = DateTime.Now 
+			Text = "Hello World! This is a longer message to test the layout of the guest book. It should wrap around and look good on the page. Let's see how it goes!",
+			User = "Eve",
+			Date = DateTime.Now
 		});
 
 		//another one
-		_messages.Add(new Message 
-		{ 
-			Text = "Hello World!", 
-			User = "Alice", 
-			Date = DateTime.Now 
+		_messages.Add(new Message
+		{
+			Text = "Hello World!",
+			User = "Alice",
+			Date = DateTime.Now
 		});
 
 	}

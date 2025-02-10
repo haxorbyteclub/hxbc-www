@@ -62,6 +62,10 @@
 		<img src="img/info-icon.png" alt="about icon">
 		<span>About</span>
 	</div>
+		<div class="desktop-icon" @onclick="ToggleGuestBook">
+		<img src="img/guestbook-icon.png" alt="guestbook icon">
+		<span>Guestbook</span>
+	</div>
 </div>
 
 @foreach (var app in _apps)
@@ -81,6 +85,10 @@
 	else if (app is ContactForm contact)
 	{
 		<ContactForm AppId="@app.AppId" />
+	}
+	else if (app is GuestBook guestBook)
+	{
+		<GuestBook AppId="@app.AppId" />
 	}
 }
 
@@ -140,6 +148,20 @@
 			_apps.Add(new Welcome() { AppId = Guid.NewGuid().ToString() });
 		}
 	}
+
+	void ToggleGuestBook()
+	{
+		if (_apps.Any(a => a is GuestBook))
+		{
+			var app = _apps.FirstOrDefault(a => a is GuestBook);
+			BringToFront(app.AppId).SafeFireAndForget();
+		}
+		else
+		{
+			_apps.Add(new GuestBook() { AppId = Guid.NewGuid().ToString() });
+		}
+	}
+
 
 
 	async Task BringToFront(string id)
