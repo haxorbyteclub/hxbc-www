@@ -4,16 +4,15 @@
 
 <PageTitle>Home</PageTitle>
 <ul role="menu-bar">
-	<li aria-haspopup="false" class="logo-container">
-		<img src="img/logo-temp.png" alt="Logo" class="logo">
-	</li>
 	<li role="menu-item" tabindex="0" aria-haspopup="true">
-		File
+		<div class="flex">
+			<img src="img/logo-temp.png" alt="Logo" class="logo">
+		</div>
 		<ul role="menu">
-			<li role="menu-item"><a href="#menu">Action</a></li>
-			<li role="menu-item"><a href="#menu">Another Action</a></li>
-			<li role="menu-item" class="divider"><a href="#menu">Something else here</a></li>
-			<li role="menu-item"><a href="https://twitter.com/sakofchit">sakun's twitter</a></li>
+			<li role="menu-item"><a href="#menu">About</a></li>
+			<li role="menu-item"><a href="#menu">Display Properties</a></li>
+			<li role="menu-item" class="divider"><a href="#menu">Socials</a></li>
+			<li role="menu-item"><a href="https://twitter.com/sakofchit">HaxorByteShop</a></li>
 		</ul>
 	</li>
 	<li role="menu-item" tabindex="0" aria-haspopup="true">
@@ -23,22 +22,6 @@
 			<li role="menu-item"><a href="#menu">Another Action</a></li>
 			<li role="menu-item" class="divider"><a href="#menu">Something else here</a></li>
 			<li role="menu-item"><a href="https://sakun.co">sakun's projects</a></li>
-		</ul>
-	</li>
-	<li role="menu-item" tabindex="0" aria-haspopup="true">
-		View
-		<ul role="menu">
-			<li role="menu-item"><a href="#menu">Action</a></li>
-			<li role="menu-item"><a href="#menu">Another Action</a></li>
-			<li role="menu-item"><a href="#menu">Something else here</a></li>
-		</ul>
-	</li>
-	<li role="menu-item" tabindex="0" aria-haspopup="true">
-		Special
-		<ul role="menu">
-			<li role="menu-item"><a href="#menu">You</a></li>
-			<li role="menu-item"><a href="#menu">Get the</a></li>
-			<li role="menu-item"><a href="#menu">Idea</a></li>
 		</ul>
 	</li>
 	<li class="date-time-container" tabindex="0" aria-haspopup="true">
@@ -62,7 +45,7 @@
 		<img src="img/info-icon.png" alt="about icon">
 		<span>About</span>
 	</div>
-		<div class="desktop-icon" @onclick="ToggleGuestBook">
+	<div class="desktop-icon" @onclick="ToggleGuestBook">
 		<img src="img/guestbook-icon.png" alt="guestbook icon">
 		<span>Guestbook</span>
 	</div>
