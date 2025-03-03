@@ -257,9 +257,6 @@ textarea {
 .loading-progress {
 	position: relative;
 	display: block;
-	width: 8rem;
-	height: 8rem;
-	margin: 20vh auto 1rem auto;
 }
 
 .loading-progress circle {
@@ -279,12 +276,10 @@ textarea {
 .loading-progress-text {
 	position: absolute;
 	text-align: center;
-	font-weight: bold;
-	inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
 }
 
 .loading-progress-text:after {
-	content: var(--blazor-load-percentage-text, "Loading");
+	content: var(--blazor-load-percentage-text, "Complete");
 }
 
 code {
