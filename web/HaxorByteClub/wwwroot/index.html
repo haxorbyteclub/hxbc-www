@@ -88,7 +88,7 @@
 				setProgress(progressValue + 2);
 			} else {
 				clearInterval(timer);
-				//print welcome message and let it stay for 1 second
+
 				setMessage('Welcome to HaxorByteClub');
 				setTimeout(() => {
 					progress.style.display = 'none';
@@ -99,16 +99,12 @@
 			}
 		}, 150);
 		function setProgress(value) {
-			//set width of progress thumb
 			document.getElementById('progressThumb').style.width = value + '%';
 		}
 		function setMessage(message) {
 			console.log('message', message);
 			document.querySelector('.loading-message').textContent = message;
 		}
-
-
-
 
 	</script>
 </body>
