@@ -18,11 +18,16 @@
 
 <body>
 	<div id="app">
-		<!-- 100x100 centered vertically and horizontally -->
-		<div class="standard-dialog center scale-down absolute w-[200px] h-[320px]">
+		<div
+			class="standard-dialog fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[420px] h-[200px]">
 			<h1 class="dialog-text loading-message loading-progress"></h1>
 			<p class="dialog-text loading-progress-text"></p>
-		  </div>
+			<div class="border-2 border-neutral-6 border-t-neutral-8 border-l-neutral-8 p-1 bg-neutral-1 w-full">
+				<div class="progress-thumb h-[42px] w-0 bg-blue-600 transition-all duration-[150ms]" id="progressThumb">
+				</div>
+			</div>
+		</div>
+	</div>
 	</div>
 
 	<div id="blazor-error-ui">
@@ -33,6 +38,79 @@
 	<script src="js/app.js"></script>
 	<script src="_framework/blazor.webassembly.js" autostart="false"></script>
 	<script>navigator.serviceWorker.register('service-worker.js');</script>
+	<script>
+		const messages = [
+			"Booting up the flux capacitor...",
+			"Reticulating splines...",
+			"Compiling infinite loop...",
+			"Decrypting the mainframe...",
+			"Bypassing the firewall...",
+			"Loading the matrix...",
+			"Reversing the polarity...",
+			"Initializing the coffee machine...",
+			"Unleashing the kraken...",
+			"Hacking the Gibson...",
+			"Compiling the kernel...",
+			"Uploading to the cloud...",
+			"Refactoring spaghetti code...",
+			"Debugging the debugger...",
+			"Synchronizing the blockchain...",
+			"Mining cryptocurrency...",
+			"Connecting to the mainframe...",
+			"Executing the payload...",
+			"Patching the system...",
+			"Defragmenting the hard drive...",
+			"Rebooting the system...",
+			"Initializing the AI...",
+			"Generating the fractal...",
+			"Calculating the quantum entanglement...",
+			"Skynet is coming online...",
+			"Quantum tunneling...",
+		];
+		let messageIndex = Math.floor(Math.random() * messages.length);
+		let messageChangeCounter = 0;
+
+		messages.sort(() => Math.random() - 0.5);
+
+		const timer = setInterval(() => {
+			console.log('timer');
+			const progress = document.querySelector('.loading-progress');
+			const progressText = document.querySelector('.loading-progress-text');
+
+			if (messageChangeCounter % 5 === 0) {
+				messageIndex = Math.floor(Math.random() * messages.length);
+				setMessage(messages[messageIndex]);
+			}
+			messageChangeCounter++;
+
+			const progressValue = parseInt(document.getElementById('progressThumb').style.width) || 0;
+			if (progressValue < 100) {
+				setProgress(progressValue + 2);
+			} else {
+				clearInterval(timer);
+				//print welcome message and let it stay for 1 second
+				setMessage('Welcome to HaxorByteClub');
+				setTimeout(() => {
+					progress.style.display = 'none';
+					progressText.style.display = 'none';
+					document.querySelector('.standard-dialog').style.display = 'none';
+					Blazor.start();
+				}, 1000);
+			}
+		}, 150);
+		function setProgress(value) {
+			//set width of progress thumb
+			document.getElementById('progressThumb').style.width = value + '%';
+		}
+		function setMessage(message) {
+			console.log('message', message);
+			document.querySelector('.loading-message').textContent = message;
+		}
+
+
+
+
+	</script>
 </body>
 
 </html>
