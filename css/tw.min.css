@@ -518,6 +518,9 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
   .static {
     position: static;
   }
@@ -536,6 +539,9 @@
   .hidden {
     display: none;
   }
+  .h-\[320px\] {
+    height: 320px;
+  }
   .max-h-\[400px\] {
     max-height: 400px;
   }
@@ -544,6 +550,9 @@
   }
   .w-11\/12 {
     width: calc(11/12 * 100%);
+  }
+  .w-\[200px\] {
+    width: 200px;
   }
   .w-full {
     width: 100%;
