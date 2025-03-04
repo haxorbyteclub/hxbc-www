@@ -22,10 +22,15 @@ jobs:
       - name: Replace base-tag in index.html
         run: |
           sed -i 's/<base href="\/" \/>/<base href="\/haxorbyteclub-www\/" \/>/g' web/HaxorByteClub/wwwroot/index.html
-
+      - name: Get Version from web\HaxorByteClub\version.txt
+        id: get_version
+        run: |
+          $version = Get-Content web/HaxorByteClub/version.txt
+          $env:CURRENT_VERSION = $version.ToString()
+          echo "::set-output name=CURRENT_VERSION::$env:CURRENT_VERSION"
       - name: Replace ###VERSION### in AboutVersion.razor
         run: |
-          sed -i "s/###VERSION###/${GITHUB_RUN_NUMBER}/g" web/HaxorByteClub/Apps/AboutVersion.razor
+          sed -i "s/###VERSION###/${{ steps.get_version.outputs.CURRENT_VERSION }}/g" web/HaxorByteClub/Apps/AboutVersion.razor
 
       - name: Replace ###COMMIT### in AboutVersion.razor
         run: |
@@ -56,3 +61,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: release/wwwroot
+      - name: Create GitHub Tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: false
+          custom_tag: ${{ steps.get_version.outputs.CURRENT_VERSION }}
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
+          body: |
+            # Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
+            based on the commit: ${{ github.event.repository.full_name }}@${{ github.sha }}.
