@@ -587,14 +587,14 @@
   .table {
     display: table;
   }
-  .h-\[22px\] {
-    height: 22px;
-  }
   .h-\[42px\] {
     height: 42px;
   }
   .h-\[200px\] {
     height: 200px;
+  }
+  .h-\[22px\] {
+    height: 22px;
   }
   .max-h-\[400px\] {
     max-height: 400px;
@@ -712,6 +712,10 @@
   .font-black {
     --tw-font-weight: var(--font-weight-black);
     font-weight: var(--font-weight-black);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .text-wrap {
     text-wrap: wrap;

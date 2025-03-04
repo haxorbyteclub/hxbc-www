@@ -16,11 +16,15 @@
 		<img class="welcome-image w-[80px]" src="img/logo.png" alt="Welcome" />
 		<div class="">
 			<p class="leading-[1.2] mt-3 font-chicago_pixel">
-				<a href="https://github.com/nor0x/haxorbyteclub-www/actions/runs/###VERSION###"
-					target="_blank">###VERSION###</a>
+				Version:
+				<a class="font-bold" href="https://github.com/nor0x/haxorbyteclub-www/actions/runs/###VERSION###"
+					target="_blank">1.###VERSION###.0</a>
 				<br />
-				<a href="https://github.com/nor0x/haxorbyteclub-www/commit/###COMMIT###"
-					target="_blank">###COMMIT###</a>
+				Commit:
+				<a class="font-bold" href="https://github.com/nor0x/haxorbyteclub-www/commit/###COMMIT###"
+					target="_blank">
+					@("###COMMIT###".Substring(0, 7))
+				</a>
 			</p>
 		</div>
 	</div>
