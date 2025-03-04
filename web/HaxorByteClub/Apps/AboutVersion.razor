@@ -1,0 +1,30 @@
+﻿@inject IJSRuntime _js
+@inherits AppBase
+
+
+<div class="window app-component draggable" id="@AppId">
+	<div class="title-bar">
+		<button aria-label="Close" class="close" @onclick="Remove"></button>
+		<h1 class="title">HaxorByte OS</h1>
+		<button aria-label="Resize" disabled class="hidden"></button>
+	</div>
+	<div class="separator"></div>
+	<div class="window-pane flex flex-col items-center">
+		<p class="text-center font-geneva mb-3">
+			Welcome to HaxorByte OS!
+		</p>
+		<img class="welcome-image w-[80px]" src="img/logo.png" alt="Welcome" />
+		<div class="">
+			<p class="leading-[1.2] mt-3 font-chicago_pixel">
+				<a href="https://github.com/nor0x/haxorbyteclub-www/actions/runs/###VERSION###"
+					target="_blank">###VERSION###</a>
+				<br />
+				<a href="https://github.com/nor0x/haxorbyteclub-www/commit/###COMMIT###"
+					target="_blank">###COMMIT###</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+@code {
+}

@@ -9,7 +9,7 @@
 			<img src="img/logo-temp.png" alt="Logo" class="logo">
 		</div>
 		<ul role="menu">
-			<li role="menu-item"><a href="#menu">About</a></li>
+			<li role="menu-item" @onclick="ToggleAboutVersion"><a href="#menu">About</a></li>
 			<li role="menu-item"><a href="#menu">Display Properties</a></li>
 			<li role="menu-item" class="divider"><a href="#menu">Socials</a></li>
 			<li role="menu-item"><a href="https://twitter.com/sakofchit">HaxorByteShop</a></li>
@@ -72,6 +72,10 @@
 	else if (app is GuestBook guestBook)
 	{
 		<GuestBook AppId="@app.AppId" />
+	}
+	else if (app is AboutVersion version)
+	{
+		<AboutVersion AppId="@app.AppId" />
 	}
 }
 
@@ -142,6 +146,19 @@
 		else
 		{
 			_apps.Add(new GuestBook() { AppId = Guid.NewGuid().ToString() });
+		}
+	}
+
+	void ToggleAboutVersion()
+	{
+		if (_apps.Any(a => a is AboutVersion))
+		{
+			var app = _apps.FirstOrDefault(a => a is AboutVersion);
+			BringToFront(app.AppId).SafeFireAndForget();
+		}
+		else
+		{
+			_apps.Add(new AboutVersion() { AppId = Guid.NewGuid().ToString() });
 		}
 	}
 

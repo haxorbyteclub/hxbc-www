@@ -23,6 +23,14 @@ jobs:
         run: |
           sed -i 's/<base href="\/" \/>/<base href="\/haxorbyteclub-www\/" \/>/g' web/HaxorByteClub/wwwroot/index.html
 
+      - name: Replace ###VERSION### in AboutVersion.razor
+        run: |
+          sed -i "s/###VERSION###/${GITHUB_RUN_NUMBER}/g" web/HaxorByteClub/Apps/AboutVersion.razor
+
+      - name: Replace ###COMMIT### in AboutVersion.razor
+        run: |
+          sed -i "s/###COMMIT###/${GITHUB_SHA}/g" web/HaxorByteClub/Apps/AboutVersion.razor
+
       - name: build Tailwind minified CSS
         run: |
           cd web
