@@ -78,5 +78,5 @@ jobs:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           name: Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
           body: |
-        # Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
-        based on the commit: ${{ github.event.repository.full_name }}@${{ github.sha }}.
+            # Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
+            based on the commit: ${{ github.event.repository.full_name }}@${{ github.sha }}.
