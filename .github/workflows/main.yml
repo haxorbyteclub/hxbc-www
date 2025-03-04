@@ -24,6 +24,7 @@ jobs:
           sed -i 's/<base href="\/" \/>/<base href="\/haxorbyteclub-www\/" \/>/g' web/HaxorByteClub/wwwroot/index.html
       - name: Get Version from web\HaxorByteClub\version.txt
         id: get_version
+        shell: pwsh
         run: |
           $version = Get-Content web/HaxorByteClub/version.txt
           $env:CURRENT_VERSION = $version.ToString()
