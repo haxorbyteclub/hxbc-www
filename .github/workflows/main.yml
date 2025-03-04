@@ -29,6 +29,7 @@ jobs:
           $version = Get-Content web/HaxorByteClub/version.txt
           $env:CURRENT_VERSION = $version.ToString()
           echo "::set-output name=CURRENT_VERSION::$env:CURRENT_VERSION"
+
       - name: Replace ###VERSION### in AboutVersion.razor
         run: |
           sed -i "s/###VERSION###/${{ steps.get_version.outputs.CURRENT_VERSION }}/g" web/HaxorByteClub/Apps/AboutVersion.razor
@@ -69,11 +70,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           default_bump: false
           custom_tag: ${{ steps.get_version.outputs.CURRENT_VERSION }}
+        continue-on-error: true
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
+        continue-on-error: true
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           name: Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
           body: |
-            # Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
-            based on the commit: ${{ github.event.repository.full_name }}@${{ github.sha }}.
+        # Release ${{ steps.get_version.outputs.CURRENT_VERSION }}
+        based on the commit: ${{ github.event.repository.full_name }}@${{ github.sha }}.
