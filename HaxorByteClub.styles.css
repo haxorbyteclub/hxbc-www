@@ -1,3 +1,17 @@
+/* /Apps/AboutVersion.razor.rz.scp.css */
+.window[b-brlvsxtko6] {
+	width: 400px;
+}
+
+.window-pane[b-brlvsxtko6] {
+	height: auto;
+}
+
+.welcome-image[b-brlvsxtko6] {
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+}
 /* /Apps/AudioPlayer.razor.rz.scp.css */
 .window[b-c8zjyqt9ej] {
 	height: 360px;
