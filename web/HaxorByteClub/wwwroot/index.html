@@ -72,7 +72,6 @@
 		messages.sort(() => Math.random() - 0.5);
 
 		const timer = setInterval(() => {
-			console.log('timer');
 			const progress = document.querySelector('.loading-progress');
 			const progressText = document.querySelector('.loading-progress-text');
 
@@ -101,7 +100,6 @@
 			document.getElementById('progressThumb').style.width = value + '%';
 		}
 		function setMessage(message) {
-			console.log('message', message);
 			document.querySelector('.loading-message').textContent = message;
 		}
 
