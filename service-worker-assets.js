@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "UvZ0URjD",
+  "version": "UukrP/4Y",
   "assets": [
     {
       "hash": "sha256-QRQDhEAI4UCG/5zpLye+U4McYwWhtsaWAr3OjpFtSGI=",
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-YUv1cpEYX99pS/1pdkxbpRenxqwH1+dam71xffMNlBQ=",
-      "url": "_framework/HaxorByteClub.puxslz5vt8.wasm"
+      "hash": "sha256-jMzoRospGxYaLwzEbLfxhAkkKaphtdh/H0JeucuXp20=",
+      "url": "_framework/HaxorByteClub.ssowng957t.wasm"
     },
     {
       "hash": "sha256-v+uwBWlsF4iCHG6B9ZA8x3jlos/84zEJCWdcqZNu3Sk=",
@@ -190,7 +190,7 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.ndyan79x3n.wasm"
     },
     {
-      "hash": "sha256-h1zSeLzGt/+8/2gVfGQC+HS/4rsicVI8Z2OwEY/Htz8=",
+      "hash": "sha256-Ii5s+CDIR728POQfnrHwH0qrXWqhiuqn+B+M5HM8cGE=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -226,6 +226,18 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.lfu7j35m59.dat"
     },
     {
+      "hash": "sha256-KuGBQNXLpLqw9nNcH/q7kIm7GMfJKJyMKFwLfrGALPI=",
+      "url": "android-chrome-192x192.png"
+    },
+    {
+      "hash": "sha256-QWO/+AZeJwqzxTFnL6dCaJGzgnx092V1xyvD/Cg3EFk=",
+      "url": "android-chrome-512x512.png"
+    },
+    {
+      "hash": "sha256-M+F45w4gNi0ww8UJW1oKcZ6UoPWwDPSdUW7eI9O8QAM=",
+      "url": "apple-touch-icon.png"
+    },
+    {
       "hash": "sha256-NBfqTE74KBLgY1we6qSyfejg5pFYaY3dBNbAOhizhFk=",
       "url": "css/app.css"
     },
@@ -246,6 +258,18 @@ self.assetsManifest = {
       "url": "data/tracks.json"
     },
     {
+      "hash": "sha256-QZMeO7OmbPuAjWE6YkugnH3zEt39AOeayGT4InuYuVQ=",
+      "url": "favicon-16x16.png"
+    },
+    {
+      "hash": "sha256-Do4iu2K/8dHgQrN9h8aGS2bzQZluVu1/30g4IcDS7N8=",
+      "url": "favicon-32x32.png"
+    },
+    {
+      "hash": "sha256-gNR5VWCI8EfMF0FH0kAfuP+ysby+qzcKGXwkjhToIII=",
+      "url": "favicon.ico"
+    },
+    {
       "hash": "sha256-sWP8Q31nkN0TqPaoIwPCk49vu48yAE7t3ONJyZRemi4=",
       "url": "fonts/PIXEAB.woff2"
     },
@@ -262,11 +286,11 @@ self.assetsManifest = {
       "url": "fonts/digital-7.woff2"
     },
     {
-      "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
+      "hash": "sha256-WEB5tzJhVex0w/SrLlT3H1kpfztMomSWIBJHfi2HUmQ=",
       "url": "icon-192.png"
     },
     {
-      "hash": "sha256-oEo6d+KqX5fjxTiZk/w9NB3Mi0+ycS5yLwCKwr4IkbA=",
+      "hash": "sha256-21BH+ccXHrDYoNbnqZJQd7T7oKSE6atjYrND7AX17+A=",
       "url": "icon-512.png"
     },
     {
@@ -326,7 +350,7 @@ self.assetsManifest = {
       "url": "img/welcome.png"
     },
     {
-      "hash": "sha256-1GxdCstZk3UWovTwKBUjcw1TIzS7suvN8lyZ/MQcEmg=",
+      "hash": "sha256-5v1A//2u8Ud/UJqEFHcLco/Krsi+kCJeRLwjD8CEKVc=",
       "url": "index.html"
     },
     {
@@ -336,6 +360,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-MJ6ZStsP2UcxZngO5BtzwH4sA/KU8Mqo61C+Cczkzhw=",
       "url": "manifest.webmanifest"
+    },
+    {
+      "hash": "sha256-ep4Hzh9zhmiZF2At3Fp1dQrYQuYF/3ZPZxc1KcGBvwQ=",
+      "url": "site.webmanifest"
     }
   ]
 };
