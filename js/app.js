@@ -197,3 +197,8 @@ window.addEventListener('resize', function () {
 		}
 	});
 });
+
+
+window.changeBackground = function (url) {
+	document.querySelector('.app').style.backgroundImage = `url(${url})`;
+}

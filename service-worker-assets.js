@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "/0ZSnDgf",
+  "version": "WH+5TEM8",
   "assets": [
     {
-      "hash": "sha256-uhodtq5KHSx/zV5/3+hoQ4sB4Kn7eiD3puByUKgqrZk=",
+      "hash": "sha256-NKKhOVumVNnLUypfPJKZEjxmpyWYcHZW0CJIB9Qf06Y=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-DTi5R6IZQtmn6Sb4zn3jC+4J4iNta9zQeXaFQwcm6Pw=",
-      "url": "_framework/HaxorByteClub.z01fprtl4u.wasm"
+      "hash": "sha256-F+udyxJXAZqV7od0NPab1AddzQm5NaFJhm7kEbuqzkM=",
+      "url": "_framework/HaxorByteClub.lt0v7abi4h.wasm"
     },
     {
       "hash": "sha256-6Pztn3r3J5QuIlO4nuXyaEKBTHq+RhKhzxdd/9cClEY=",
@@ -190,7 +190,7 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.ndyan79x3n.wasm"
     },
     {
-      "hash": "sha256-pKijNCTg4aTc17yqT/goWzECsN1wI0stfO5UCuXFqz4=",
+      "hash": "sha256-z+IUO3PSoUaZhC+71F08NoVCJxs9jUchjcbfhG4xlgw=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -238,7 +238,7 @@ self.assetsManifest = {
       "url": "apple-touch-icon.png"
     },
     {
-      "hash": "sha256-NBfqTE74KBLgY1we6qSyfejg5pFYaY3dBNbAOhizhFk=",
+      "hash": "sha256-2Em12fbxgxLmamzTGhtdAWtPNWea2jAS3wSWv1nC0C8=",
       "url": "css/app.css"
     },
     {
@@ -250,7 +250,7 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-CWkHpS6Jwaw5ib21YcveD0zr//62yLR8aN4kJ227mfA=",
+      "hash": "sha256-9u8BJK/m1JEzJ5k389IfcYEepHFOgwm3WX/b5a/Bpaw=",
       "url": "css/tw.min.css"
     },
     {
@@ -290,16 +290,8 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Mt9C0ym78ClnHDfzso4GGmK6Wa8zGNgin9SUwgAWZ50=",
-      "url": "img/chitz.png"
-    },
-    {
       "hash": "sha256-EOjXWMYBDRpMmFjJcYIoF2PYleCTpEG/Xle1g/nTa2E=",
       "url": "img/contact-icon.png"
-    },
-    {
-      "hash": "sha256-SwHa6UmeGlVUYZ5q91i4EnbsgwDD7banyXaln3SZv0w=",
-      "url": "img/dot-pattern.svg"
     },
     {
       "hash": "sha256-SRRRoS8VOkk+uY+iniqyOpEt2EEdrbhYrXaxO6u90q8=",
@@ -343,18 +335,38 @@ self.assetsManifest = {
     },
     {
       "hash": "sha256-b4EGg/kaYAs3X4HU/l/rWOGLzItgjyZ/JXVkPwQi1nE=",
+      "url": "img/screen-old.png"
+    },
+    {
+      "hash": "sha256-2CHExQ49MEYNY65+rAavm7iztOjjANn4iI64ZIKVw2k=",
       "url": "img/screen.png"
+    },
+    {
+      "hash": "sha256-aAa7EnA6GQOJ15CSNeErVpdJ7e73jsj3R9RrhbznTHI=",
+      "url": "img/wallpapers/data.json"
+    },
+    {
+      "hash": "sha256-6sFBpObwM5JSMhiAZdJDXoGj1Cjcl3AZjMRAvEvl6E0=",
+      "url": "img/wallpapers/dots-dots-dots.png"
+    },
+    {
+      "hash": "sha256-SwHa6UmeGlVUYZ5q91i4EnbsgwDD7banyXaln3SZv0w=",
+      "url": "img/wallpapers/dots-dots-dots.svg"
+    },
+    {
+      "hash": "sha256-Mt9C0ym78ClnHDfzso4GGmK6Wa8zGNgin9SUwgAWZ50=",
+      "url": "img/wallpapers/modular-brickwork.png"
     },
     {
       "hash": "sha256-QpGKf9HKe4sPs/eQdt7sGNTd86I3euNQwVuSLWBC+cg=",
       "url": "img/welcome.png"
     },
     {
-      "hash": "sha256-46YDXm8HYfBjvkp/SHu+hQH2OeqHhnJ1Dlse/0jo9+c=",
+      "hash": "sha256-bossPXe0lxbqeRJhafJFQoIwo2Zo/wa3RFGkArCcKgY=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-eYJxAegbIAffHyFiWwJzvQHx5NUGiAFd8qmNvyy2R0A=",
+      "hash": "sha256-ipSB0vuukMZ2ARW4QDUq1QizW76FhYDaFw8ofrtx8BA=",
       "url": "js/app.js"
     },
     {
