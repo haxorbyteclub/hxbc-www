@@ -1,6 +1,7 @@
 ﻿.window {
-	height: 360px;
+	height: auto;
 	width: 290px;
+	padding-bottom: 12px;
 }
 
 .media-player {}
