@@ -70,16 +70,29 @@
 			"Skynet is coming online...",
 			"Quantum tunneling...",
 		];
-		let messageIndex = Math.floor(Math.random() * messages.length);
-		let messageChangeCounter = 0;
 
 		messages.sort(() => Math.random() - 0.5);
+
+		let messageIndex = Math.floor(Math.random() * messages.length);
+		let messageChangeCounter = 0;
+		const maxMessageChanges = 6;
+
+		const totalDuration = Math.random() * (4500 - 1200) + 1200;
+		const steps = Math.floor(Math.random() * (100 - 30) + 30);
+		const intervalDuration = totalDuration / steps;
+		const baseMessageChangeInterval = Math.floor(steps / maxMessageChanges); // Base interval for changing messages
+
+
+		console.log('totalDuration', totalDuration);
+		console.log('steps', steps);
 
 		const timer = setInterval(() => {
 			const progress = document.querySelector('.loading-progress');
 			const progressText = document.querySelector('.loading-progress-text');
+			const randomFactor = Math.random() * 0.3 + 0.9;
+			const messageChangeInterval = Math.floor(baseMessageChangeInterval * randomFactor);
 
-			if (messageChangeCounter % 5 === 0) {
+			if (messageChangeCounter % messageChangeInterval === 0 && messageChangeCounter / messageChangeInterval < maxMessageChanges) {
 				messageIndex = Math.floor(Math.random() * messages.length);
 				setMessage(messages[messageIndex]);
 			}
@@ -87,7 +100,7 @@
 
 			const progressValue = parseInt(document.getElementById('progressThumb').style.width) || 0;
 			if (progressValue < 100) {
-				setProgress(progressValue + 2);
+				setProgress(progressValue + (100 / steps));
 			} else {
 				clearInterval(timer);
 
@@ -99,7 +112,7 @@
 					Blazor.start();
 				}, 1000);
 			}
-		}, 150);
+		}, intervalDuration);
 		function setProgress(value) {
 			document.getElementById('progressThumb').style.width = value + '%';
 		}
