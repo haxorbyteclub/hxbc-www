@@ -1,5 +1,5 @@
 ﻿@inject IJSRuntime _js
-@inject YoutubeService _youtube
+@inject TrackService _trackService
 @inherits AppBase
 
 <div class="window app-component draggable" id="@AppId">
@@ -37,7 +37,14 @@
 						<img src="img/prev.svg" />
 					</button>
 					<button class="btn play" @onclick="PlayPause">
-						<img src="img/play.svg" />
+						@if (_isPlaying)
+						{
+							<img src="img/pause.svg" />
+						}
+						else
+						{
+							<img src="img/play.svg" />
+						}
 					</button>
 					<button class="btn next" @onclick="PlayNext">
 						<img src="img/next.svg" />
@@ -52,11 +59,11 @@
 					{
 						@if (_currentTrack == track)
 						{
-							<div class="track selected">@track.GetName()</div>
+							<div class="track selected">@track.Name</div>
 						}
 						else
 						{
-							<div class="track" @onclick="() => SelectTrack(track)">@track.GetName()</div>
+							<div class="track" @onclick="() => SelectTrack(track)">@track.Name</div>
 						}
 					}
 				</div>
@@ -68,13 +75,14 @@
 	List<Track> _tracks = new();
 
 	Track? _currentTrack = null;
+	bool _isPlaying = false;
 
 	override protected async Task OnAfterRenderAsync(bool firstRender)
 	{
 		await base.OnAfterRenderAsync(firstRender);
 		if (firstRender)
 		{
-			var tracks = await _youtube.GetTracks();
+			var tracks = await _trackService.GetTracks();
 			foreach (var track in tracks.Shuffle())
 			{
 				_tracks.Add(track);
@@ -100,6 +108,7 @@
 		{
 			_js.InvokeVoidAsync("playPauseAudio");
 		}
+		_isPlaying = !_isPlaying;
 	}
 
 	void PlayNext()
