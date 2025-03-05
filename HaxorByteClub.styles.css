@@ -54,6 +54,7 @@
 	justify-content: center;
 	gap: 5px;
 	align-items: self-end;
+	margin-left: -50px;
 }
 
 .track-info[b-c8zjyqt9ej],
@@ -63,8 +64,6 @@
 }
 
 .track-info span[b-c8zjyqt9ej] {
-	text-wrap: nowrap;
-	max-width: 230px;
 	text-wrap: nowrap;
 	max-width: 205px;
 	font-size: 13px;
@@ -139,6 +138,43 @@
 
 .track:last-child[b-c8zjyqt9ej] {
 	border-bottom: none;
+}
+
+.track-subtitle[b-c8zjyqt9ej] {
+	width: auto;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	height: 20px;
+}
+
+.track-subtitle span[b-c8zjyqt9ej] {
+	text-wrap: nowrap;
+	font-size: 13px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.scrolling-text[b-c8zjyqt9ej] {
+	display: inline-block;
+	position: absolute;
+	animation: bounce-b-c8zjyqt9ej 8s linear infinite;
+}
+
+
+
+@keyframes bounce-b-c8zjyqt9ej {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(calc(100% - var(--track-subtitle-width, 230px)));
+	}
+
+	100% {
+		transform: translateX(0);
+	}
 }
 /* /Apps/ContactForm.razor.rz.scp.css */
 .window[b-u4ohh11vgb] {

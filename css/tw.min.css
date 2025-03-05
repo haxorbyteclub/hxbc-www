@@ -626,6 +626,10 @@
     --tw-leading: 1.2;
     line-height: 1.2;
   }
+  .font-\[600\] {
+    --tw-font-weight: 600;
+    font-weight: 600;
+  }
   .font-black {
     --tw-font-weight: var(--font-weight-black);
     font-weight: var(--font-weight-black);
