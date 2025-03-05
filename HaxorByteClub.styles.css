@@ -278,3 +278,8 @@ textarea[b-rvka4hpuv4] {
 	height: auto;
 	object-fit: contain;
 }
+/* /Pages/Home.razor.rz.scp.css */
+.li-icon:hover .logo[b-0duknsy223],
+.li-icon:focus .logo[b-0duknsy223] {
+	content: url('img/logo-temp-inv.png');
+}
