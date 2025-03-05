@@ -39,6 +39,7 @@
 	justify-content: center;
 	gap: 5px;
 	align-items: self-end;
+	margin-left: -50px;
 }
 
 .track-info,
@@ -48,8 +49,6 @@
 }
 
 .track-info span {
-	text-wrap: nowrap;
-	max-width: 230px;
 	text-wrap: nowrap;
 	max-width: 205px;
 	font-size: 13px;
@@ -124,4 +123,41 @@
 
 .track:last-child {
 	border-bottom: none;
+}
+
+.track-subtitle {
+	width: auto;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	height: 20px;
+}
+
+.track-subtitle span {
+	text-wrap: nowrap;
+	font-size: 13px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.scrolling-text {
+	display: inline-block;
+	position: absolute;
+	animation: bounce 8s linear infinite;
+}
+
+
+
+@keyframes bounce {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(calc(100% - var(--track-subtitle-width, 230px)));
+	}
+
+	100% {
+		transform: translateX(0);
+	}
 }

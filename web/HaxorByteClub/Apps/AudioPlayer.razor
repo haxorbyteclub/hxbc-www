@@ -15,9 +15,15 @@
 			<div class="media-player">
 				<div class="display">
 					<div>
-						<div class="track-info">
-							<span>@_currentTrack?.Name</span>
-						</div>
+						@if (_currentTrack is not null)
+						{
+							<div class="track-info font-[600]">
+								<span>@_currentTrack?.Name by @_currentTrack.Artist</span>
+							</div>
+							<div class="track-subtitle">
+								<span class="scrolling-text">@string.Join(" • ", _currentTrack?.Genres)</span>
+							</div>
+						}
 						<div class="track-details">
 							<span class="audio-current-time">00:00</span>
 						</div>
@@ -92,6 +98,7 @@
 			if (_currentTrack is not null)
 			{
 				await _js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+				_isPlaying = true;
 			}
 		}
 	}
@@ -127,12 +134,14 @@
 				_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
 			}
 		}
+		_isPlaying = true;
 	}
 
 	void SelectTrack(Track track)
 	{
 		_currentTrack = track;
 		_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+		_isPlaying = true;
 	}
 
 	void PlayPrevious()
@@ -151,11 +160,14 @@
 				_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
 			}
 		}
+		_isPlaying = true;
 	}
 
 	protected async override void Remove()
 	{
+		_isPlaying = false;
 		await _js.InvokeVoidAsync("stopAudio");
 		base.Remove();
+		StateHasChanged();
 	}
 }
