@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "VUDHs0Ph",
+  "version": "RExKRESR",
   "assets": [
     {
       "hash": "sha256-QRQDhEAI4UCG/5zpLye+U4McYwWhtsaWAr3OjpFtSGI=",
@@ -18,64 +18,64 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-v4mkh+ynZqU5050EIbmusdbITRHWvnnECoQNg4nPWLY=",
-      "url": "_framework/HaxorByteClub.v80ysi77y0.wasm"
+      "hash": "sha256-xKfx80rg+jzRlOd0e63jC0BBrbuzUbfKVLiFEshT4mg=",
+      "url": "_framework/HaxorByteClub.wvso8ao7kh.wasm"
     },
     {
-      "hash": "sha256-v+uwBWlsF4iCHG6B9ZA8x3jlos/84zEJCWdcqZNu3Sk=",
-      "url": "_framework/Microsoft.AspNetCore.Components.Web.tx885whulx.wasm"
+      "hash": "sha256-6Pztn3r3J5QuIlO4nuXyaEKBTHq+RhKhzxdd/9cClEY=",
+      "url": "_framework/Microsoft.AspNetCore.Components.069u3wh89v.wasm"
     },
     {
-      "hash": "sha256-TMJrwxmh7raq50FXlf8OFb9/PXWC0dJ48IVhshQE3jE=",
-      "url": "_framework/Microsoft.AspNetCore.Components.WebAssembly.ojjbeuchn6.wasm"
+      "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
+      "url": "_framework/Microsoft.AspNetCore.Components.Web.jcafy9fy3t.wasm"
     },
     {
-      "hash": "sha256-iz11SWOPLVRj9I4breuTY0VdXGuqJ0c3DFg/d4UWk+A=",
-      "url": "_framework/Microsoft.AspNetCore.Components.bwoe0y8mrl.wasm"
+      "hash": "sha256-jB/Gf1i7eXuQqAzqY/ZONe+hrW3x94pYZlL+G0Cv7Co=",
+      "url": "_framework/Microsoft.AspNetCore.Components.WebAssembly.0prlth0hc4.wasm"
     },
     {
-      "hash": "sha256-yxPiW+l2bwpbqQMt+LqIVyoudbaoHWuYPnD4DDJUr88=",
-      "url": "_framework/Microsoft.Extensions.Configuration.7p4o2tpul4.wasm"
+      "hash": "sha256-V/8lrAHQfJYsJtV+bKRHL6fmMFhJhAOyoTNfGTbwTdQ=",
+      "url": "_framework/Microsoft.Extensions.Configuration.7sm4vp77d1.wasm"
     },
     {
-      "hash": "sha256-Vaey6KNbQjvV5f4sgTb9Z7DpC7i8fKGaG8HGFaV0O8k=",
-      "url": "_framework/Microsoft.Extensions.Configuration.Abstractions.79qfazjlcu.wasm"
+      "hash": "sha256-M/V9DIZ9otM7/qEt+xn3wagkoRiLOf4JMPyDoo6WUM8=",
+      "url": "_framework/Microsoft.Extensions.Configuration.Abstractions.n3roazub70.wasm"
     },
     {
-      "hash": "sha256-e7KqvUYccR78CImWVq5kLp49gK7pPVNLuAnrrJ59tXE=",
-      "url": "_framework/Microsoft.Extensions.Configuration.Json.lo1485j0el.wasm"
+      "hash": "sha256-XQykit2HYxnB0emmOc5bra6XuZq3KgCfazi8kFAErDs=",
+      "url": "_framework/Microsoft.Extensions.Configuration.Json.jgtmx19396.wasm"
     },
     {
-      "hash": "sha256-e8G0JQI0dUUudPzWdfamVDGrSV+tqr50McBL0FMtaGo=",
-      "url": "_framework/Microsoft.Extensions.DependencyInjection.3ynt3oix6u.wasm"
+      "hash": "sha256-hFmZdMBFfV3jRvVye2ZK56E/GWNNfi4N5pWPoI0Gk/E=",
+      "url": "_framework/Microsoft.Extensions.DependencyInjection.Abstractions.keztu4iber.wasm"
     },
     {
-      "hash": "sha256-Vz1RrpNGOoRsPaNOzAM1oLnTQSNBrTsVW+1tQ2xFaEo=",
-      "url": "_framework/Microsoft.Extensions.DependencyInjection.Abstractions.rb3i4um9n3.wasm"
+      "hash": "sha256-wPj/fOeoE7JKOgIYh6OIvl/k3Iw6EPDmmXDjtnQ6rJk=",
+      "url": "_framework/Microsoft.Extensions.DependencyInjection.g0r86u4i0h.wasm"
     },
     {
-      "hash": "sha256-RNnHyPNkK1NTHRZzmhEjy4LEsjj3+xYMgMOU2b7Ce/Y=",
-      "url": "_framework/Microsoft.Extensions.Logging.Abstractions.016buaursh.wasm"
+      "hash": "sha256-6UXGcpnRVdREm/wLy0F4/SMe6bufvlF3kBHQ/4OfswE=",
+      "url": "_framework/Microsoft.Extensions.Logging.Abstractions.lp9rwj90hb.wasm"
     },
     {
-      "hash": "sha256-Rw3p7P7cbetsRUa1O+Q7ltdFAmR7kf26guR3xO9aq3s=",
-      "url": "_framework/Microsoft.Extensions.Logging.fugc9tzrx1.wasm"
+      "hash": "sha256-5E3YJsqbWNbv+OJiZ1kCoV5czf1fXeUBZBKig0eHQKs=",
+      "url": "_framework/Microsoft.Extensions.Logging.km3zhtnk76.wasm"
     },
     {
-      "hash": "sha256-aghFR5ix2EFcXsXxIjilRm2GirVLMF7NAkzXIR0Y9JY=",
-      "url": "_framework/Microsoft.Extensions.Options.er9kaksr7l.wasm"
+      "hash": "sha256-2xzw4xsXcqL7SQ6R76v+GZrC7ZqwjD2SQaJrbh6IFlc=",
+      "url": "_framework/Microsoft.Extensions.Options.xtnmlnlmnd.wasm"
     },
     {
-      "hash": "sha256-DnlMLnoUShENHHG/1JwJlFyv8wwJ0wNnr/fEV/sR2dI=",
-      "url": "_framework/Microsoft.Extensions.Primitives.2jafe63jbt.wasm"
+      "hash": "sha256-+HoDX+e0bGwi8OjZvR5ZpN4OxMMBE8OX4f2wu++wdqE=",
+      "url": "_framework/Microsoft.Extensions.Primitives.geznw6vy35.wasm"
     },
     {
-      "hash": "sha256-sGms9Oai1ztzgfMsqBvmeKwa5ZyGWr/AEXr6thw0lso=",
-      "url": "_framework/Microsoft.JSInterop.WebAssembly.8eb000j8w7.wasm"
+      "hash": "sha256-hbzWuXrlepIqY/y+nQ2ZAFer2/njy1dc+Y4LUaAaL5E=",
+      "url": "_framework/Microsoft.JSInterop.WebAssembly.p386u0jty9.wasm"
     },
     {
-      "hash": "sha256-LuYfR4a5fwfclUwXPnTjZGpINIjF23AhCZmTFWP2xbQ=",
-      "url": "_framework/Microsoft.JSInterop.iknej2zdh8.wasm"
+      "hash": "sha256-j93883TLWrUsylBnXBVb1aCW34uImOVFvkmgV7v8tx0=",
+      "url": "_framework/Microsoft.JSInterop.bdr89uoxtd.wasm"
     },
     {
       "hash": "sha256-DGozlkVWg5YKnaVkb89Atf1cSZrw+2E/ri/L3SVTsJs=",
@@ -150,8 +150,8 @@ self.assetsManifest = {
       "url": "_framework/System.ObjectModel.8syj72htdm.wasm"
     },
     {
-      "hash": "sha256-QSK9tLdEaKGdBoIU4yRP3Vp2AfFLQJin0eIOp8RsfU0=",
-      "url": "_framework/System.Private.CoreLib.3bb6v8gn2h.wasm"
+      "hash": "sha256-HLJCrjgRZs+giG+Dj/eVrFT8m3CpgTdoW4x4fuWAVhM=",
+      "url": "_framework/System.Private.CoreLib.c6gs9t52qv.wasm"
     },
     {
       "hash": "sha256-HRwaeGIzoTxtMdqEp7x9Q/L6Q3wPwjz2804i2QHds4M=",
@@ -190,7 +190,7 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.ndyan79x3n.wasm"
     },
     {
-      "hash": "sha256-D6ThIqzdz9pRcDJlU789sU0GcYmFQNyF6tew+cTqhLM=",
+      "hash": "sha256-nqjlVV20BZ962CxOg9miI3JOaBN9LF/lGez7FEXCcuM=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -250,12 +250,8 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-iDGwl6y7LTCpVskaPNbDuDHCLfnqGuYLMYQT0DAWr5w=",
+      "hash": "sha256-GeAcoA4bVePP9zcjAYXemNopf3zvSIRC7wQSfJJvERk=",
       "url": "css/tw.min.css"
-    },
-    {
-      "hash": "sha256-g6AeUUVe2CTOnhsGUcieP48Ow4+xyKxQXweH60/xu2M=",
-      "url": "data/tracks.json"
     },
     {
       "hash": "sha256-QZMeO7OmbPuAjWE6YkugnH3zEt39AOeayGT4InuYuVQ=",
@@ -360,6 +356,134 @@ self.assetsManifest = {
     {
       "hash": "sha256-MJ6ZStsP2UcxZngO5BtzwH4sA/KU8Mqo61C+Cczkzhw=",
       "url": "manifest.webmanifest"
+    },
+    {
+      "hash": "sha256-dLxVK4kT7RgIhU4lbaUc3S6s4gXDwyKt+Y9e9JyIi14=",
+      "url": "music/AUTUMN-Soulful_Relaxed_Lounge.mp3"
+    },
+    {
+      "hash": "sha256-m/AtQRNHgb3YdvTAFVlgJBVM9Aap0SZtivI/ch7YMKA=",
+      "url": "music/BALANCE-Lofi_Dreamy_Bright.mp3"
+    },
+    {
+      "hash": "sha256-CVnNQEm4j+MegEJJuHVaGa27/o8T5P51RC/JdMW2UhI=",
+      "url": "music/BINARY-Hip-Hop_Boom-Bap_Chill.mp3"
+    },
+    {
+      "hash": "sha256-CfVMyo4DcecI7Ei5YF3bYoCGFFA4bhx+zK6xJPe6T8w=",
+      "url": "music/BUCKSHOT-Dubstep_Intense_Thrilling.mp3"
+    },
+    {
+      "hash": "sha256-l31petawaQIMWwVhWSuS1FFe7LPo/e9bCzIoLpTASZE=",
+      "url": "music/CALM-Lofi_Chill_Relaxing.mp3"
+    },
+    {
+      "hash": "sha256-5FP+eSO2CB45WSuLBHyA2/Cqul2vrUvu7ICidq0gmz4=",
+      "url": "music/COLLAPSE-Synthwave_Electro_80s-Retro.mp3"
+    },
+    {
+      "hash": "sha256-0KvGhpi4DYsUhT1Em+mxyMDbTFPodOqwvTrp7hSoNGo=",
+      "url": "music/DATA-BREACH-Synthwave_Retro_Dubstep.mp3"
+    },
+    {
+      "hash": "sha256-rgr+w6GNrKekhcyanYvIgt32+9+fUYzMzQ35y3gu99s=",
+      "url": "music/DECAY-House-music_Synthwave_Retro.mp3"
+    },
+    {
+      "hash": "sha256-mBXeRv+DGtZtaVfqnqqf9KZXIH/wl1F6fIj5wIf9wl0=",
+      "url": "music/ENCRYPTED-Deep-House_Electronica_Bright.mp3"
+    },
+    {
+      "hash": "sha256-PPIgJ+7V++djrJR5Q3LobYgefIus7QSFmTuc4HEY4lg=",
+      "url": "music/FADED-Deep-House_Electro_Vibrant.mp3"
+    },
+    {
+      "hash": "sha256-NKKEn7CdBtdGbzdXe8a3bar0QRXgpyX+/fl75SsAFqQ=",
+      "url": "music/FUSION-Lofi_Jazz_Unwind.mp3"
+    },
+    {
+      "hash": "sha256-KtjD41h9vQry4ZQGiVHhYoIWpfW84mdP/ytAdoHgn9g=",
+      "url": "music/GHOST-Lofi_Piano_Ambient.mp3"
+    },
+    {
+      "hash": "sha256-x/HyAEE7WEOtWE9Y6VSNPgZ5Li+EN+csE/DNMNVFV1k=",
+      "url": "music/HACKER-Synthwave_Cinematic_Retro.mp3"
+    },
+    {
+      "hash": "sha256-ZQ+HaZGcgRMXQRgZzsvaXPVstuOsNRB5D98ZoZqcbxQ=",
+      "url": "music/HOLOGRAM-Techno_Thundering_Energy.mp3"
+    },
+    {
+      "hash": "sha256-+98pmKV1ePh6QRtP08iTQSPXLUnudpFiVt3HTnrEygQ=",
+      "url": "music/HYPERLIGHT-Synth_Dystopian_Explosive.mp3"
+    },
+    {
+      "hash": "sha256-rCbzDn487oJuSzzef0gyymfctiNz6gDDGV0L5bdmyjw=",
+      "url": "music/METROPOLIS-Deep-House_Somber_Melancholy.mp3"
+    },
+    {
+      "hash": "sha256-IoYWZgPR0g5sasZqmeUxmdVV6Xru9YWLQb1on4cAORI=",
+      "url": "music/MOTION-UKGarage_Club_Bouncy.mp3"
+    },
+    {
+      "hash": "sha256-nGXvCAQdY6JEZvb/VDY9yF/LMBJUGm9NkZ4/rR058T4=",
+      "url": "music/PHANTOM-Dubstep_Synthwave_Retro.mp3"
+    },
+    {
+      "hash": "sha256-fWTrWtZF3SoefVx5PiXMIPUYvC+XHxPPFdXWdf5pOAU=",
+      "url": "music/PIXEL-Piano_Lofi_Dreamy.mp3"
+    },
+    {
+      "hash": "sha256-Bqpotw77fuifyGq57i1uiZpNU68cqQEueyy+wUllat4=",
+      "url": "music/PULSE-Retro_Cinematic_Chase.mp3"
+    },
+    {
+      "hash": "sha256-uqt0vwxPybi00cPqX4s5IPJwftrjLAh7KGzkojs+ca4=",
+      "url": "music/REDLINE-Dubstep_Energetic_Thrilling.mp3"
+    },
+    {
+      "hash": "sha256-1oxgwMaiEvroSRNqjHinfDXQ+9kOHh/pT2OJjlK6Jtk=",
+      "url": "music/REFLECT-Deep-House_Soulful_Dreamy.mp3"
+    },
+    {
+      "hash": "sha256-5+b8siaS1LU0XX7tvIgoMyOYGwhkRYH3xpVOcAl/mGc=",
+      "url": "music/REQUIEM-Synthwave_Futuristic_Dystopian.mp3"
+    },
+    {
+      "hash": "sha256-lNPX77IoXKhgrgb5PFYe65xQRLUhZH4uuxSwWLHY/7c=",
+      "url": "music/ROUTINE-Boom-Bap_Hip-Hop_Mellow.mp3"
+    },
+    {
+      "hash": "sha256-V1UnRYgA+15xRKq9LteqLf2m7woAalXRp8CXiyc3/pM=",
+      "url": "music/SCHEMATIC-Drum-&-Bass_High-Octane_Dynamic.mp3"
+    },
+    {
+      "hash": "sha256-ivfldIlWrtkuxHKN3lQ2K4Rq67bSZXK1sx8rOQ8nuoA=",
+      "url": "music/SHADE-Hip-Hop_Boom-Bap_Lofi.mp3"
+    },
+    {
+      "hash": "sha256-O7h83m4FLuG5jXsDtxEPROchiI+UufvJV4wX3mW76EU=",
+      "url": "music/SHADOWRUN-Synthwave_Retro_Cyberpunk.mp3"
+    },
+    {
+      "hash": "sha256-C/TTlZfzwtZE+9xZ6K3603aMxFDiXg1AXLAJvrLlboY=",
+      "url": "music/SONATA-Hip-Hop_Boom-Bap_Lofi.mp3"
+    },
+    {
+      "hash": "sha256-zOsZyeV9of4kFSoSVDP6NSD9Ht7vSr9kR+/9voCmTmM=",
+      "url": "music/SUAVE-Funk_Confident_Energetic.mp3"
+    },
+    {
+      "hash": "sha256-bp0IVQcfOhNXW3y7eiN4pK8WTAXsiI1RrRm46i/sI/o=",
+      "url": "music/TRANQUIL-Lofi_Piano_Relaxed.mp3"
+    },
+    {
+      "hash": "sha256-JhvMLDzMPFte3hI8l9DIZs9SauWx+kTGDb5kl+vzuEQ=",
+      "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
+    },
+    {
+      "hash": "sha256-OcIp1fNEN68fJdsO3BLxUYaZ7SvZEqsnAfBZeY32XYk=",
+      "url": "music/data.json"
     },
     {
       "hash": "sha256-ep4Hzh9zhmiZF2At3Fp1dQrYQuYF/3ZPZxc1KcGBvwQ=",
