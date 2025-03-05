@@ -1,0 +1,68 @@
+﻿@inject IJSRuntime _js
+@inject WallpaperService _wallpaperService;
+@inherits AppBase
+
+
+<div class="window app-component draggable" id="@AppId">
+	<div class="title-bar">
+		<button aria-label="Close" class="close" @onclick="Remove"></button>
+		<h1 class="title">HaxorByteClub</h1>
+		<button aria-label="Resize" disabled class="hidden"></button>
+	</div>
+	<div class="separator"></div>
+	<div class="window-pane">
+		<div class="display-container flex flex-col items-center">
+
+			<div class="screen-container">
+				<div class="display-image-wrapper">
+					<img class="display-image w-[250px]" src="img/screen.png" alt="Welcome" />
+					@if (_selectedWallpaper is not null)
+					{
+						<div class="wallpaper-image w-[250px]"
+							style="background: url('@_selectedWallpaper.Url') no-repeat center center / cover;"></div>
+
+					}
+				</div>
+			</div>
+			<div class="separator w-full my-2"></div>
+			<p class="text-sm">Select a theme to apply to your desktop.
+			</p>
+			<div class="wallpaper-list w-full">
+				@if (_wallpapers is not null)
+				{
+					@foreach (var wallpaper in _wallpapers)
+					{
+						@if (_selectedWallpaper == wallpaper)
+						{
+							<div class="wallpaper-item selected">@wallpaper.Name</div>
+						}
+						else
+						{
+							<div class="wallpaper-item" @onclick="() => _selectedWallpaper = wallpaper">@wallpaper.Name</div>
+						}
+					}
+				}
+			</div>
+		</div>
+	</div>
+	<section class="field-row flex justify-end mr-2 mb-2">
+		<button class="btn btn-black h-[32px] flex justify-center items-center">Download</button>
+		<button class="btn w-[95px] h-[32px] flex justify-center items-center">Apply</button>
+	</section>
+</div>
+
+@code {
+	List<Wallpaper>? _wallpapers;
+	Wallpaper? _selectedWallpaper;
+
+	protected override async Task OnInitializedAsync()
+	{
+		_wallpapers = await _wallpaperService.GetWallpapers();
+		_selectedWallpaper = _wallpapers.FirstOrDefault();
+	}
+
+	async Task Apply()
+	{
+		await _js.InvokeVoidAsync("changeBackground", _selectedWallpaper?.Url);
+	}
+}

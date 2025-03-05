@@ -10,18 +10,9 @@
 		</div>
 		<ul role="menu">
 			<li role="menu-item" @onclick="ToggleAboutVersion"><a href="#menu">About</a></li>
-			<li role="menu-item"><a href="#menu">Display Properties</a></li>
+			<li role="menu-item" @onclick="ToggleDisplayProperties"><a href="#menu">Display Properties</a></li>
 			<li role="menu-item" class="divider"><a href="#menu">Socials</a></li>
 			<li role="menu-item"><a href="https://twitter.com/sakofchit">HaxorByteShop</a></li>
-		</ul>
-	</li>
-	<li role="menu-item" tabindex="0" aria-haspopup="true">
-		Edit
-		<ul role="menu">
-			<li role="menu-item"><a href="#menu">Action</a></li>
-			<li role="menu-item"><a href="#menu">Another Action</a></li>
-			<li role="menu-item" class="divider"><a href="#menu">Something else here</a></li>
-			<li role="menu-item"><a href="https://sakun.co">sakun's projects</a></li>
 		</ul>
 	</li>
 	<li class="date-time-container" tabindex="0" aria-haspopup="true">
@@ -76,6 +67,10 @@
 	else if (app is AboutVersion version)
 	{
 		<AboutVersion AppId="@app.AppId" />
+	}
+	else if (app is DisplayProperties display)
+	{
+		<DisplayProperties AppId="@app.AppId" />
 	}
 }
 
@@ -159,6 +154,19 @@
 		else
 		{
 			_apps.Add(new AboutVersion() { AppId = Guid.NewGuid().ToString() });
+		}
+	}
+
+	void ToggleDisplayProperties()
+	{
+		if (_apps.Any(a => a is DisplayProperties))
+		{
+			var app = _apps.FirstOrDefault(a => a is DisplayProperties);
+			BringToFront(app.AppId).SafeFireAndForget();
+		}
+		else
+		{
+			_apps.Add(new DisplayProperties() { AppId = Guid.NewGuid().ToString() });
 		}
 	}
 

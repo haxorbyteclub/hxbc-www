@@ -7,18 +7,18 @@ namespace HaxorByteClub;
 public class TrackService
 {
 	HttpClient _httpClient;
-	List<Track> tracks;
+	List<Track> _tracks;
 	public TrackService(HttpClient http)
 	{
 		_httpClient = http;
-		tracks = new List<Track>();
+		_tracks = new List<Track>();
 	}
 	public async Task<List<Track>> GetTracks()
 	{
-		if (tracks.Count == 0)
+		if (_tracks.Count == 0)
 		{
-			tracks = await _httpClient.GetFromJsonAsync<List<Track>>("music/data.json");
+			_tracks = await _httpClient.GetFromJsonAsync<List<Track>>("music/data.json");
 		}
-		return tracks;
+		return _tracks;
 	}
 }

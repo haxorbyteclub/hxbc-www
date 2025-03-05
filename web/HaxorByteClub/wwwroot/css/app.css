@@ -56,7 +56,7 @@ html {
 
 #app::before {
 	content: "";
-	background-image: url("../img/chitz.png");
+	background-image: url("../img/wallpapers/modular-brickwork.png");
 	height: 100%;
 	position: fixed;
 	width: 100%;
@@ -269,4 +269,23 @@ textarea {
 
 code {
 	color: #c02d76;
+}
+
+.btn-black {
+	border-style: solid;
+	border-width: 5.5px;
+	color: #fff;
+	cursor: pointer;
+	font-family: Chicago_12;
+	font-size: 18px;
+	min-height: 20px;
+	min-width: 59px;
+	padding: 0 20px;
+	text-align: center;
+	text-decoration: none;
+
+	background: #000;
+	border-radius: 6px;
+	color: #fff;
+	font-family: Chicago_12;
 }

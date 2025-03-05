@@ -23,10 +23,11 @@
 			<div class="message-form">
 				<div class="flex flex-col">
 					<label for="text_email">Nickname</label>
-					<input id="text_email" type="text" class="w-full" placeholder="Elliot Alderson" @bind="Nickname" />
+					<input id="text_email" type="text" class="w-full" placeholder="Elliot Alderson" @bind="Nickname"
+						autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
 					<label class="mt-2" for="text_message">Message</label>
-					<textarea id="text_message" type="text" class="w-full" placeholder="hello world..."
-						@bind="Message" />
+					<textarea id="text_message" type="text" class="w-full" placeholder="hello world..." @bind="Message"
+						autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
 					<button class="btn mt-2" @onclick="Submit">Send it!</button>
 				</div>
 			</div>

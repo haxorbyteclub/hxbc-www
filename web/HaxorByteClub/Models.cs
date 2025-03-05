@@ -6,3 +6,6 @@ public record Track(string Id, string Name, string Artist, string Duration, stri
 
 	public int DurationInSeconds => int.Parse(Duration.Split(':')[0]) * 60 + int.Parse(Duration.Split(':')[1]);
 }
+
+
+public record Wallpaper(string Id, string Name, string Url);
