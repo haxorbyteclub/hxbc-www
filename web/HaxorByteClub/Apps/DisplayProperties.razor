@@ -46,8 +46,8 @@
 		</div>
 	</div>
 	<section class="field-row flex justify-end mr-2 mb-2">
-		<button class="btn btn-black h-[32px] flex justify-center items-center">Download</button>
-		<button class="btn w-[95px] h-[32px] flex justify-center items-center">Apply</button>
+		<button class="btn btn-black h-[32px] flex justify-center items-center" @onclick="Download">Download</button>
+		<button class="btn w-[95px] h-[32px] flex justify-center items-center" @onclick="Apply">Apply</button>
 	</section>
 </div>
 
@@ -63,6 +63,16 @@
 
 	async Task Apply()
 	{
-		await _js.InvokeVoidAsync("changeBackground", _selectedWallpaper?.Url);
+		await _js.InvokeVoidAsync("changeBackground", _selectedWallpaper?.Id);
+	}
+
+	async Task Download()
+	{
+		var url = _selectedWallpaper?.Url;
+		if (!string.IsNullOrEmpty(url))
+		{
+			await _js.InvokeVoidAsync("triggerDownload", url);
+		}
+
 	}
 }

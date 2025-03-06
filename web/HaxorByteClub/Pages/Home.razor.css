@@ -2,3 +2,18 @@
 .li-icon:focus .logo {
 	content: url('img/logo-temp-inv.png');
 }
+
+.d58016c611e44b7f98e5827364779100 {
+	background: white !important;
+	background-image: url('img/wallpapers/dots-dots-dots.png') !important;
+	background-size: 100px !important;
+}
+
+.d815257682154834a1c5bfdb5c9c1bd6 {
+	background-image: url('img/wallpapers/modular-brickwork.png') !important;
+}
+
+.c3be1b76914e4e168b8b596ca3aa607c {
+	background-image: url('img/wallpapers/bliss.png') !important;
+	background-size: cover !important;
+}

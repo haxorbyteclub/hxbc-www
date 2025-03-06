@@ -179,7 +179,6 @@ function stopEqualizer() {
 }
 
 
-
 // Handle window resize
 window.addEventListener('resize', function () {
 	const draggableElements = document.querySelectorAll('.draggable');
@@ -199,6 +198,18 @@ window.addEventListener('resize', function () {
 });
 
 
-window.changeBackground = function (url) {
-	document.querySelector('.app').style.backgroundImage = `url(${url})`;
+window.changeBackground = function (cssClass) {
+	var wallpaper = document.getElementById('wallpaper');
+	wallpaper.classList = '';
+	wallpaper.classList.add(cssClass);
 }
+
+window.triggerDownload = function (url) {
+	const link = document.createElement('a');
+	link.href = url;
+	link.download = url.substring(url.lastIndexOf('/') + 1);
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+}
+
