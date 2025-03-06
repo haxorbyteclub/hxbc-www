@@ -48,14 +48,16 @@ html {
 	-webkit-user-select: none;
 	user-select: none;
 	image-rendering: pixelated;
+	background: none;
 }
 
 #app {
 	height: 100%;
 }
 
-#app::before {
+#wallpaper {
 	content: "";
+	background: white;
 	background-image: url("../img/wallpapers/modular-brickwork.png");
 	height: 100%;
 	position: fixed;

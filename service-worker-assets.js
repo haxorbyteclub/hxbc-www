@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "yCVsXKwv",
+  "version": "uw8057A2",
   "assets": [
     {
-      "hash": "sha256-NKKhOVumVNnLUypfPJKZEjxmpyWYcHZW0CJIB9Qf06Y=",
+      "hash": "sha256-GyRH5MwL6VdUQwt72QX7u+v+2LY/hVbldEDuRG8R8sk=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-S15Ewq2Ql0MPHulV3hUnh6nAN+tpRg8yqTjEfIOASIs=",
-      "url": "_framework/HaxorByteClub.f74c2fewiz.wasm"
+      "hash": "sha256-z5iMOwc2Ug8qG8zfLTMh+wBYLTWzzFhPWTRghlKbVLw=",
+      "url": "_framework/HaxorByteClub.n2bz2543ob.wasm"
     },
     {
       "hash": "sha256-6Pztn3r3J5QuIlO4nuXyaEKBTHq+RhKhzxdd/9cClEY=",
@@ -190,7 +190,7 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.ndyan79x3n.wasm"
     },
     {
-      "hash": "sha256-Bi9jYYTNhsoVArNm47mTC824OP4559R7exO53vg7usw=",
+      "hash": "sha256-PxTneaaY/eRHKjfqRd96xKUxLPzo2bFpIyqq4ud5vMk=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -238,7 +238,7 @@ self.assetsManifest = {
       "url": "apple-touch-icon.png"
     },
     {
-      "hash": "sha256-2Em12fbxgxLmamzTGhtdAWtPNWea2jAS3wSWv1nC0C8=",
+      "hash": "sha256-eA1xjaZY7ySAYYzkJtpkPiAud7J4vXfTeaUEdyBMB1s=",
       "url": "css/app.css"
     },
     {
@@ -342,7 +342,11 @@ self.assetsManifest = {
       "url": "img/screen.png"
     },
     {
-      "hash": "sha256-aAa7EnA6GQOJ15CSNeErVpdJ7e73jsj3R9RrhbznTHI=",
+      "hash": "sha256-GoLUS4oOxjutf0b7mnnf9PqoPCvQagUPP7jnmnfWz2Q=",
+      "url": "img/wallpapers/bliss.png"
+    },
+    {
+      "hash": "sha256-9gFQkRXEXN3/1DFh9F4+w+/vwNakhWF51DwLgYZkRj8=",
       "url": "img/wallpapers/data.json"
     },
     {
@@ -366,7 +370,7 @@ self.assetsManifest = {
       "url": "index.html"
     },
     {
-      "hash": "sha256-ipSB0vuukMZ2ARW4QDUq1QizW76FhYDaFw8ofrtx8BA=",
+      "hash": "sha256-Zgylr5jsithGynPuEdSWdnZAyCXIjeowghPMttUGW1M=",
       "url": "js/app.js"
     },
     {
