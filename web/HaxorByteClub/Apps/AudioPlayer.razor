@@ -94,12 +94,12 @@
 				_tracks.Add(track);
 			}
 			_currentTrack = _tracks[0];
-			StateHasChanged();
 			if (_currentTrack is not null)
 			{
 				await _js.InvokeVoidAsync("playAudio", _currentTrack.Url);
 				_isPlaying = true;
 			}
+			StateHasChanged();
 		}
 	}
 

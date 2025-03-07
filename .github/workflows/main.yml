@@ -45,6 +45,16 @@ jobs:
           npm install -D tailwindcss
           npx tailwindcss -i ./wwwroot/css/tw.css -o ./wwwroot/css/tw.min.css
 
+      #TODO:
+      # add build hash to all css, js and json files in wwwroot and subfolders
+      - name: Add build hash to all css, js and json files
+        run: |
+          cd web
+          cd HaxorByteClub
+          npm install -D hashmark
+          npx hashmark ./wwwroot/**/*.css ./wwwroot/**/*.js ./wwwroot/**/*.json
+
+
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
         run: dotnet publish web/HaxorByteClub/HaxorByteClub.csproj -c Release -o release --nologo
