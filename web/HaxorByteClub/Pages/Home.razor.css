@@ -1,4 +1,8 @@
-﻿.li-icon:hover .logo,
+﻿.menu-bar {
+	border-bottom: 1.5px solid #000;
+}
+
+.li-icon:hover .logo,
 .li-icon:focus .logo {
 	content: url('img/logo-temp-inv.png');
 }
