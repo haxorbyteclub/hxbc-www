@@ -1,0 +1,15 @@
+﻿.window {
+	width: 290px;
+}
+
+.window-pane {
+	height: auto;
+	padding: 0;
+	max-height: 500px;
+}
+
+.welcome-image {
+	height: 50px;
+	object-fit: contain;
+	image-rendering: pixelated;
+}

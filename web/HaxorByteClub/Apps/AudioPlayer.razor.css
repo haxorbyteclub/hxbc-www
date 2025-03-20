@@ -66,15 +66,19 @@
 	display: flex;
 	justify-content: center;
 	margin: 10px 0;
+	gap: 6px;
 }
 
 .controls img {
 	height: 9px;
 }
 
-/* btn active should make the svg inside white */
 .btn:active svg {
 	fill: white;
+}
+
+.btn {
+	height: 28px;
 }
 
 .progress-bar {

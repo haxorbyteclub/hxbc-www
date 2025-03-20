@@ -1,0 +1,67 @@
+﻿@inject IJSRuntime _js
+@inject HttpClient _httpClient
+@using System.Xml
+@using System.Xml.Linq
+@using System.Text.RegularExpressions
+@inherits AppBase
+
+<div class="window app-component draggable" id="@AppId">
+	<div class="title-bar">
+		<button aria-label="Close" class="close" @onclick="Remove"></button>
+		<h1 class="title">Hacker News Reader</h1>
+		<button aria-label="Resize" disabled class="hidden"></button>
+	</div>
+	<div class="separator"></div>
+
+	<div class="text-sm window-pane">
+		<div class="max-h-[400px] overflow-y-auto">
+			<img class="welcome-image mx-auto" src="img/hn.png" alt="Welcome" />
+			@if (articles != null)
+			{
+				@foreach (var article in articles)
+				{
+					<div class="standard-dialog center scale-down text-xs w-11/12 mx-auto my-2">
+						<h1 class="dialog-text mb-2"><span>@article.Title</span></h1>
+						<a class="dialog-text font-black" href="@article.Link" target="_blank">Read More</a>
+					</div>
+				}
+			}
+			else
+			{
+				<p>Loading...</p>
+			}
+		</div>
+	</div>
+</div>
+
+@code {
+	private List<Article> articles;
+
+	protected override async Task OnInitializedAsync()
+	{
+		articles = await FetchHackerNewsRss();
+	}
+
+	private async Task<List<Article>> FetchHackerNewsRss()
+	{
+		var rssFeed = await _httpClient.GetStringAsync("data/hn.xml");
+		var doc = XDocument.Parse(rssFeed);
+		var items = doc.Descendants("item")
+		.Select(item => new Article
+		{
+			Title = item.Element("title")?.Value,
+			Link = item.Element("link")?.Value
+		})
+		.ToList();
+		return items;
+	}
+
+
+
+
+	private class Article
+	{
+		public string Title { get; set; }
+		public string Link { get; set; }
+	}
+}

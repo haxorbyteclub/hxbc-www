@@ -3,7 +3,7 @@
 @inject IJSRuntime _js
 
 <PageTitle>Home</PageTitle>
-		<div id="wallpaper"></div>
+<div id="wallpaper"></div>
 <ul role="menu-bar">
 	<li role="menu-item" class="li-icon" tabindex="0" aria-haspopup="true">
 		<div class="flex">
@@ -41,6 +41,10 @@
 		<img src="img/guestbook-icon.png" alt="guestbook icon">
 		<span>Guestbook</span>
 	</div>
+	<div class="desktop-icon" @onclick="ToggleHackerNews">
+		<img src="img/hn-icon.png" alt="hacker news icon">
+		<span>Hacker News</span>
+	</div>
 </div>
 
 @foreach (var app in _apps)
@@ -72,6 +76,11 @@
 	else if (app is DisplayProperties display)
 	{
 		<DisplayProperties AppId="@app.AppId" />
+	}
+
+	else if (app is HackerNews hn)
+	{
+		<HackerNews AppId="@app.AppId" />
 	}
 }
 
@@ -168,6 +177,19 @@
 		else
 		{
 			_apps.Add(new DisplayProperties() { AppId = Guid.NewGuid().ToString() });
+		}
+	}
+
+	void ToggleHackerNews()
+	{
+		if (_apps.Any(a => a is HackerNews))
+		{
+			var app = _apps.FirstOrDefault(a => a is HackerNews);
+			BringToFront(app.AppId).SafeFireAndForget();
+		}
+		else
+		{
+			_apps.Add(new HackerNews() { AppId = Guid.NewGuid().ToString() });
 		}
 	}
 

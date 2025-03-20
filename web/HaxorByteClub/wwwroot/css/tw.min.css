@@ -596,6 +596,9 @@
   .h-\[32px\] {
     height: 32px;
   }
+  .h-\[50px\] {
+    height: 50px;
+  }
   .max-h-\[400px\] {
     max-height: 400px;
   }
