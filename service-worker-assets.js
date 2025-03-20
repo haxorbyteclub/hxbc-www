@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "H+oKgC05",
+  "version": "C4hqQH2Y",
   "assets": [
     {
-      "hash": "sha256-x0VPszqOkcF8jVwITVgzBI4dAPAmy+0ySBdA0t/+Tno=",
+      "hash": "sha256-1vNWgLI7H2pCFoNjcCmhNakyscx2qvAkwQfytOxT2MI=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-Jn4bp5OLucLeDVK69Lzzat33ExSzKNI6QhQBmyhbu8A=",
-      "url": "_framework/HaxorByteClub.mt718rty6i.wasm"
+      "hash": "sha256-EVU2yp8bSx1R4QUwVRre/uFqos8UPlAQcywzoBs/Q2M=",
+      "url": "_framework/HaxorByteClub.92g353li7w.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-JbRMR19pW4+//yJmbetyG3YGC1/wSFcawoaHqmM0kaU=",
+      "hash": "sha256-3AAATcy9pVl3GWS/SQBONVNc9b6br0ouSo/os/kn2xo=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -542,7 +542,7 @@ self.assetsManifest = {
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
     },
     {
-      "hash": "sha256-9u8BJK/m1JEzJ5k389IfcYEepHFOgwm3WX/b5a/Bpaw=",
+      "hash": "sha256-R0No4tnuU+sNhdeTmnbvExqg4PZtzXwQLILxPYlb0yQ=",
       "url": "music/data.json"
     },
     {

@@ -361,6 +361,10 @@ textarea[b-rvka4hpuv4] {
 	object-fit: contain;
 }
 /* /Pages/Home.razor.rz.scp.css */
+.menu-bar[b-0duknsy223] {
+	border-bottom: 1.5px solid #000;
+}
+
 .li-icon:hover .logo[b-0duknsy223],
 .li-icon:focus .logo[b-0duknsy223] {
 	content: url('img/logo-temp-inv.png');
