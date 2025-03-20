@@ -81,15 +81,19 @@
 	display: flex;
 	justify-content: center;
 	margin: 10px 0;
+	gap: 6px;
 }
 
 .controls img[b-c8zjyqt9ej] {
 	height: 9px;
 }
 
-/* btn active should make the svg inside white */
 .btn:active svg[b-c8zjyqt9ej] {
 	fill: white;
+}
+
+.btn[b-c8zjyqt9ej] {
+	height: 28px;
 }
 
 .progress-bar[b-c8zjyqt9ej] {
@@ -325,6 +329,22 @@ textarea[b-rvka4hpuv4] {
 
 .window-pane[b-rvka4hpuv4] {
 	padding: 0;
+}
+/* /Apps/HackerNews.razor.rz.scp.css */
+.window[b-rohz7cw4g7] {
+	width: 290px;
+}
+
+.window-pane[b-rohz7cw4g7] {
+	height: auto;
+	padding: 0;
+	max-height: 500px;
+}
+
+.welcome-image[b-rohz7cw4g7] {
+	height: 50px;
+	object-fit: contain;
+	image-rendering: pixelated;
 }
 /* /Apps/Welcome.razor.rz.scp.css */
 .window[b-878u4gjg4v] {
