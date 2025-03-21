@@ -1,0 +1,33 @@
+﻿.window {
+	width: 400px;
+}
+
+.window.resizable {
+    resize: both;
+    overflow: hidden;
+}
+
+.window-pane {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+.editor-textarea {
+    flex-grow: 1;
+    resize: none;
+    border: none;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+	resize: both;
+}
+
+textarea:focus {
+background: #fff;
+	color: #000;
+}

@@ -45,6 +45,10 @@
 		<img src="img/hn-icon.png" alt="hacker news icon">
 		<span>Hacker News</span>
 	</div>
+	<div class="desktop-icon" @onclick="ToggleEditor">
+    <img src="img/editor-icon.png" alt="editor icon">
+    <span>Editor</span>
+</div>
 </div>
 
 @foreach (var app in _apps)
@@ -77,11 +81,15 @@
 	{
 		<DisplayProperties AppId="@app.AppId" />
 	}
-
 	else if (app is HackerNews hn)
 	{
 		<HackerNews AppId="@app.AppId" />
 	}
+	else if (app is Editor editor)
+	{
+		<Editor AppId="@app.AppId" />
+	}
+
 }
 
 @code
@@ -192,6 +200,18 @@
 			_apps.Add(new HackerNews() { AppId = Guid.NewGuid().ToString() });
 		}
 	}
+	void ToggleEditor()
+{
+    if (_apps.Any(a => a is Editor))
+    {
+        var app = _apps.FirstOrDefault(a => a is Editor);
+        BringToFront(app.AppId).SafeFireAndForget();
+    }
+    else
+    {
+        _apps.Add(new Editor() { AppId = Guid.NewGuid().ToString() });
+    }
+}
 
 
 
