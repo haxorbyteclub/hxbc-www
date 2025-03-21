@@ -286,6 +286,40 @@ textarea[b-u4ohh11vgb] {
 	background-color: black;
 	color: white;
 }
+/* /Apps/Editor.razor.rz.scp.css */
+.window[b-peh58gb5pd] {
+	width: 400px;
+}
+
+.window.resizable[b-peh58gb5pd] {
+    resize: both;
+    overflow: hidden;
+}
+
+.window-pane[b-peh58gb5pd] {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+.editor-textarea[b-peh58gb5pd] {
+    flex-grow: 1;
+    resize: none;
+    border: none;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+	resize: both;
+}
+
+textarea:focus[b-peh58gb5pd] {
+background: #fff;
+	color: #000;
+}
 /* /Apps/GuestBook.razor.rz.scp.css */
 .window[b-rvka4hpuv4] {
 	width: 290px;

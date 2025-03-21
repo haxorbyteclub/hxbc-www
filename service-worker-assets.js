@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "C4hqQH2Y",
+  "version": "18aMmSzz",
   "assets": [
     {
-      "hash": "sha256-1vNWgLI7H2pCFoNjcCmhNakyscx2qvAkwQfytOxT2MI=",
+      "hash": "sha256-oz5JOxnsGxFSt+lu5NMj0BT8C0bRjhd0V29PvWBO6LY=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-EVU2yp8bSx1R4QUwVRre/uFqos8UPlAQcywzoBs/Q2M=",
-      "url": "_framework/HaxorByteClub.92g353li7w.wasm"
+      "hash": "sha256-6GYNHdg/sx0hy9FchPam8SNG0JUBZ2naUEe1hptuHWY=",
+      "url": "_framework/HaxorByteClub.88c4c5trg7.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -174,12 +174,12 @@ self.assetsManifest = {
       "url": "_framework/System.Private.Xml.Linq.gf9a3rh5ji.wasm"
     },
     {
-      "hash": "sha256-DIZZQ6VsUec1Pfplu09jx3HbOcNosppsi7Hn8cKN5Mg=",
-      "url": "_framework/System.Runtime.InteropServices.JavaScript.gr73skhjil.wasm"
+      "hash": "sha256-Oy9TBBnHSmF7tBnXqtY79irHbq4k1yQm8D3nSxtxgVA=",
+      "url": "_framework/System.Runtime.3yzl2lh71f.wasm"
     },
     {
-      "hash": "sha256-kv/N+qUSvWaq2Es3yc+9Fkdgcj/Lhlpznonp1GDlF38=",
-      "url": "_framework/System.Runtime.m2t9lsyrmo.wasm"
+      "hash": "sha256-DIZZQ6VsUec1Pfplu09jx3HbOcNosppsi7Hn8cKN5Mg=",
+      "url": "_framework/System.Runtime.InteropServices.JavaScript.gr73skhjil.wasm"
     },
     {
       "hash": "sha256-HQtn3o8+TYPiT1aeXexGnNQ29xw/DTf4iRCtDFg10dQ=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-3AAATcy9pVl3GWS/SQBONVNc9b6br0ouSo/os/kn2xo=",
+      "hash": "sha256-/agDm6Ttig2OCZM1YplFXQwxzOsxxUF8ZBUoQQtRlZA=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -278,7 +278,7 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-9u8BJK/m1JEzJ5k389IfcYEepHFOgwm3WX/b5a/Bpaw=",
+      "hash": "sha256-h+tnGUAesF6gupJ5az7u437na0e3DXPLpEWkXwhXOC0=",
       "url": "css/tw.min.css"
     },
     {
@@ -324,6 +324,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-EOjXWMYBDRpMmFjJcYIoF2PYleCTpEG/Xle1g/nTa2E=",
       "url": "img/contact-icon.png"
+    },
+    {
+      "hash": "sha256-wVqnvliD7X9vPkXFWIZJdqVGREQwHFSgcpAJWHJVGFg=",
+      "url": "img/editor-icon.png"
     },
     {
       "hash": "sha256-SRRRoS8VOkk+uY+iniqyOpEt2EEdrbhYrXaxO6u90q8=",
@@ -542,7 +546,7 @@ self.assetsManifest = {
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
     },
     {
-      "hash": "sha256-R0No4tnuU+sNhdeTmnbvExqg4PZtzXwQLILxPYlb0yQ=",
+      "hash": "sha256-FgfLnd3o2IlKoNcgkSnR+qgMUCel3ort56b3LB0RZ4c=",
       "url": "music/data.json"
     },
     {
