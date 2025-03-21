@@ -25,30 +25,30 @@
 </ul>
 
 <div class="desktop-icons">
-	<div class="desktop-icon" @onclick="ToggleAudioPlayer">
+	<div id="audio-player-icon" class="desktop-icon" @onclick="ToggleAudioPlayer">
 		<img src="img/player-icon.png" alt="player icon">
 		<span>Audio Player</span>
 	</div>
-	<div class="desktop-icon" @onclick="ToggleContactForm">
+	<div id="contact-form-icon" class="desktop-icon" @onclick="ToggleContactForm">
 		<img src="img/contact-icon.png" alt="contact form icon">
 		<span>Contact Us</span>
 	</div>
-	<div class="desktop-icon" @onclick="ToggleAbout">
+	<div id="about-icon" class="desktop-icon" @onclick="ToggleAbout">
 		<img src="img/info-icon.png" alt="about icon">
 		<span>About</span>
 	</div>
-	<div class="desktop-icon" @onclick="ToggleGuestBook">
+	<div id="guestbook-icon" class="desktop-icon" @onclick="ToggleGuestBook">
 		<img src="img/guestbook-icon.png" alt="guestbook icon">
 		<span>Guestbook</span>
 	</div>
-	<div class="desktop-icon" @onclick="ToggleHackerNews">
+	<div id="hacker-news-icon" class="desktop-icon" @onclick="ToggleHackerNews">
 		<img src="img/hn-icon.png" alt="hacker news icon">
 		<span>Hacker News</span>
 	</div>
-	<div class="desktop-icon" @onclick="ToggleEditor">
-    <img src="img/editor-icon.png" alt="editor icon">
-    <span>Editor</span>
-</div>
+	<div id="editor-icon" class="desktop-icon" @onclick="ToggleEditor">
+		<img src="img/editor-icon.png" alt="editor icon">
+		<span>Editor</span>
+	</div>
 </div>
 
 @foreach (var app in _apps)
@@ -101,6 +101,7 @@
 		if (firstRender)
 		{
 			await _js.InvokeVoidAsync("setupClock");
+			await _js.InvokeVoidAsync("setupIconDrag");
 		}
 	}
 
@@ -201,17 +202,17 @@
 		}
 	}
 	void ToggleEditor()
-{
-    if (_apps.Any(a => a is Editor))
-    {
-        var app = _apps.FirstOrDefault(a => a is Editor);
-        BringToFront(app.AppId).SafeFireAndForget();
-    }
-    else
-    {
-        _apps.Add(new Editor() { AppId = Guid.NewGuid().ToString() });
-    }
-}
+	{
+		if (_apps.Any(a => a is Editor))
+		{
+			var app = _apps.FirstOrDefault(a => a is Editor);
+			BringToFront(app.AppId).SafeFireAndForget();
+		}
+		else
+		{
+			_apps.Add(new Editor() { AppId = Guid.NewGuid().ToString() });
+		}
+	}
 
 
 

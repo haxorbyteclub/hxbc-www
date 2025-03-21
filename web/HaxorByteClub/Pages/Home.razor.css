@@ -21,3 +21,16 @@
 	background-image: url('img/wallpapers/bliss.png') !important;
 	background-size: cover !important;
 }
+
+.desktop-icons {
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+.desktop-icon {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	user-select: none;
+}
