@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "18aMmSzz",
+  "version": "bs6L5Wlk",
   "assets": [
     {
       "hash": "sha256-oz5JOxnsGxFSt+lu5NMj0BT8C0bRjhd0V29PvWBO6LY=",
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-6GYNHdg/sx0hy9FchPam8SNG0JUBZ2naUEe1hptuHWY=",
-      "url": "_framework/HaxorByteClub.88c4c5trg7.wasm"
+      "hash": "sha256-HXWsIE696GlH/zsuc1AyA4VgFZzLkc4baeLW9bCoSs8=",
+      "url": "_framework/HaxorByteClub.hj290kriez.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-/agDm6Ttig2OCZM1YplFXQwxzOsxxUF8ZBUoQQtRlZA=",
+      "hash": "sha256-WWUDxFsOStVJwYHdlmlP/MYnV321soudb+QX8HgFCOA=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -266,7 +266,7 @@ self.assetsManifest = {
       "url": "apple-touch-icon.png"
     },
     {
-      "hash": "sha256-eA1xjaZY7ySAYYzkJtpkPiAud7J4vXfTeaUEdyBMB1s=",
+      "hash": "sha256-SN79OUZ3u0BVZ7iFh7oe5isWIHMye+HysJTgLyCrW3I=",
       "url": "css/app.css"
     },
     {
@@ -546,7 +546,7 @@ self.assetsManifest = {
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
     },
     {
-      "hash": "sha256-FgfLnd3o2IlKoNcgkSnR+qgMUCel3ort56b3LB0RZ4c=",
+      "hash": "sha256-h+tnGUAesF6gupJ5az7u437na0e3DXPLpEWkXwhXOC0=",
       "url": "music/data.json"
     },
     {
