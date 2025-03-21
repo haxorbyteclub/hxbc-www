@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "0GiEhgQz",
+  "version": "NZmlh4de",
   "assets": [
     {
       "hash": "sha256-y9CAl2W1I7z/yUTT2KEwaR3Ak6enzoBjtC71hv5BjjE=",
@@ -14,12 +14,12 @@ self.assetsManifest = {
       "url": "_framework/AsyncAwaitBestPractices.vjycdyzqwn.wasm"
     },
     {
-      "hash": "sha256-SxybjbCDKpaHGSQHz7Hny3A9sE2wIfzjmATkDziadcY=",
-      "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
+      "hash": "sha256-Zb6N8oeOIa0g+yKAuLOyKRLPLw4zvU1Sa7YPoJapa+U=",
+      "url": "_framework/CommunityToolkit.Mvvm.19qua9lesm.wasm"
     },
     {
-      "hash": "sha256-fXCAqoQ3LUuqNLo3bGnwAFpBH2Hjnkmc9nKrAlleDPI=",
-      "url": "_framework/HaxorByteClub.r6heho7n1w.wasm"
+      "hash": "sha256-LtPG7aSNZx+KH0S1sSx5CP3RkCEUUHKwHsxDma2e7lU=",
+      "url": "_framework/HaxorByteClub.y4m7dxbnm1.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -174,12 +174,12 @@ self.assetsManifest = {
       "url": "_framework/System.Private.Xml.Linq.gf9a3rh5ji.wasm"
     },
     {
-      "hash": "sha256-Oy9TBBnHSmF7tBnXqtY79irHbq4k1yQm8D3nSxtxgVA=",
-      "url": "_framework/System.Runtime.3yzl2lh71f.wasm"
-    },
-    {
       "hash": "sha256-DIZZQ6VsUec1Pfplu09jx3HbOcNosppsi7Hn8cKN5Mg=",
       "url": "_framework/System.Runtime.InteropServices.JavaScript.gr73skhjil.wasm"
+    },
+    {
+      "hash": "sha256-kv/N+qUSvWaq2Es3yc+9Fkdgcj/Lhlpznonp1GDlF38=",
+      "url": "_framework/System.Runtime.m2t9lsyrmo.wasm"
     },
     {
       "hash": "sha256-HQtn3o8+TYPiT1aeXexGnNQ29xw/DTf4iRCtDFg10dQ=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-7KNIZdRLPnFoeLiebQKYbwKWT/F3jxJsH31IRFabjss=",
+      "hash": "sha256-63jB9uVrAeeSA0EARjAk9zVm+RVMGwWv6PUfTk4FF8E=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -414,7 +414,7 @@ self.assetsManifest = {
       "url": "index.html"
     },
     {
-      "hash": "sha256-+ofUWDp43mg0Tuj6KOQeQe/8uHv3UIq6/S/GkKChHsM=",
+      "hash": "sha256-OHPg4LgkvifHJxVXVodP+zWZd+YGHi4aVzk6qLoR/E0=",
       "url": "js/app.js"
     },
     {
@@ -546,7 +546,7 @@ self.assetsManifest = {
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
     },
     {
-      "hash": "sha256-8xgshvjXMyTcJh/3fjnm8U33rnCOVFkuq7PNRRJ773M=",
+      "hash": "sha256-Owe1tW6iLmxtffx2UPTmoGHTakNVNiPWgyWcW6nX5zU=",
       "url": "music/data.json"
     },
     {

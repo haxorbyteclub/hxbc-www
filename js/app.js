@@ -124,7 +124,9 @@ window.playAudio = function (url) {
 		if (currentTimeSpan) {
 			currentTimeSpan.textContent = ('0' + Math.floor(audio.currentTime / 60)).slice(-2) + ':' + ('0' + Math.floor(audio.currentTime % 60)).slice(-2);
 		}
-		progress.style.width = value + '%';
+		if (progress) {
+			progress.style.width = value + '%';
+		}
 	});
 	//start with delay
 	setTimeout(function () {
@@ -217,15 +219,41 @@ window.triggerDownload = function (url) {
 
 window.setupIconDrag = function () {
 	const icons = document.querySelectorAll(".desktop-icon");
+	const occupiedPositions = []; // Array to store occupied positions
 
 	icons.forEach(icon => {
 		let isDragging = false; // Flag to track dragging
 
+		// Function to check if a position overlaps with existing icons
+		const isOverlapping = (x, y, width, height) => {
+			return occupiedPositions.some(pos => {
+				return (
+					x < pos.x + pos.width &&
+					x + width > pos.x &&
+					y < pos.y + pos.height &&
+					y + height > pos.y
+				);
+			});
+		};
+
 		// Set random initial positions for the icons
 		const maxX = window.innerWidth - icon.offsetWidth; // Ensure the icon stays within the screen width
 		const maxY = window.innerHeight - icon.offsetHeight - 50; // Subtract 50px for the top bar height
-		const randomX = Math.floor(Math.random() * Math.max(1, maxX));
-		const randomY = Math.floor(Math.random() * Math.max(1, maxY)) + 50; // Ensure it starts below the top bar
+		let randomX, randomY;
+
+		// Keep generating random positions until no overlap is found
+		do {
+			randomX = Math.floor(Math.random() * Math.max(1, maxX));
+			randomY = Math.floor(Math.random() * Math.max(1, maxY)) + 50; // Ensure it starts below the top bar
+		} while (isOverlapping(randomX, randomY, icon.offsetWidth, icon.offsetHeight));
+
+		// Store the position as occupied
+		occupiedPositions.push({
+			x: randomX,
+			y: randomY,
+			width: icon.offsetWidth,
+			height: icon.offsetHeight
+		});
 
 		icon.style.position = "absolute";
 		icon.style.left = `${randomX}px`;
