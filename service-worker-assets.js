@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "bs6L5Wlk",
+  "version": "0GiEhgQz",
   "assets": [
     {
-      "hash": "sha256-oz5JOxnsGxFSt+lu5NMj0BT8C0bRjhd0V29PvWBO6LY=",
+      "hash": "sha256-y9CAl2W1I7z/yUTT2KEwaR3Ak6enzoBjtC71hv5BjjE=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.xp9imvzwfl.wasm"
     },
     {
-      "hash": "sha256-HXWsIE696GlH/zsuc1AyA4VgFZzLkc4baeLW9bCoSs8=",
-      "url": "_framework/HaxorByteClub.hj290kriez.wasm"
+      "hash": "sha256-fXCAqoQ3LUuqNLo3bGnwAFpBH2Hjnkmc9nKrAlleDPI=",
+      "url": "_framework/HaxorByteClub.r6heho7n1w.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-WWUDxFsOStVJwYHdlmlP/MYnV321soudb+QX8HgFCOA=",
+      "hash": "sha256-7KNIZdRLPnFoeLiebQKYbwKWT/F3jxJsH31IRFabjss=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -278,7 +278,7 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-h+tnGUAesF6gupJ5az7u437na0e3DXPLpEWkXwhXOC0=",
+      "hash": "sha256-g9jmjtC3LsLcO98vje/wizEemE1oOW4vpMvicCVbnz8=",
       "url": "css/tw.min.css"
     },
     {
@@ -410,11 +410,11 @@ self.assetsManifest = {
       "url": "img/welcome.png"
     },
     {
-      "hash": "sha256-AklJ9kzQ3gEQmfRgsa5uCCorxPTOqxle9kDHoiXywwU=",
+      "hash": "sha256-CBldhmQBi2c+k3pnbmKAGTADSBhT0W2Y0665hFjbmB4=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-Zgylr5jsithGynPuEdSWdnZAyCXIjeowghPMttUGW1M=",
+      "hash": "sha256-+ofUWDp43mg0Tuj6KOQeQe/8uHv3UIq6/S/GkKChHsM=",
       "url": "js/app.js"
     },
     {
@@ -546,7 +546,7 @@ self.assetsManifest = {
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
     },
     {
-      "hash": "sha256-h+tnGUAesF6gupJ5az7u437na0e3DXPLpEWkXwhXOC0=",
+      "hash": "sha256-8xgshvjXMyTcJh/3fjnm8U33rnCOVFkuq7PNRRJ773M=",
       "url": "music/data.json"
     },
     {

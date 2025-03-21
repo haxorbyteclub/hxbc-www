@@ -213,3 +213,59 @@ window.triggerDownload = function (url) {
 	document.body.removeChild(link);
 }
 
+
+
+window.setupIconDrag = function () {
+	const icons = document.querySelectorAll(".desktop-icon");
+
+	icons.forEach(icon => {
+		let isDragging = false; // Flag to track dragging
+
+		// Set random initial positions for the icons
+		const maxX = window.innerWidth - icon.offsetWidth; // Ensure the icon stays within the screen width
+		const maxY = window.innerHeight - icon.offsetHeight - 50; // Subtract 50px for the top bar height
+		const randomX = Math.floor(Math.random() * Math.max(1, maxX));
+		const randomY = Math.floor(Math.random() * Math.max(1, maxY)) + 50; // Ensure it starts below the top bar
+
+		icon.style.position = "absolute";
+		icon.style.left = `${randomX}px`;
+		icon.style.top = `${randomY}px`;
+		icon.style.cursor = "grab";
+
+		// Add drag-and-drop functionality
+		icon.addEventListener("mousedown", (e) => {
+			isDragging = false; // Reset dragging flag
+			icon.style.cursor = "grabbing";
+			let shiftX = e.clientX - icon.getBoundingClientRect().left;
+			let shiftY = e.clientY - icon.getBoundingClientRect().top;
+
+			const moveAt = (pageX, pageY) => {
+				isDragging = true; // Set dragging flag
+				let newX = Math.max(0, Math.min(pageX - shiftX, window.innerWidth - icon.offsetWidth));
+				let newY = Math.max(50, Math.min(pageY - shiftY, window.innerHeight - icon.offsetHeight)); // Prevent moving into the top bar
+				icon.style.left = `${newX}px`;
+				icon.style.top = `${newY}px`;
+			};
+
+			const onMouseMove = (e) => {
+				moveAt(e.pageX, e.pageY);
+			};
+
+			document.addEventListener("mousemove", onMouseMove);
+
+			icon.addEventListener("mouseup", () => {
+				document.removeEventListener("mousemove", onMouseMove);
+				icon.style.cursor = "grab";
+			}, { once: true });
+		});
+
+		// Prevent @onclick from firing if the icon was dragged
+		icon.addEventListener("click", (e) => {
+			if (isDragging) {
+				e.stopImmediatePropagation(); // Prevent the click event from propagating
+			}
+		});
+
+		icon.ondragstart = () => false; // Disable default drag behavior
+	});
+};
