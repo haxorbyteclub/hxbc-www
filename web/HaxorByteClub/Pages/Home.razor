@@ -205,16 +205,13 @@
 	}
 	void ToggleEditor()
 	{
-		if (_apps.Any(a => a is Editor))
+		_apps.Add(new Editor()
 		{
-			var app = _apps.FirstOrDefault(a => a is Editor);
-			(app as Editor).UpdateTextAndTitle(string.Empty, string.Empty);
-			BringToFront(app.AppId).SafeFireAndForget();
-		}
-		else
-		{
-			_apps.Add(new Editor() { AppId = Guid.NewGuid().ToString(), Text = string.Empty, Title = "" });
-		}
+			AppId = Guid.NewGuid().ToString(),
+			Text = string.Empty,
+			Title = $"Editor"
+		});
+		StateHasChanged();
 	}
 
 
@@ -236,19 +233,12 @@
 	private async void OnShowEditorMessage(object recipient, ShowEditorMessage message)
 	{
 		EditorLaunchSettings launchSettings = message.Value;
-		if (_apps.Any(a => a is Editor))
+		_apps.Add(new Editor()
 		{
-			Console.WriteLine("Editor already exists");
-			var app = _apps.FirstOrDefault(a => a is Editor);
-			await BringToFront(app.AppId);
-			((Editor)app).Text = launchSettings.Text;
-			((Editor)app).Title = launchSettings.Title;
-		}
-		else
-		{
-			_apps.Add(new Editor() { AppId = Guid.NewGuid().ToString(), Text = launchSettings.Text, Title = launchSettings.Title });
-		}
+			AppId = Guid.NewGuid().ToString(),
+			Text = launchSettings.Text,
+			Title = launchSettings.Title
+		});
 		InvokeAsync(StateHasChanged);
-
 	}
 }
