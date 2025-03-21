@@ -4,31 +4,47 @@
 <div class="window app-component draggable resizable" id="@AppId">
 	<div class="title-bar">
 		<button aria-label="Close" class="close" @onclick="Remove"></button>
-		<h1 class="title">Editor</h1>
+		<h1 class="title">@_title</h1>
 		<button aria-label="Resize" disabled class="hidden"></button>
 	</div>
 	<div class="separator"></div>
 	<div class="text-sm window-pane flex flex-col">
-		<textarea class="editor-textarea flex-grow w-full h-full" @bind="TextContent"
-			placeholder="Start typing..."></textarea>
+		<textarea class="editor-textarea flex-grow w-full h-full" placeholder="Start typing...">@_text</textarea>
 	</div>
 </div>
 
 @code {
-	private string TextContent { get; set; } = string.Empty;
+	[Parameter]
+	public string? Text { get; set; }
 
-	private async Task SaveContent()
+
+	[Parameter]
+	public string? Title { get; set; }
+
+	string _text = string.Empty;
+
+	string _title = "Editor";
+
+
+	protected override void OnInitialized()
 	{
-		await _js.InvokeVoidAsync("localStorage.setItem", "editorContent", TextContent);
+		base.OnInitialized();
 	}
 
-	private async Task LoadContent()
+	//onparameterset
+	protected override void OnParametersSet()
 	{
-		TextContent = await _js.InvokeAsync<string>("localStorage.getItem", "editorContent") ?? string.Empty;
+		base.OnParametersSet();
+		if (!string.IsNullOrEmpty(Text))
+		{
+			_text = Text;
+		}
+
+		if (!string.IsNullOrEmpty(Title))
+		{
+			_title = Title;
+		}
+
 	}
 
-	private void EnableResize()
-	{
-		// Placeholder for resize logic if needed
-	}
 }

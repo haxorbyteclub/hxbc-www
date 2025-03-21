@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using HaxorByteClub.Apps
+@using HaxorByteClub.Models
 @inject IJSRuntime _js
 
 <PageTitle>Home</PageTitle>
@@ -10,10 +11,10 @@
 			<img src="img/logo-temp.png" alt="Logo" class="logo">
 		</div>
 		<ul role="menu">
-			<li role="menu-item" @onclick="ToggleAboutVersion"><a href="#menu">About</a></li>
-			<li role="menu-item" @onclick="ToggleDisplayProperties"><a href="#menu">Display Properties</a></li>
-			<li role="menu-item" class="divider"><a href="#menu">Socials</a></li>
-			<li role="menu-item"><a href="https://twitter.com/sakofchit">HaxorByteShop</a></li>
+			<li role="menu-item" @onclick="ToggleAboutVersion"><a href="">About</a></li>
+			<li role="menu-item" @onclick="ToggleDisplayProperties"><a href="">Display Properties</a></li>
+			<li role="menu-item" class="divider"><a href="">Socials</a></li>
+			<li role="menu-item"><a href="">HaxorByteShop</a></li>
 		</ul>
 	</li>
 	<li class="date-time-container" tabindex="0" aria-haspopup="true">
@@ -87,9 +88,8 @@
 	}
 	else if (app is Editor editor)
 	{
-		<Editor AppId="@app.AppId" />
+		<Editor AppId="@app.AppId" Text="@editor.Text" Title="@editor.Title" />
 	}
-
 }
 
 @code
@@ -109,6 +109,8 @@
 	{
 		base.OnInitialized();
 		WeakReferenceMessenger.Default.Register<RemoveAppMessage>(this, OnRemoveApp);
+		WeakReferenceMessenger.Default.Register<ShowEditorMessage>(this, OnShowEditorMessage);
+
 	}
 
 	void ToggleAudioPlayer()
@@ -206,14 +208,14 @@
 		if (_apps.Any(a => a is Editor))
 		{
 			var app = _apps.FirstOrDefault(a => a is Editor);
+			(app as Editor).UpdateTextAndTitle(string.Empty, string.Empty);
 			BringToFront(app.AppId).SafeFireAndForget();
 		}
 		else
 		{
-			_apps.Add(new Editor() { AppId = Guid.NewGuid().ToString() });
+			_apps.Add(new Editor() { AppId = Guid.NewGuid().ToString(), Text = string.Empty, Title = "" });
 		}
 	}
-
 
 
 	async Task BringToFront(string id)
@@ -229,5 +231,24 @@
 			_apps.Remove(app);
 			StateHasChanged();
 		}
+	}
+
+	private async void OnShowEditorMessage(object recipient, ShowEditorMessage message)
+	{
+		EditorLaunchSettings launchSettings = message.Value;
+		if (_apps.Any(a => a is Editor))
+		{
+			Console.WriteLine("Editor already exists");
+			var app = _apps.FirstOrDefault(a => a is Editor);
+			await BringToFront(app.AppId);
+			((Editor)app).Text = launchSettings.Text;
+			((Editor)app).Title = launchSettings.Title;
+		}
+		else
+		{
+			_apps.Add(new Editor() { AppId = Guid.NewGuid().ToString(), Text = launchSettings.Text, Title = launchSettings.Title });
+		}
+		InvokeAsync(StateHasChanged);
+
 	}
 }
