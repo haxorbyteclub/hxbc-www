@@ -17,7 +17,7 @@ public class TrackService
 	{
 		if (_tracks.Count == 0)
 		{
-			_tracks = await _httpClient.GetFromJsonAsync<List<Track>>("music/data.json");
+			_tracks = await _httpClient.GetFromJsonAsync<List<Track>>("/music/music.json");
 		}
 		return _tracks;
 	}
