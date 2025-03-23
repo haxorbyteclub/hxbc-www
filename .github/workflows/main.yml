@@ -21,7 +21,7 @@ jobs:
       # set base href
       - name: Replace base-tag in index.html
         run: |
-          sed -i 's/<base href="\/" \/>/<base href="\/haxorbyteclub-www\/" \/>/g' wwwroot/index.html
+          sed -i 's/<base href="\/" \/>/<base href="\/hxbc-www\/" \/>/g' wwwroot/index.html
       - name: Get Version from version.txt
         id: get_version
         shell: pwsh
