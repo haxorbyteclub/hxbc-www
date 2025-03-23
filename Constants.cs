@@ -6,7 +6,7 @@ public static class Constants
 #if DEBUG
 	public const string BaseUrl = "http://localhost:5062";
 #else
-	public const string BaseUrl = "https://haxorbyteclub.com";
+	public const string BaseUrl = "https://haxorbyteclub.runasp.net";
 #endif
 
 	public const string HNEndpoint = "/api/v0/hackernews";
