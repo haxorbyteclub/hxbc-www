@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "NZmlh4de",
+  "version": "hjxHVTPW",
   "assets": [
     {
-      "hash": "sha256-y9CAl2W1I7z/yUTT2KEwaR3Ak6enzoBjtC71hv5BjjE=",
+      "hash": "sha256-nQ4U6TiO9Sod7Q6qd3/HXRWZfB1Xvxse34TZ/Adccm4=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -14,12 +14,12 @@ self.assetsManifest = {
       "url": "_framework/AsyncAwaitBestPractices.vjycdyzqwn.wasm"
     },
     {
-      "hash": "sha256-Zb6N8oeOIa0g+yKAuLOyKRLPLw4zvU1Sa7YPoJapa+U=",
-      "url": "_framework/CommunityToolkit.Mvvm.19qua9lesm.wasm"
+      "hash": "sha256-M0Cuu2z24xgbU8W/Ng19xFoXMzWNleVW2zZBBfgngKY=",
+      "url": "_framework/CommunityToolkit.Mvvm.vla6lw9ir2.wasm"
     },
     {
-      "hash": "sha256-LtPG7aSNZx+KH0S1sSx5CP3RkCEUUHKwHsxDma2e7lU=",
-      "url": "_framework/HaxorByteClub.y4m7dxbnm1.wasm"
+      "hash": "sha256-WAIfb1tfIOv/vT65oSFz12o5S8/tMH7nFh9AhHMwRbc=",
+      "url": "_framework/HaxorByteClub.cjj7zzf1yd.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-63jB9uVrAeeSA0EARjAk9zVm+RVMGwWv6PUfTk4FF8E=",
+      "hash": "sha256-uT0WAwj/ShK8qA/0UkOs5ZiFXN6f6JaI6Z4a8ecuoCs=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -254,18 +254,6 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.lfu7j35m59.dat"
     },
     {
-      "hash": "sha256-KuGBQNXLpLqw9nNcH/q7kIm7GMfJKJyMKFwLfrGALPI=",
-      "url": "android-chrome-192x192.png"
-    },
-    {
-      "hash": "sha256-QWO/+AZeJwqzxTFnL6dCaJGzgnx092V1xyvD/Cg3EFk=",
-      "url": "android-chrome-512x512.png"
-    },
-    {
-      "hash": "sha256-M+F45w4gNi0ww8UJW1oKcZ6UoPWwDPSdUW7eI9O8QAM=",
-      "url": "apple-touch-icon.png"
-    },
-    {
       "hash": "sha256-SN79OUZ3u0BVZ7iFh7oe5isWIHMye+HysJTgLyCrW3I=",
       "url": "css/app.css"
     },
@@ -278,24 +266,8 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-g9jmjtC3LsLcO98vje/wizEemE1oOW4vpMvicCVbnz8=",
+      "hash": "sha256-pzPBacfCTIV0+T6Qb/pc++rFFDAkqtWYwMb5rvTW1LQ=",
       "url": "css/tw.min.css"
-    },
-    {
-      "hash": "sha256-MmstzhC2lkGEiqCDYQbV1Zrwx0SE1TmxM6dxml9Ovv0=",
-      "url": "data/hn.xml"
-    },
-    {
-      "hash": "sha256-QZMeO7OmbPuAjWE6YkugnH3zEt39AOeayGT4InuYuVQ=",
-      "url": "favicon-16x16.png"
-    },
-    {
-      "hash": "sha256-Do4iu2K/8dHgQrN9h8aGS2bzQZluVu1/30g4IcDS7N8=",
-      "url": "favicon-32x32.png"
-    },
-    {
-      "hash": "sha256-gNR5VWCI8EfMF0FH0kAfuP+ysby+qzcKGXwkjhToIII=",
-      "url": "favicon.ico"
     },
     {
       "hash": "sha256-sWP8Q31nkN0TqPaoIwPCk49vu48yAE7t3ONJyZRemi4=",
@@ -314,12 +286,32 @@ self.assetsManifest = {
       "url": "fonts/digital-7.woff2"
     },
     {
-      "hash": "sha256-WEB5tzJhVex0w/SrLlT3H1kpfztMomSWIBJHfi2HUmQ=",
-      "url": "icon-192.png"
+      "hash": "sha256-DeRx2kfQKlRqJP5nAl4xctUPz8N6g9qKjDv23u+kVAM=",
+      "url": "icons/android-chrome-192x192.png"
     },
     {
-      "hash": "sha256-21BH+ccXHrDYoNbnqZJQd7T7oKSE6atjYrND7AX17+A=",
-      "url": "icon-512.png"
+      "hash": "sha256-0pbRhAfWS2LD9E9VHBdevHUNFPACbOqOPZht9UAT+9A=",
+      "url": "icons/android-chrome-512x512.png"
+    },
+    {
+      "hash": "sha256-7OFuYDGhHFoYzS+ZjJBsAVotuQ2p1u+4sa66vqa5oDY=",
+      "url": "icons/apple-touch-icon.png"
+    },
+    {
+      "hash": "sha256-CahMlszbhxJ+19VWU6B6JvBBGrUWfWqkm0TmxpN1uLI=",
+      "url": "icons/favicon-16x16.png"
+    },
+    {
+      "hash": "sha256-7/1VicpkXG33X4kxv/7VryDLWUeNNyQ+Dog+nRsxrao=",
+      "url": "icons/favicon-32x32.png"
+    },
+    {
+      "hash": "sha256-mMUWIXgGJaujaoWDRZCS6ee1tk7wdYbjzcrwJNSh+Vw=",
+      "url": "icons/favicon.ico"
+    },
+    {
+      "hash": "sha256-ep4Hzh9zhmiZF2At3Fp1dQrYQuYF/3ZPZxc1KcGBvwQ=",
+      "url": "icons/site.webmanifest"
     },
     {
       "hash": "sha256-EOjXWMYBDRpMmFjJcYIoF2PYleCTpEG/Xle1g/nTa2E=",
@@ -342,20 +334,24 @@ self.assetsManifest = {
       "url": "img/hn.png"
     },
     {
+      "hash": "sha256-MYKJ6r1JtVg9YgaKEIga4QfFyaIBR+ehFXDrq14Wca8=",
+      "url": "img/icon-bg.png"
+    },
+    {
+      "hash": "sha256-rTimzi9u/O1mPKE8azI4kiHDu7eZc3MpkCEI3KWqDjE=",
+      "url": "img/icon-inv.png"
+    },
+    {
+      "hash": "sha256-mrGSmmtbMe9haM9BMNLbIVym+ZfNlPiJ3fCMAaw4BJI=",
+      "url": "img/icon.png"
+    },
+    {
       "hash": "sha256-MW6Nr5SWAJYvjfq3iFYqStxb4xDq1In3mM0lEfgarPQ=",
       "url": "img/info-icon.png"
     },
     {
-      "hash": "sha256-5ADxGnrdsuCxGlwz5kfoepRWNgYPMR14wcpajuKQfp0=",
-      "url": "img/logo-temp-inv.png"
-    },
-    {
-      "hash": "sha256-uH6gVrTLx061zUK5z+DGGNXi5Xg3Vysr+mIfXpNBDU0=",
-      "url": "img/logo-temp.png"
-    },
-    {
-      "hash": "sha256-7BCHCV9jT00oV5T6V2QQ2/Da2j9gjgIAB9F+kCYxnls=",
-      "url": "img/logo.png"
+      "hash": "sha256-eCD8VH+ceK0VBufizSEY5FuZ2kb6fPIoyxVh7Ec4m94=",
+      "url": "img/logo-bg.png"
     },
     {
       "hash": "sha256-0R4ksSNiVq4QFWII6uuCrG2sIz1eAt5aawjkq9cNnn8=",
@@ -410,7 +406,7 @@ self.assetsManifest = {
       "url": "img/welcome.png"
     },
     {
-      "hash": "sha256-CBldhmQBi2c+k3pnbmKAGTADSBhT0W2Y0665hFjbmB4=",
+      "hash": "sha256-k7Nl8fK3PsAXWpxDst29HelDPvwf/QJiL6JpsQDoYSE=",
       "url": "index.html"
     },
     {
@@ -418,8 +414,8 @@ self.assetsManifest = {
       "url": "js/app.js"
     },
     {
-      "hash": "sha256-MJ6ZStsP2UcxZngO5BtzwH4sA/KU8Mqo61C+Cczkzhw=",
-      "url": "manifest.webmanifest"
+      "hash": "sha256-p5MFRbRCLrRZ8YzDxb7T6KhTmB6vVZTtLoBT1DflCr8=",
+      "url": "js/localStorageHelper.js"
     },
     {
       "hash": "sha256-dLxVK4kT7RgIhU4lbaUc3S6s4gXDwyKt+Y9e9JyIi14=",
@@ -546,12 +542,8 @@ self.assetsManifest = {
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
     },
     {
-      "hash": "sha256-Owe1tW6iLmxtffx2UPTmoGHTakNVNiPWgyWcW6nX5zU=",
+      "hash": "sha256-c/ePWX06kW0i2MBoyIh1tRqBAxFDa06YliocDQKx9Qo=",
       "url": "music/data.json"
-    },
-    {
-      "hash": "sha256-ep4Hzh9zhmiZF2At3Fp1dQrYQuYF/3ZPZxc1KcGBvwQ=",
-      "url": "site.webmanifest"
     }
   ]
 };

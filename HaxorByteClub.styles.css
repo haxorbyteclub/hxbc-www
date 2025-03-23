@@ -399,9 +399,23 @@ textarea[b-rvka4hpuv4] {
 	border-bottom: 1.5px solid #000;
 }
 
+.li-icon[b-0duknsy223] {
+	background: #000;
+}
+
+.li-icon:hover[b-0duknsy223],
+.li-icon:focus[b-0duknsy223] {
+	background: #fff !important;
+	border-right: 1.5px solid black;
+}
+
 .li-icon:hover .logo[b-0duknsy223],
 .li-icon:focus .logo[b-0duknsy223] {
-	content: url('img/logo-temp-inv.png');
+	content: url('img/icon-inv.png');
+	background: #fff;
+	color: #fff;
+	outline: none;
+
 }
 
 .d58016c611e44b7f98e5827364779100[b-0duknsy223] {

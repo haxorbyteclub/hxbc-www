@@ -1,13 +1,19 @@
-﻿let zIndex = 100; // Start with an arbitrary value for z-index
+function saveToLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
 
+function getFromLocalStorage(key) {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
+}
 
-window.setupDragElement = function (id) {
-	var elmnt = document.getElementById(id);
-	var startX = 0, startY = 0, initialX = 0, initialY = 0;
-	var header = elmnt.querySelector('.title-bar');
-	header.onmousedown = dragMouseDown;
+function removeFromLocalStorage(key) {
+    localStorage.removeItem(key);
+}
 
-	const maxX = window.innerWidth - 400; // Assuming the width of the window is 300px
+function clearLocalStorage() {
+    localStorage.clear();
+}e window is 300px
 	const maxY = window.innerHeight - 400; // Assuming a rough height for the window
 	const randomX = Math.floor(Math.random() * Math.max(1, maxX));
 	const randomY = Math.floor(Math.random() * Math.max(1, maxY));
@@ -707,11 +713,11 @@ window.setupIconDrag = function () {
   .w-11\/12 {
     width: calc(11/12 * 100%);
   }
-  .w-\[80px\] {
-    width: 80px;
-  }
   .w-\[95px\] {
     width: 95px;
+  }
+  .w-\[110px\] {
+    width: 110px;
   }
   .w-\[250px\] {
     width: 250px;
@@ -735,6 +741,9 @@ window.setupIconDrag = function () {
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .resize {
     resize: both;

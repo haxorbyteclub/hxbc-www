@@ -580,11 +580,11 @@
   .w-11\/12 {
     width: calc(11/12 * 100%);
   }
-  .w-\[80px\] {
-    width: 80px;
-  }
   .w-\[95px\] {
     width: 95px;
+  }
+  .w-\[110px\] {
+    width: 110px;
   }
   .w-\[250px\] {
     width: 250px;
@@ -608,6 +608,9 @@
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .resize {
     resize: both;
