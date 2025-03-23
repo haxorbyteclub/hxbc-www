@@ -1,16 +1,9 @@
-# HaxorByteClub
+# 
 
-> a place for developers, hackers, nerds and all other tech enthusiasts to have a good time.
+[![Deploy to GitHub Pages](https://github.com/haxorbyteclub/hxbc-www/actions/workflows/main.yml/badge.svg)](https://github.com/haxorbyteclub/hxbc-www/actions/workflows/main.yml)
 
-
-<img src="https://raw.githubusercontent.com/nor0x/haxorbyteclub-www/refs/heads/main/web/HaxorByteClub/wwwroot/img/logo.png" alt="HaxorByteClub Logo" width="200"/>
-
+Enter HaxorByte.Club 🐻 – The Nexus for Tech Enthusiasts. Connect with Fellow Innovators, Share Ideas, and Dive into a World of Technology and Collaboration Tailored for Your Inner Geek
 
 
-<div align="center">
+<img src="https://raw.githubusercontent.com/haxorbyteclub/hxbc-www/refs/heads/main/wwwroot/img/logo-bg.png" alt="HaxorByteClub Logo" width="200"/>
 
-[![Build](https://github.com/nor0x/haxorbyteclub-www/actions/workflows/main.yml/badge.svg)](https://github.com/nor0x/haxorbyteclub-www/actions/workflows/main.yml)
-
-[![Deploy](https://github.com/nor0x/haxorbyteclub-www/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/nor0x/haxorbyteclub-www/actions/workflows/pages/pages-build-deployment)
-
-</div>
