@@ -2,9 +2,23 @@
 	border-bottom: 1.5px solid #000;
 }
 
+.li-icon {
+	background: #000;
+}
+
+.li-icon:hover,
+.li-icon:focus {
+	background: #fff !important;
+	border-right: 1.5px solid black;
+}
+
 .li-icon:hover .logo,
 .li-icon:focus .logo {
-	content: url('img/logo-temp-inv.png');
+	content: url('img/icon-inv.png');
+	background: #fff;
+	color: #fff;
+	outline: none;
+
 }
 
 .d58016c611e44b7f98e5827364779100 {
