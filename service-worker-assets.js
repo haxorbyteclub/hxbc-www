@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "NUL9CQKZ",
+  "version": "rMAEvjaq",
   "assets": [
     {
       "hash": "sha256-nQ4U6TiO9Sod7Q6qd3/HXRWZfB1Xvxse34TZ/Adccm4=",
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.vla6lw9ir2.wasm"
     },
     {
-      "hash": "sha256-K8hZoSfxVCH9pSHOA5S6Geo3oSS4kngx/CcgkVO5s4o=",
-      "url": "_framework/HaxorByteClub.pn8g0ufmw8.wasm"
+      "hash": "sha256-hBtAmwJitikeYNqmkLmcBgtzae4qFTCSebAQFrEgRCw=",
+      "url": "_framework/HaxorByteClub.wpa956wq5s.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-Fpr5JUkhIlJoYwBM+vlx5bPeAZQ5ZcCGcZN7HTZdUG4=",
+      "hash": "sha256-obWCN86/O0a3BKh2Ij/YgkkM1z6RsNYd0M9v//PHDgs=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -539,7 +539,7 @@ self.assetsManifest = {
     },
     {
       "hash": "sha256-QIXyKycBas599Q9S4Dc4Fr+/g2XNtdM3zVsskoN4Jjc=",
-      "url": "music/data.json"
+      "url": "music/music.json"
     }
   ]
 };
