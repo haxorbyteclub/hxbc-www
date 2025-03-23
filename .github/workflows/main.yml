@@ -21,12 +21,12 @@ jobs:
       # set base href
       - name: Replace base-tag in index.html
         run: |
-          sed -i 's/<base href="\/" \/>/<base href="\/haxorbyteclub-www\/" \/>/g' web/HaxorByteClub/wwwroot/index.html
-      - name: Get Version from web\HaxorByteClub\version.txt
+          sed -i 's/<base href="\/" \/>/<base href="\/haxorbyteclub-www\/" \/>/g' wwwroot/index.html
+      - name: Get Version from version.txt
         id: get_version
         shell: pwsh
         run: |
-          $version = Get-Content web/HaxorByteClub/version.txt
+          $version = Get-Content version.txt
           $env:CURRENT_VERSION = $version.ToString()
           echo "::set-output name=CURRENT_VERSION::$env:CURRENT_VERSION"
 
@@ -36,12 +36,10 @@ jobs:
 
       - name: Replace ###COMMIT### in AboutVersion.razor
         run: |
-          sed -i "s/###COMMIT###/${GITHUB_SHA}/g" web/HaxorByteClub/Apps/AboutVersion.razor
+          sed -i "s/###COMMIT###/${GITHUB_SHA}/g" Apps/AboutVersion.razor
 
       - name: build Tailwind minified CSS
         run: |
-          cd web
-          cd HaxorByteClub
           npm install -D tailwindcss
           npx tailwindcss -i ./wwwroot/css/tw.css -o ./wwwroot/css/tw.min.css
 
@@ -49,15 +47,13 @@ jobs:
       # add build hash to all css, js and json files in wwwroot and subfolders
       - name: Add build hash to all css, js and json files
         run: |
-          cd web
-          cd HaxorByteClub
           npm install -D hashmark
           npx hashmark ./wwwroot/**/*.css ./wwwroot/**/*.js ./wwwroot/**/*.json
 
 
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
-        run: dotnet publish web/HaxorByteClub/HaxorByteClub.csproj -c Release -o release --nologo
+        run: dotnet publish HaxorByteClub.csproj -c Release -o release --nologo
 
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html

@@ -9,3 +9,4 @@ public record Track(string Id, string Name, string Artist, string Duration, stri
 
 
 public record Wallpaper(string Id, string Name, string Url);
+

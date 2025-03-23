@@ -44,7 +44,7 @@
 
 	private async Task<List<Article>> FetchHackerNewsRss()
 	{
-		var rssFeed = await _httpClient.GetStringAsync("data/hn.xml");
+		var rssFeed = await _httpClient.GetStringAsync(Constants.BaseUrl + Constants.HNEndpoint);
 		var doc = XDocument.Parse(rssFeed);
 		var items = doc.Descendants("item")
 		.Select(item => new Article
