@@ -11,5 +11,6 @@ public static class Constants
 
 	public const string HNEndpoint = "/api/v0/hackernews";
 	public const string GuestbookEndpoint = "/api/v0/guestbook";
+	public const string TracksEndpoint = "/api/v0/music";
 }
 
