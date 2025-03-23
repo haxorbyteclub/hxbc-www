@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "xr6rmh68",
+  "version": "NUL9CQKZ",
   "assets": [
     {
       "hash": "sha256-nQ4U6TiO9Sod7Q6qd3/HXRWZfB1Xvxse34TZ/Adccm4=",
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.vla6lw9ir2.wasm"
     },
     {
-      "hash": "sha256-+cZ6gGkzl7YX5quTyfB8dX2AD+Erkn8jMQylzL+Zjck=",
-      "url": "_framework/HaxorByteClub.xq3kztal5k.wasm"
+      "hash": "sha256-K8hZoSfxVCH9pSHOA5S6Geo3oSS4kngx/CcgkVO5s4o=",
+      "url": "_framework/HaxorByteClub.pn8g0ufmw8.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-zfstyQ4ajG7AHv7ciEGKhPeflICPf6mr9Isx1GDS+YY=",
+      "hash": "sha256-Fpr5JUkhIlJoYwBM+vlx5bPeAZQ5ZcCGcZN7HTZdUG4=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -414,10 +414,6 @@ self.assetsManifest = {
       "url": "js/app.js"
     },
     {
-      "hash": "sha256-p5MFRbRCLrRZ8YzDxb7T6KhTmB6vVZTtLoBT1DflCr8=",
-      "url": "js/localStorageHelper.js"
-    },
-    {
       "hash": "sha256-dLxVK4kT7RgIhU4lbaUc3S6s4gXDwyKt+Y9e9JyIi14=",
       "url": "music/AUTUMN-Soulful_Relaxed_Lounge.mp3"
     },
@@ -542,7 +538,7 @@ self.assetsManifest = {
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
     },
     {
-      "hash": "sha256-c/ePWX06kW0i2MBoyIh1tRqBAxFDa06YliocDQKx9Qo=",
+      "hash": "sha256-QIXyKycBas599Q9S4Dc4Fr+/g2XNtdM3zVsskoN4Jjc=",
       "url": "music/data.json"
     }
   ]
