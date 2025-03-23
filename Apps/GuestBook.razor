@@ -13,21 +13,29 @@
 	<div class="separator"></div>
 	<div class=" text-sm window-pane">
 		<div class="max-h-[400px] overflow-y-auto">
-			@foreach (var message in _guestBookService.GetMessages().OrderByDescending(m => m.Date))
+			@if (_messages is not null)
 			{
-				<div class="standard-dialog center scale-down text-xs w-11/12 mx-auto my-2">
-					<h1 class="dialog-text uppercase"><span class="font-black">@message.User</span> -
-						@message.Date.ToShortDateString()</h1>
-					<p class="dialog-text">@message.Text</p>
-				</div>
+				@foreach (var message in _messages.OrderByDescending(m => m.Date))
+				{
+					<div class="standard-dialog center scale-down text-xs w-11/12 mx-auto my-2">
+						<h1 class="dialog-text uppercase"><span class="font-black">@message.User</span> -
+							@message.Date.ToShortDateString()</h1>
+						<p class="dialog-text">@message.Text</p>
+					</div>
+				}
+			}
+			else
+			{
+				<p>Loading...</p>
 			}
 		</div>
 	</div>
 </div>
 @code {
+	List<Message>? _messages;
 	protected override void OnInitialized()
 	{
-		_guestBookService.MessagesChanged += OnMessagesChanged;
+		//_guestBookService.MessagesChanged += OnMessagesChanged;
 	}
 
 	private void OnMessagesChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -37,5 +45,14 @@
 
 	private async Task Submit()
 	{
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			_messages = await _guestBookService.GetMessages();
+			await InvokeAsync(StateHasChanged);
+		}
 	}
 }

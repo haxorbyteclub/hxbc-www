@@ -1,6 +1,16 @@
 
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Json;
+using System.Net.Http.Headers;
+using System.Text.Encodings.Web;
 using HaxorByteClub.Models;
 
 namespace HaxorByteClub.Services;
@@ -15,52 +25,41 @@ public class GuestBookService
 		remove { _messages.CollectionChanged -= value; }
 	}
 
-	public void AddMessage(Message message)
+	public async Task AddMessage(Message message)
 	{
-		if (message.Date == DateTime.MinValue)
-		{
-			message.Date = DateTime.Now;
-		}
 		_messages.Add(message);
+		var json = JsonSerializer.Serialize(message, new JsonSerializerOptions
+		{
+			PropertyNameCaseInsensitive = true,
+			Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+			Converters =
+			{
+				new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
+			}
+		});
+		var content = new StringContent(json, Encoding.UTF8, "application/json");
+		await _httpClient.PostAsync(Constants.BaseUrl + Constants.GuestbookEndpoint, content);
 	}
 
-	public IEnumerable<Message> GetMessages()
+	public async Task<List<Message>> GetMessages()
 	{
-		return _messages;
+		var guestbookString = await _httpClient.GetStringAsync(Constants.BaseUrl + Constants.GuestbookEndpoint);
+		var guestbook = JsonSerializer.Deserialize<List<Message>>(guestbookString, new JsonSerializerOptions
+		{
+			PropertyNameCaseInsensitive = true,
+			Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+			Converters =
+			{
+				new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
+			}
+		});
+
+		return guestbook;
 	}
 
-	public GuestBookService()
+	public GuestBookService(HttpClient client)
 	{
-		//5 demo messages
-		_messages.Add(new Message { Text = "Hello World!", User = "Alice", Date = DateTime.Now });
-		_messages.Add(new Message { Text = "Hi!", User = "Bob", Date = DateTime.Now });
-		_messages.Add(new Message
-		{
-			Text = "Hey!",
-			User = "Charlie",
-		});
-		_messages.Add(new Message
-		{
-			Text = "Hi there!",
-			User = "David",
-			Date = DateTime.Now
-		});
-
-		//with more text
-		_messages.Add(new Message
-		{
-			Text = "Hello World! This is a longer message to test the layout of the guest book. It should wrap around and look good on the page. Let's see how it goes!",
-			User = "Eve",
-			Date = DateTime.Now
-		});
-
-		//another one
-		_messages.Add(new Message
-		{
-			Text = "Hello World!",
-			User = "Alice",
-			Date = DateTime.Now
-		});
-
+		_httpClient = client;
 	}
+	private readonly HttpClient _httpClient;
 }
