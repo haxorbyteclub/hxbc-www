@@ -32,7 +32,7 @@ jobs:
 
       - name: Replace ###VERSION### in AboutVersion.razor
         run: |
-          sed -i "s/###VERSION###/${{ steps.get_version.outputs.CURRENT_VERSION }}/g" web/HaxorByteClub/Apps/AboutVersion.razor
+          sed -i "s/###VERSION###/${{ steps.get_version.outputs.CURRENT_VERSION }}/g" Apps/AboutVersion.razor
 
       - name: Replace ###COMMIT### in AboutVersion.razor
         run: |
