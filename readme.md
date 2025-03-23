@@ -1,4 +1,4 @@
-# 
+# HaxorByteClub
 
 [![Deploy to GitHub Pages](https://github.com/haxorbyteclub/hxbc-www/actions/workflows/main.yml/badge.svg)](https://github.com/haxorbyteclub/hxbc-www/actions/workflows/main.yml)
 
