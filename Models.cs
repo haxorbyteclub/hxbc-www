@@ -1,4 +1,4 @@
-namespace HaxorByteClub;
+﻿namespace HaxorByteClub;
 
 public record Track(string Id, string Name, string Artist, string Duration, string Genre, string Url)
 {
@@ -10,3 +10,15 @@ public record Track(string Id, string Name, string Artist, string Duration, stri
 
 public record Wallpaper(string Id, string Name, string Url);
 
+public enum AppType
+{
+	Unknown,
+	HackerNews,
+	GuestBook,
+	AudioPlayer,
+	DisplayProperties,
+	ContactForm,
+	Editor,
+	Welcome,
+	AboutVersion
+}

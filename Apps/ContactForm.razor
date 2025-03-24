@@ -8,7 +8,7 @@
 		<button aria-label="Close" class="close" @onclick="Remove"></button>
 		<h1 class="title">Send love!
 		</h1>
-				<button aria-label="Resize" disabled class="hidden"></button>
+		<button aria-label="Resize" disabled class="hidden"></button>
 
 	</div>
 	<div class="separator"></div>
@@ -18,7 +18,11 @@
 
 			<div class="standard-dialog center scale-down text-xs w-9/12 mx-auto">
 				<h1 class="dialog-text uppercase font-black">Get in touch</h1>
-				<p class="dialog-text font-geneva">Let's talk! Your messages are collected in our guestbook.</p>
+				<p class="dialog-text font-geneva">Let's talk! Your messages are collected in our
+					<span class="cursor-pointer underline" @onclick="ShowGuestBook">
+						guestbook
+					</span>.
+				</p>
 			</div>
 
 
@@ -51,5 +55,10 @@
 		});
 		Nickname = string.Empty;
 		Message = string.Empty;
+	}
+
+	private void ShowGuestBook()
+	{
+		WeakReferenceMessenger.Default.Send(new AddAppMessage(AppType.GuestBook, ""));
 	}
 }

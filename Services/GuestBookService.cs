@@ -1,4 +1,4 @@
-
+﻿
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
@@ -41,7 +41,21 @@ public class GuestBookService
 		await _httpClient.PostAsync(Constants.BaseUrl + Constants.GuestbookEndpoint, content);
 	}
 
-	public async Task<List<Message>> GetMessages()
+	public async Task<List<Message>> GetMessages(bool forceRefresh = false)
+	{
+		if (_messages.Count == 0 || forceRefresh)
+		{
+			var guestbook = await GetGuestbook();
+			_messages.Clear();
+			foreach (var message in guestbook)
+			{
+				_messages.Add(message);
+			}
+		}
+		return _messages.ToList();
+	}
+
+	private async Task<List<Message>> GetGuestbook()
 	{
 		var guestbookString = await _httpClient.GetStringAsync(Constants.BaseUrl + Constants.GuestbookEndpoint);
 		var guestbook = JsonSerializer.Deserialize<List<Message>>(guestbookString, new JsonSerializerOptions

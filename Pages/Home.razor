@@ -109,6 +109,7 @@
 	{
 		base.OnInitialized();
 		WeakReferenceMessenger.Default.Register<RemoveAppMessage>(this, OnRemoveApp);
+		WeakReferenceMessenger.Default.Register<AddAppMessage>(this, OnAddApp);
 		WeakReferenceMessenger.Default.Register<ShowEditorMessage>(this, OnShowEditorMessage);
 
 	}
@@ -228,6 +229,41 @@
 			_apps.Remove(app);
 			StateHasChanged();
 		}
+	}
+
+	void OnAddApp(object sender, AddAppMessage message)
+	{
+		switch (message.Type)
+		{
+			case AppType.AudioPlayer:
+				ToggleAudioPlayer();
+				break;
+			case AppType.ContactForm:
+				ToggleContactForm();
+				break;
+			case AppType.GuestBook:
+				ToggleGuestBook();
+				break;
+			case AppType.HackerNews:
+				ToggleHackerNews();
+				break;
+			case AppType.Welcome:
+				ToggleAbout();
+				break;
+			case AppType.AboutVersion:
+				ToggleAboutVersion();
+				break;
+			case AppType.DisplayProperties:
+				ToggleDisplayProperties();
+				break;
+			case AppType.Editor:
+				ToggleEditor();
+				break;
+			default:
+				break;
+		}
+        StateHasChanged();
+
 	}
 
 	private async void OnShowEditorMessage(object recipient, ShowEditorMessage message)

@@ -1,4 +1,4 @@
-namespace HaxorByteClub;
+﻿namespace HaxorByteClub;
 
 public static class Constants
 {

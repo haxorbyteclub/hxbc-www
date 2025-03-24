@@ -32,27 +32,26 @@
 	</div>
 </div>
 @code {
-	List<Message>? _messages;
-	protected override void OnInitialized()
-	{
-		//_guestBookService.MessagesChanged += OnMessagesChanged;
-	}
+    List<Message>? _messages;
+    protected override void OnInitialized()
+    {
+        _guestBookService.MessagesChanged += OnMessagesChanged;
+    }
 
-	private void OnMessagesChanged(object sender, NotifyCollectionChangedEventArgs e)
-	{
-		InvokeAsync(StateHasChanged);
-	}
+    private async void OnMessagesChanged(object sender, NotifyCollectionChangedEventArgs e)
+    {
+        _messages = await _guestBookService.GetMessages();
+        InvokeAsync(StateHasChanged);
+    }
 
-	private async Task Submit()
-	{
-	}
 
-	protected override async Task OnAfterRenderAsync(bool firstRender)
-	{
-		if (firstRender)
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
 		{
-			_messages = await _guestBookService.GetMessages();
-			await InvokeAsync(StateHasChanged);
+		    _messages = await _guestBookService.GetMessages(true);
+		    await InvokeAsync(StateHasChanged);
 		}
 	}
 }
