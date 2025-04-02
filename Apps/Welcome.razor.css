@@ -1,9 +1,11 @@
 ﻿.window {
-	width: 400px;
+	width: 420px;
 }
 
 .window-pane {
 	height: auto;
+	padding: 0;
+	padding-bottom:1rem;
 }
 
 .welcome-image {

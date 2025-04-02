@@ -11,7 +11,12 @@
 	},
 	{
 		"Id": "c3be1b76914e4e168b8b596ca3aa607c",
-		"Name": "Dithered Bliss",
+		"Name": "Blissthered",
 		"Url": "img/wallpapers/bliss.png"
+	},
+	{
+		"Id": "f7b04814bfbf45e3bda42dcc277b4cfb",
+		"Name": "Bear Vibe Coding",
+		"Url": "img/wallpapers/hxbc-vibe-coding.png"
 	}
 ]
