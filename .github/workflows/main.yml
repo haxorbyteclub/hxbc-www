@@ -49,8 +49,12 @@ jobs:
           npm install -D hashmark
           npx hashmark ./wwwroot/**/*.css ./wwwroot/**/*.js ./wwwroot/**/*.json
 
+      - name: Restore NuGet packages
+        run: dotnet restore HaxorByteClub.sln
+
       - name: Get list of all nugets and their versions
         run: |
+        
           dotnet list HaxorByteClub.csproj package --include-transitive > credits.txt
           sed -i 's/\\r\\n/\\n/g' credits.txt
           sed -i 's/\\r/\\n/g' credits.txt
@@ -60,7 +64,7 @@ jobs:
 
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
-        run: dotnet publish HaxorByteClub.csproj -c Release -o release --nologo
+        run: dotnet publish HaxorByteClub.csproj -c Release -o release --nologo --no-restore
 
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html
