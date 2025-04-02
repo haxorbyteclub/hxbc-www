@@ -382,11 +382,13 @@ textarea[b-rvka4hpuv4] {
 }
 /* /Apps/Welcome.razor.rz.scp.css */
 .window[b-878u4gjg4v] {
-	width: 400px;
+	width: 420px;
 }
 
 .window-pane[b-878u4gjg4v] {
 	height: auto;
+	padding: 0;
+	padding-bottom:1rem;
 }
 
 .welcome-image[b-878u4gjg4v] {
@@ -430,6 +432,11 @@ textarea[b-rvka4hpuv4] {
 
 .c3be1b76914e4e168b8b596ca3aa607c[b-0duknsy223] {
 	background-image: url('img/wallpapers/bliss.png') !important;
+	background-size: cover !important;
+}
+
+.f7b04814bfbf45e3bda42dcc277b4cfb[b-0duknsy223] {
+	background-image: url('img/wallpapers/hxbc-vibe-coding.png') !important;
 	background-size: cover !important;
 }
 

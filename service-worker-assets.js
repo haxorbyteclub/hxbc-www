@@ -1,12 +1,12 @@
 self.assetsManifest = {
-  "version": "q/0/WLcM",
+  "version": "pgI8bKSa",
   "assets": [
     {
-      "hash": "sha256-kMjTA3GD6CrLX60oHjYvYY5xWzmBgUUogv94eaQs1Nc=",
+      "hash": "sha256-lcg9gr0UuGWegdiyd1TLHN3AFv+yOwjqYU9gs9ahq9k=",
       "url": "**/*.json"
     },
     {
-      "hash": "sha256-nQ4U6TiO9Sod7Q6qd3/HXRWZfB1Xvxse34TZ/Adccm4=",
+      "hash": "sha256-zX0+VSPfy2jHO2oxEKCeNgjZ62ACs7nkgEXmlMIzDmg=",
       "url": "HaxorByteClub.styles.css"
     },
     {
@@ -22,8 +22,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.vla6lw9ir2.wasm"
     },
     {
-      "hash": "sha256-9s2/WeHogKc5Xs/BkU4M6mo1lEzzZrWBch41/CSK0Ow=",
-      "url": "_framework/HaxorByteClub.avxa0948qg.wasm"
+      "hash": "sha256-qPHXrTpv+3vIB8L9s1yjAJNADifERdAXl1Uazs5aTIk=",
+      "url": "_framework/HaxorByteClub.o0ci1kps9b.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -222,7 +222,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-CoP1++/iMsRB7tAbbpUVUrGl7i+41CJ3E/86/5ZzMCE=",
+      "hash": "sha256-G3fCb+gIXmcFRcVyh1PMY2ZTNvK6usghpqV3HnHzt9o=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -258,7 +258,7 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.lfu7j35m59.dat"
     },
     {
-      "hash": "sha256-SN79OUZ3u0BVZ7iFh7oe5isWIHMye+HysJTgLyCrW3I=",
+      "hash": "sha256-7h8FP1PlsDmg4o1CH/MT0zC3+1nWNQhMQr6wTL9x9h0=",
       "url": "css/app.css"
     },
     {
@@ -270,7 +270,7 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-qoDpH7ynBb6v412cXd5cQnYo4P/JxYKIF9X2kh3k9aI=",
+      "hash": "sha256-W0EsrHTavk1Wv3cX6aCG/USwhZtEqqa9XpU1ppwfkPE=",
       "url": "css/tw.min.css"
     },
     {
@@ -390,7 +390,7 @@ self.assetsManifest = {
       "url": "img/wallpapers/bliss.png"
     },
     {
-      "hash": "sha256-9gFQkRXEXN3/1DFh9F4+w+/vwNakhWF51DwLgYZkRj8=",
+      "hash": "sha256-Smh2D49+a5ILXQtvA3xw6vLxUVZwB9nKxmNYOIejLPw=",
       "url": "img/wallpapers/data.json"
     },
     {
@@ -400,6 +400,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-SwHa6UmeGlVUYZ5q91i4EnbsgwDD7banyXaln3SZv0w=",
       "url": "img/wallpapers/dots-dots-dots.svg"
+    },
+    {
+      "hash": "sha256-kiEV0xC/NnWKgova7RqILcxyxgU+v0gX0c+nhF0RII4=",
+      "url": "img/wallpapers/hxbc-vibe-coding.png"
     },
     {
       "hash": "sha256-Mt9C0ym78ClnHDfzso4GGmK6Wa8zGNgin9SUwgAWZ50=",
