@@ -1,4 +1,4 @@
-﻿let zIndex = 100; // Start with an arbitrary value for z-index
+@import "tailwindcss";/ Start with an arbitrary value for z-index
 
 
 window.setupDragElement = function (id) {
