@@ -43,12 +43,19 @@ jobs:
           npm install -D tailwindcss
           npx tailwindcss -i ./wwwroot/css/tw.css -o ./wwwroot/css/tw.min.css
 
-      #TODO:
       # add build hash to all css, js and json files in wwwroot and subfolders
       - name: Add build hash to all css, js and json files
         run: |
           npm install -D hashmark
           npx hashmark ./wwwroot/**/*.css ./wwwroot/**/*.js ./wwwroot/**/*.json
+
+      - name: Get list of all nugets and their versions
+        run: |
+          dotnet list HaxorByteClub.csproj package --include-transitive > credits.txt
+          sed -i 's/\\r\\n/\\n/g' credits.txt
+          sed -i 's/\\r/\\n/g' credits.txt
+          sed -i 's/\\n/\\r\\n/g' credits.txt
+          sed -i 's/###CREDITS###/$(cat credits.txt)/g' Apps/AboutVersion.razor
 
 
       # publishes Blazor project to the release-folder
