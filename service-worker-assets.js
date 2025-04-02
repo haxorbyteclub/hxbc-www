@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "cuFh3Z8b",
+  "version": "f9fpThEF",
   "assets": [
     {
       "hash": "sha256-W0EsrHTavk1Wv3cX6aCG/USwhZtEqqa9XpU1ppwfkPE=",
@@ -22,8 +22,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.vla6lw9ir2.wasm"
     },
     {
-      "hash": "sha256-P+9Bmwb04Ct7rtA1yKpKbte+vWcNhyZhUhh4YnX7YtM=",
-      "url": "_framework/HaxorByteClub.jvtknlvhtp.wasm"
+      "hash": "sha256-UyobVkP06tTjIPHRMYHlaobMVB/ZY9Aj7rAW2cura4E=",
+      "url": "_framework/HaxorByteClub.l21pk0jxyz.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -222,7 +222,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-8YwSWE4tPWlF6bldfJZEspMxBHneq4AqZe0PMLot9Yk=",
+      "hash": "sha256-10liX0/znNuKxImir6tZeIyXfpTTMs5ixmODLACT3kA=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -410,7 +410,7 @@ self.assetsManifest = {
       "url": "img/wallpapers/modular-brickwork.png"
     },
     {
-      "hash": "sha256-RVFKsHxbMftAuHgzCw4AVtoHyYCI4LLyumXhERKSdgk=",
+      "hash": "sha256-ttPoBHaQCvwJNFXJIbWQQwcw8vR89mHwdsWtcIsSCVI=",
       "url": "img/welcome.jpg"
     },
     {
