@@ -701,6 +701,9 @@
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
   .text-center {
     text-align: center;
   }
