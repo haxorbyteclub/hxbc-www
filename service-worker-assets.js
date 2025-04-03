@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "WZKcIlVq",
+  "version": "0h5hq1OY",
   "assets": [
     {
-      "hash": "sha256-W0EsrHTavk1Wv3cX6aCG/USwhZtEqqa9XpU1ppwfkPE=",
+      "hash": "sha256-L90F8QxSOJ9gSsfD17ozoVLHgzG3NmnnSpIuxzAN7/s=",
       "url": "**/*.json"
     },
     {
@@ -22,8 +22,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.vla6lw9ir2.wasm"
     },
     {
-      "hash": "sha256-i/F+fzr7cA2QAiw0+vD3qPEsIao3s4evBTHsYRfSSHo=",
-      "url": "_framework/HaxorByteClub.t68gtdbxgq.wasm"
+      "hash": "sha256-FvoMneSJZsehTW3jbu0Opih+/x5W24aMjJzQHwarlbg=",
+      "url": "_framework/HaxorByteClub.q4w9325ag4.wasm"
     },
     {
       "hash": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
@@ -222,7 +222,7 @@ self.assetsManifest = {
       "url": "_framework/System.q2jl4ndpi3.wasm"
     },
     {
-      "hash": "sha256-VnxO3WvySJ+C+G9MzhgcMzcVKFbfJauByEEQsA7mpMo=",
+      "hash": "sha256-fK7wYIRoBcHO5iqhz6KazIf3PDldHi+/f5Jvj/TMjAc=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -260,10 +260,6 @@ self.assetsManifest = {
     {
       "hash": "sha256-7h8FP1PlsDmg4o1CH/MT0zC3+1nWNQhMQr6wTL9x9h0=",
       "url": "css/app.css"
-    },
-    {
-      "hash": "sha256-5trOhcka4lQ63m/L4W1VBkmyL6TOYVp8jan+eb2k15M=",
-      "url": "css/system.css"
     },
     {
       "hash": "sha256-lE5uEsAGemdng2p4rWxAlbgp+Wa0TzO8lc/vFAGrPBA=",
@@ -414,7 +410,7 @@ self.assetsManifest = {
       "url": "img/welcome.jpg"
     },
     {
-      "hash": "sha256-AsYej/klL4eRcww78Mtp83XHPTLU1c7d2yO5x2SzpM8=",
+      "hash": "sha256-+m3I0CZ1AfsK3X9nKpMAQ/uXkl/4ClQZ/sTCmREVUCI=",
       "url": "index.html"
     },
     {
@@ -544,6 +540,42 @@ self.assetsManifest = {
     {
       "hash": "sha256-JhvMLDzMPFte3hI8l9DIZs9SauWx+kTGDb5kl+vzuEQ=",
       "url": "music/ZERO-Deep-House_Vibrant_Warm.mp3"
+    },
+    {
+      "hash": "sha256-7De+oFDgf8gQ5dZn1MThW41myBSj2TlEbOHUuSZo3hc=",
+      "url": "systemcss/fonts/ChiKareGo2.woff"
+    },
+    {
+      "hash": "sha256-Jumlo7FRs/rYAzP/5zi6GOWrjJDBXMGdEwRIEQjxGLk=",
+      "url": "systemcss/fonts/ChiKareGo2.woff2"
+    },
+    {
+      "hash": "sha256-QEWQdPbYBqm9WHcV+8sAgos69nWZ87HSafWfNXp0bLE=",
+      "url": "systemcss/fonts/ChicagoFLF.woff"
+    },
+    {
+      "hash": "sha256-XSXc7B+JhMXgrtOYp8kL6N6Gu0+bz+1Ofh4sPBO350I=",
+      "url": "systemcss/fonts/ChicagoFLF.woff2"
+    },
+    {
+      "hash": "sha256-2DuubEkRDnLSfXkL7GqnYY0Vr6ZRIbuYdxHcr+hyV2s=",
+      "url": "systemcss/fonts/FindersKeepers.woff"
+    },
+    {
+      "hash": "sha256-YjcxvDKNMbReiwBf5Nzm4VTDKyP4VWcbqaWpLE6a9eE=",
+      "url": "systemcss/fonts/FindersKeepers.woff2"
+    },
+    {
+      "hash": "sha256-DiZMtYT0+WbpFV1QZ4v0TuQGAudSKMRfopeja53J+OM=",
+      "url": "systemcss/fonts/monaco.woff"
+    },
+    {
+      "hash": "sha256-oj7F8S+Xl28wYvkM/VYY0i665uaGGYsto3bzMpZ4Fxw=",
+      "url": "systemcss/fonts/monaco.woff2"
+    },
+    {
+      "hash": "sha256-rRJFun9Js1ZeLQEeCnmaoEtqX8/dCvAA7CwvaoPOKKw=",
+      "url": "systemcss/style.css"
     }
   ]
 };
