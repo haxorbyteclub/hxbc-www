@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "HaxorByteClub",
   "resources": {
-    "hash": "sha256-EBCLcIMRkEIUj+Yi3S3raPxhHdGz4hQYPLzhiqsSSuA=",
+    "hash": "sha256-a03xWBecocdd6DfKxqIdf0dBK4hxL4dASMKwYYFPepg=",
     "fingerprinting": {
       "AsyncAwaitBestPractices.vkrfhkzgha.wasm": "AsyncAwaitBestPractices.wasm",
       "CommunityToolkit.Mvvm.kg1oa3i8ak.wasm": "CommunityToolkit.Mvvm.wasm",
@@ -48,7 +48,7 @@
       "System.Xml.XDocument.7i6b8j33h6.wasm": "System.Xml.XDocument.wasm",
       "System.skovpw3515.wasm": "System.wasm",
       "System.Private.CoreLib.38ndta0v1b.wasm": "System.Private.CoreLib.wasm",
-      "HaxorByteClub.ijxszo1g8t.wasm": "HaxorByteClub.wasm",
+      "HaxorByteClub.7deiqvq86h.wasm": "HaxorByteClub.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.ylx55wmvq1.js": "dotnet.native.js",
       "dotnet.native.xxmhv0y7iz.wasm": "dotnet.native.wasm",
@@ -119,7 +119,7 @@
       "System.Xml.Linq.iuz7rctiys.wasm": "sha256-xlO/20lwAursbGwIXebBfGkfdGOw9HkYa2QSlVGhjUA=",
       "System.Xml.XDocument.7i6b8j33h6.wasm": "sha256-Ueb/SxOakTyp1RvoaKWsMnX1HIcB/VN5e8E6ZhNQJoE=",
       "System.skovpw3515.wasm": "sha256-LDcVgBCpIylTERddH+EkvfEQDefLo1BQz0cA551vxL4=",
-      "HaxorByteClub.ijxszo1g8t.wasm": "sha256-zgsEWqKDs39N1zQqbv4VWi6TT6I/slKSscCkFoCn2tg="
+      "HaxorByteClub.7deiqvq86h.wasm": "sha256-xRB7jih/9ff/iffdbjdrmSz+8Oo4TGEA3dDV6/Sbaeo="
     }
   },
   "cacheBootResources": true,
