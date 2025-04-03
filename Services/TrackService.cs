@@ -1,6 +1,4 @@
-using System.Net.Http.Json;
-using System.Text.Json;
-using YoutubeExplode;
+﻿using System.Net.Http.Json;
 
 namespace HaxorByteClub;
 

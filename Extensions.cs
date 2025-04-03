@@ -1,18 +1,20 @@
-namespace HaxorByteClub;
+﻿namespace HaxorByteClub;
 
 public static class Extensions
 {
-	public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
-	{
-		var sourceArray = source.ToArray();
-		for (int i = 0; i < sourceArray.Length - 1; i++)
-		{
-			int j = Random.Shared.Next(i, sourceArray.Length);
-			yield return sourceArray[j];
-			sourceArray[j] = sourceArray[i];
-		}
-		yield return sourceArray[^1];
-	}
+	//Shuffle is now part of .NET 10
+	//https://github.com/dotnet/runtime/pull/112173
+	//public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
+	//{
+	//	var sourceArray = source.ToArray();
+	//	for (int i = 0; i < sourceArray.Length - 1; i++)
+	//	{
+	//		int j = Random.Shared.Next(i, sourceArray.Length);
+	//		yield return sourceArray[j];
+	//		sourceArray[j] = sourceArray[i];
+	//	}
+	//	yield return sourceArray[^1];
+	//}
 
 	public static string FirstCharToUpper(this string input) =>
 	input switch
