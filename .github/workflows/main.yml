@@ -61,10 +61,9 @@ jobs:
           sed -i 's/\\n/\\r\\n/g' credits.txt
           sed -i 's/###CREDITS###/$(cat credits.txt)/g' Apps/AboutVersion.razor
 
-
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
-        run: dotnet publish HaxorByteClub.csproj -c Release -o release --nologo --no-restore
+        run: dotnet publish HaxorByteClub.csproj -c Release -o release --nologo
 
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html
