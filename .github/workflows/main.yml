@@ -58,8 +58,8 @@ jobs:
           sed -i 's/\\r\\n/\\n/g' credits.txt
           sed -i 's/\\r/\\n/g' credits.txt
           sed -i 's/\\n/\\r\\n/g' credits.txt
-          credits=$(cat credits.txt)
-          sed -i "s/###CREDITS###/${credits}/g" Apps/AboutVersion.razor
+          credits=$(cat credits.txt | sed 's/[&/\]/\\&/g') # Escape special characters
+          sed -i "s|###CREDITS###|${credits}|g" Apps/AboutVersion.razor
 
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
