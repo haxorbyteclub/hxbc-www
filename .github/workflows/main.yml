@@ -54,12 +54,12 @@ jobs:
 
       - name: Get list of all nugets and their versions
         run: |
-        
           dotnet list HaxorByteClub.csproj package --include-transitive > credits.txt
           sed -i 's/\\r\\n/\\n/g' credits.txt
           sed -i 's/\\r/\\n/g' credits.txt
           sed -i 's/\\n/\\r\\n/g' credits.txt
-          sed -i 's/###CREDITS###/$(cat credits.txt)/g' Apps/AboutVersion.razor
+          credits=$(cat credits.txt)
+          sed -i "s/###CREDITS###/${credits}/g" Apps/AboutVersion.razor
 
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
