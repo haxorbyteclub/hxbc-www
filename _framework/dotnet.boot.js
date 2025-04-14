@@ -1,7 +1,7 @@
 export const config = /*json-start*/{
   "mainAssemblyName": "HaxorByteClub",
   "resources": {
-    "hash": "sha256-+hHrzu3OW9iLnNGJqLVUVJLpn36F1SZFSZqkJLre63Y=",
+    "hash": "sha256-S2uof/o5lKMq9QeREE+4qWE3SMeHmQ9VdMt1pPvCFGU=",
     "fingerprinting": {
       "AsyncAwaitBestPractices.vkrfhkzgha.wasm": "AsyncAwaitBestPractices.wasm",
       "CommunityToolkit.Mvvm.kg1oa3i8ak.wasm": "CommunityToolkit.Mvvm.wasm",
@@ -48,7 +48,7 @@ export const config = /*json-start*/{
       "System.Xml.XDocument.3ukpbuowv1.wasm": "System.Xml.XDocument.wasm",
       "System.00hjxwka2g.wasm": "System.wasm",
       "System.Private.CoreLib.nwxe3o4me5.wasm": "System.Private.CoreLib.wasm",
-      "HaxorByteClub.6kta9et9xg.wasm": "HaxorByteClub.wasm",
+      "HaxorByteClub.upr5gv11hi.wasm": "HaxorByteClub.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.cknyxrewbq.js": "dotnet.native.js",
       "dotnet.native.d4mnexatxu.wasm": "dotnet.native.wasm",
@@ -119,7 +119,7 @@ export const config = /*json-start*/{
       "System.Xml.Linq.7x65cyfsju.wasm": "sha256-tQmzz2rdanKkls6tw2NmsLJ17dMRXi8oLdcECtrAL1A=",
       "System.Xml.XDocument.3ukpbuowv1.wasm": "sha256-u9hPacM9x5BZJtqKMoR6l3ARsURDjhyceg7wuDR7Q+4=",
       "System.00hjxwka2g.wasm": "sha256-MCJyRdEE+BrpaDZdg34F8BE8hOeQcOUzkkm/GWGpvdQ=",
-      "HaxorByteClub.6kta9et9xg.wasm": "sha256-2po2rqJ/c1rmoJXWPdWLXksTJ+drbSOcquj7XyH30jg="
+      "HaxorByteClub.upr5gv11hi.wasm": "sha256-kleedK/U/QRne6MeKZIZsredngVHF98SyeeKGXkwyBw="
     }
   },
   "cacheBootResources": true,
