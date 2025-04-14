@@ -78,6 +78,8 @@
 	</div>
 </div>
 @code {
+	DotNetObjectReference<AudioPlayer>? _dotNetRef;
+
 	List<Track> _tracks = new();
 
 	Track? _currentTrack = null;
@@ -88,6 +90,8 @@
 		await base.OnAfterRenderAsync(firstRender);
 		if (firstRender)
 		{
+			_dotNetRef = DotNetObjectReference.Create(this);
+			await _js.InvokeVoidAsync("initializeAudioPlayer", _dotNetRef);
 			var tracks = await _trackService.GetTracks();
 			foreach (var track in tracks.Shuffle())
 			{
@@ -118,7 +122,8 @@
 		_isPlaying = !_isPlaying;
 	}
 
-	void PlayNext()
+	[JSInvokable("PlayNext")]
+	public void PlayNext()
 	{
 		if (_currentTrack == null)
 		{
@@ -133,8 +138,14 @@
 				_currentTrack = _tracks[currentIndex + 1];
 				_js.InvokeVoidAsync("playAudio", _currentTrack.Url);
 			}
+            else
+            {
+                _currentTrack = _tracks[0];
+                _js.InvokeVoidAsync("playAudio", _currentTrack.Url);
+            }
 		}
 		_isPlaying = true;
+		StateHasChanged();
 	}
 
 	void SelectTrack(Track track)
@@ -167,6 +178,7 @@
 	{
 		_isPlaying = false;
 		await _js.InvokeVoidAsync("stopAudio");
+		_dotNetRef?.Dispose();
 		base.Remove();
 		StateHasChanged();
 	}
