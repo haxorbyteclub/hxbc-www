@@ -101,6 +101,12 @@ window.setupClock = function () {
 	updateTimeAndDate(); // Initial call to display the date and time
 }
 
+let audioPlayerRef;
+
+window.initializeAudioPlayer = function (dotNetRef) {
+	audioPlayerRef = dotNetRef;
+};
+
 window.playAudio = function (url) {
 	stopEqualizer();
 	if (document.querySelector('audio')) {
@@ -109,12 +115,11 @@ window.playAudio = function (url) {
 	var audio = document.createElement('audio');
 	audio.src = url;
 	audio.autoplay = true;
-	audio.loop = true;
+	audio.loop = false;
 	audio.style.display = 'none';
 	document.body.appendChild(audio);
 
 	audio.addEventListener('timeupdate', function () {
-		//update .progress width
 		var progress = document.querySelector('.progress');
 		var value = 0;
 		if (audio.currentTime > 0) {
@@ -128,12 +133,17 @@ window.playAudio = function (url) {
 			progress.style.width = value + '%';
 		}
 	});
-	//start with delay
+
+	audio.addEventListener('ended', function () {
+		if (audioPlayerRef) {
+			audioPlayerRef.invokeMethodAsync('PlayNext');
+		}
+	});
+
 	setTimeout(function () {
 		animateEqualizer();
 	}, 500);
-
-}
+};
 
 window.stopAudio = function () {
 	stopEqualizer();
@@ -171,7 +181,6 @@ function animateEqualizer() {
 }
 
 function stopEqualizer() {
-	console.log('Stopping equalizer');
 	intervalIds.forEach(clearInterval);
 	intervalIds = [];
 	var bars = document.querySelectorAll('.bar');
