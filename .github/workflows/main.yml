@@ -43,6 +43,15 @@ jobs:
           npm install -D tailwindcss
           npx tailwindcss -i ./wwwroot/css/tw.css -o ./wwwroot/css/tw.min.css
 
+      - name: minify and obfuscate js files
+        run: |
+          npm install -D terser
+          npx terser ./wwwroot/js/*.js --compress --mangle --output ./wwwroot/js/app.min.js
+
+      - name: add app.min.js to index.html
+        run: |
+          sed -i 's|<script src="js/app.js"></script>|<script src="js/app.min.js"></script>|g' wwwroot/index.html
+
       # add build hash to all css, js and json files in wwwroot and subfolders
       - name: Add build hash to all css, js and json files
         run: |
