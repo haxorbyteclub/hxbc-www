@@ -41,6 +41,12 @@
 	background-size: cover !important;
 }
 
+.ec89224785304769a54e3b51af0eff7f {
+	background-image: url('img/wallpapers/patterned.png') !important;
+	background-size: 333px !important;
+	background-repeat: repeat !important;
+}
+
 .desktop-icons {
 	position: relative;
 	width: 100%;
