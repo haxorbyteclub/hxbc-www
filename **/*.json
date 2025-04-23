@@ -1,4 +1,190 @@
-let audioPlayerRef,zIndex=100;function updateTimeAndDate(){const e=document.getElementById("currentDate"),t=document.getElementById("currentTime"),n=new Date;e.textContent=n.toLocaleDateString(),t.textContent=n.toLocaleTimeString()}window.setupDragElement=function(e){var t=document.getElementById(e),n=0,o=0,i=0,a=0,r=t.querySelector(".title-bar");r.onmousedown=s;const d=window.innerWidth-400,l=window.innerHeight-400,u=Math.floor(Math.random()*Math.max(1,d)),c=Math.floor(Math.random()*Math.max(1,l));function s(e){e.preventDefault(),t.style.zIndex=zIndex++,"touchstart"===e.type?(n=e.touches[0].clientX,o=e.touches[0].clientY):(n=e.clientX,o=e.clientY);let r=getComputedStyle(t).transform;if("none"!==r){let e=new DOMMatrixReadOnly(r);i=e.m41,a=e.m42}document.onmouseup=h,document.onmousemove=m}function m(e){let r,d;e.preventDefault(),"touchmove"===e.type?(r=e.touches[0].clientX,d=e.touches[0].clientY):(r=e.clientX,d=e.clientY);let l=i+(r-n),u=a+(d-o);l=Math.max(0,Math.min(l,window.innerWidth-t.offsetWidth)),u=Math.max(0,Math.min(u,window.innerHeight-t.offsetHeight)),t.style.transform=`translate(${l}px, ${u}px)`}function h(){document.onmouseup=null,document.onmousemove=null,document.ontouchend=null,document.ontouchmove=null}t.style.transform=`translate(${u}px, ${c}px)`,r.addEventListener("touchstart",s),r.addEventListener("touchmove",m),r.addEventListener("touchend",h)},window.bringToFront=function(e){document.getElementById(e).style.zIndex=zIndex++},document.addEventListener("click",(function(e){if(e.target.classList.contains("draggable")||e.target.closest(".draggable")){e.target.closest(".draggable").style.zIndex=zIndex++}}),!0),window.setupClock=function(){setInterval(updateTimeAndDate,1e3),updateTimeAndDate()},window.initializeAudioPlayer=function(e){audioPlayerRef=e},window.playAudio=function(e){stopEqualizer(),document.querySelector("audio")&&document.querySelector("audio").remove();var t=document.createElement("audio");t.src=e,t.autoplay=!0,t.loop=!1,t.style.display="none",document.body.appendChild(t),t.addEventListener("timeupdate",(function(){var e=document.querySelector(".progress"),n=0;t.currentTime>0&&(n=Math.floor(100/t.duration*t.currentTime));var o=document.querySelector(".audio-current-time");o&&(o.textContent=("0"+Math.floor(t.currentTime/60)).slice(-2)+":"+("0"+Math.floor(t.currentTime%60)).slice(-2)),e&&(e.style.width=n+"%")})),t.addEventListener("ended",(function(){audioPlayerRef&&audioPlayerRef.invokeMethodAsync("PlayNext")})),setTimeout((function(){animateEqualizer()}),500)},window.stopAudio=function(){stopEqualizer(),document.querySelector("audio")&&document.querySelector("audio").remove()},window.playPauseAudio=function(){var e=document.querySelector("audio");e.paused?(e.play(),animateEqualizer()):(e.pause(),stopEqualizer())};var intervalIds=[];function animateEqualizer(){intervalIds.forEach(clearInterval),intervalIds=[],document.querySelectorAll(".bar").forEach((function(e){var t=setInterval((function(){e.style.height=Math.floor(100*Math.random())+"%"}),Math.floor(800*Math.random()));intervalIds.push(t)}))}function stopEqualizer(){intervalIds.forEach(clearInterval),intervalIds=[],document.querySelectorAll(".bar").forEach((function(e){e.style.height="0%"}))}window.addEventListener("resize",(function(){document.querySelectorAll(".draggable").forEach((e=>{let t=getComputedStyle(e).transform;if("none"!==t){let n=new DOMMatrixReadOnly(t),o=n.m41,i=n.m42,a=Math.min(o,window.innerWidth-e.offsetWidth),r=Math.min(i,window.innerHeight-e.offsetHeight);e.style.transform=`translate(${a}px, ${r}px)`}}))})),window.changeBackground=function(e){var t=document.getElementById("wallpaper");t.classList="",t.classList.add(e)},window.triggerDownload=function(e){const t=document.createElement("a");t.href=e,t.download=e.substring(e.lastIndexOf("/")+1),document.body.appendChild(t),t.click(),document.body.removeChild(t)},window.setupIconDrag=function(){const e=document.querySelectorAll(".desktop-icon"),t=[];e.forEach((e=>{let n=!1;const o=(e,n,o,i)=>t.some((t=>e<t.x+t.width&&e+o>t.x&&n<t.y+t.height&&n+i>t.y)),i=window.innerWidth-e.offsetWidth,a=window.innerHeight-e.offsetHeight-50;let r,d;do{r=Math.floor(Math.random()*Math.max(1,i)),d=Math.floor(Math.random()*Math.max(1,a))+50}while(o(r,d,e.offsetWidth,e.offsetHeight));t.push({x:r,y:d,width:e.offsetWidth,height:e.offsetHeight}),e.style.position="absolute",e.style.left=`${r}px`,e.style.top=`${d}px`,e.style.cursor="grab",e.addEventListener("mousedown",(t=>{n=!1,e.style.cursor="grabbing";let o=t.clientX-e.getBoundingClientRect().left,i=t.clientY-e.getBoundingClientRect().top;const a=t=>{((t,a)=>{n=!0;let r=Math.max(0,Math.min(t-o,window.innerWidth-e.offsetWidth)),d=Math.max(50,Math.min(a-i,window.innerHeight-e.offsetHeight));e.style.left=`${r}px`,e.style.top=`${d}px`})(t.pageX,t.pageY)};document.addEventListener("mousemove",a),e.addEventListener("mouseup",(()=>{document.removeEventListener("mousemove",a),e.style.cursor="grab"}),{once:!0})})),e.addEventListener("click",(e=>{n&&e.stopImmediatePropagation()})),e.ondragstart=()=>!1}))};	bars.forEach(function (bar) {
+﻿let zIndex = 100; // Start with an arbitrary value for z-index
+
+
+window.setupDragElement = function (id) {
+	var elmnt = document.getElementById(id);
+	var startX = 0, startY = 0, initialX = 0, initialY = 0;
+	var header = elmnt.querySelector('.title-bar');
+	header.onmousedown = dragMouseDown;
+
+	const maxX = window.innerWidth - 400; // Assuming the width of the window is 300px
+	const maxY = window.innerHeight - 400; // Assuming a rough height for the window
+	const randomX = Math.floor(Math.random() * Math.max(1, maxX));
+	const randomY = Math.floor(Math.random() * Math.max(1, maxY));
+
+	elmnt.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+	header.addEventListener('touchstart', dragMouseDown);
+	header.addEventListener('touchmove', elementDrag);
+	header.addEventListener('touchend', closeDragElement);
+
+	function dragMouseDown(e) {
+		e.preventDefault();
+		// Bring the current window to the front
+		elmnt.style.zIndex = zIndex++;
+
+		if (e.type === 'touchstart') {
+			startX = e.touches[0].clientX;
+			startY = e.touches[0].clientY;
+		} else {
+			startX = e.clientX;
+			startY = e.clientY;
+		}
+
+		let transform = getComputedStyle(elmnt).transform;
+		if (transform !== 'none') {
+			let matrix = new DOMMatrixReadOnly(transform);
+			initialX = matrix.m41;
+			initialY = matrix.m42;
+		}
+
+		document.onmouseup = closeDragElement;
+		document.onmousemove = elementDrag;
+	}
+
+	function elementDrag(e) {
+		e.preventDefault();
+		let clientX, clientY;
+		if (e.type === 'touchmove') {
+			clientX = e.touches[0].clientX;
+			clientY = e.touches[0].clientY;
+		} else {
+			clientX = e.clientX;
+			clientY = e.clientY;
+		}
+
+		let deltaX = clientX - startX;
+		let deltaY = clientY - startY;
+
+		let newX = initialX + deltaX;
+		let newY = initialY + deltaY;
+
+		newX = Math.max(0, Math.min(newX, window.innerWidth - elmnt.offsetWidth));
+		newY = Math.max(0, Math.min(newY, window.innerHeight - elmnt.offsetHeight));
+
+		elmnt.style.transform = `translate(${newX}px, ${newY}px)`;
+	}
+
+	function closeDragElement() {
+		document.onmouseup = null;
+		document.onmousemove = null;
+		document.ontouchend = null;
+		document.ontouchmove = null;
+	}
+}
+
+window.bringToFront = function (id) {
+	const elmnt = document.getElementById(id);
+	elmnt.style.zIndex = zIndex++;
+}
+
+// Additionally, to bring a window to front when clicked, not just when dragged
+document.addEventListener('click', function (e) {
+	if (e.target.classList.contains('draggable') || e.target.closest('.draggable')) {
+		let targetEl = e.target.closest('.draggable');
+		targetEl.style.zIndex = zIndex++;
+	}
+}, true);
+
+
+function updateTimeAndDate() {
+	const dateElement = document.getElementById('currentDate');
+	const timeElement = document.getElementById('currentTime');
+	const now = new Date();
+	dateElement.textContent = now.toLocaleDateString();
+	timeElement.textContent = now.toLocaleTimeString();
+}
+
+window.setupClock = function () {
+
+	setInterval(updateTimeAndDate, 1000); // Update the date and time every second
+	updateTimeAndDate(); // Initial call to display the date and time
+}
+
+let audioPlayerRef;
+
+window.initializeAudioPlayer = function (dotNetRef) {
+	audioPlayerRef = dotNetRef;
+};
+
+window.playAudio = function (url) {
+	stopEqualizer();
+	if (document.querySelector('audio')) {
+		document.querySelector('audio').remove();
+	}
+	var audio = document.createElement('audio');
+	audio.src = url;
+	audio.autoplay = true;
+	audio.loop = false;
+	audio.style.display = 'none';
+	document.body.appendChild(audio);
+
+	audio.addEventListener('timeupdate', function () {
+		var progress = document.querySelector('.progress');
+		var value = 0;
+		if (audio.currentTime > 0) {
+			value = Math.floor((100 / audio.duration) * audio.currentTime);
+		}
+		var currentTimeSpan = document.querySelector('.audio-current-time');
+		if (currentTimeSpan) {
+			currentTimeSpan.textContent = ('0' + Math.floor(audio.currentTime / 60)).slice(-2) + ':' + ('0' + Math.floor(audio.currentTime % 60)).slice(-2);
+		}
+		if (progress) {
+			progress.style.width = value + '%';
+		}
+	});
+
+	audio.addEventListener('ended', function () {
+		if (audioPlayerRef) {
+			audioPlayerRef.invokeMethodAsync('PlayNext');
+		}
+	});
+
+	setTimeout(function () {
+		animateEqualizer();
+	}, 500);
+};
+
+window.stopAudio = function () {
+	stopEqualizer();
+	if (document.querySelector('audio')) {
+		document.querySelector('audio').remove();
+	}
+}
+
+window.playPauseAudio = function () {
+	var audio = document.querySelector('audio');
+	if (audio.paused) {
+		audio.play();
+		animateEqualizer();
+
+	} else {
+		audio.pause();
+		stopEqualizer();
+	}
+}
+
+var intervalIds = [];
+
+function animateEqualizer() {
+	// Clear existing intervals
+	intervalIds.forEach(clearInterval);
+	intervalIds = [];
+
+	var bars = document.querySelectorAll('.bar');
+	bars.forEach(function (bar) {
+		var intervalId = setInterval(function () {
+			bar.style.height = Math.floor(Math.random() * 100) + '%';
+		}, Math.floor(Math.random() * 800));
+		intervalIds.push(intervalId);
+	});
+}
+
+function stopEqualizer() {
+	intervalIds.forEach(clearInterval);
+	intervalIds = [];
+	var bars = document.querySelectorAll('.bar');
+	bars.forEach(function (bar) {
 		bar.style.height = '0%';
 	});
 }
