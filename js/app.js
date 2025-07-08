@@ -20,6 +20,10 @@ window.setupDragElement = function (id) {
 
 	function dragMouseDown(e) {
 		e.preventDefault();
+		// Prevent drag if the target is a button or inside a button
+		if (e.target.closest('button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])')) {
+			return;
+		}
 		// Bring the current window to the front
 		elmnt.style.zIndex = zIndex++;
 
