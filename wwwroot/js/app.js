@@ -19,11 +19,12 @@ window.setupDragElement = function (id) {
 	header.addEventListener('touchend', closeDragElement);
 
 	function dragMouseDown(e) {
-		e.preventDefault();
 		// Prevent drag if the target is a button or inside a button
 		if (e.target.closest('button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])')) {
 			return;
 		}
+		
+		e.preventDefault();
 		// Bring the current window to the front
 		elmnt.style.zIndex = zIndex++;
 
