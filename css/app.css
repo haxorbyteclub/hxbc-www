@@ -124,6 +124,18 @@ html {
 	box-shadow: inset -1px -1px 0 0 rgba(0, 0, 0, 0.144), inset 1px 1px 0 0 #fff, 5px 5px 0 rgb(128 128 128 / 69%);
 }
 
+.title-bar button {
+	border: none;
+	background-color: white;
+	font-size: 27px;
+}
+
+.title-bar button.close::before,
+.title-bar button.close::after {
+
+	background: none;
+}
+
 .header {
 	color: #FFF;
 	display: flex;
