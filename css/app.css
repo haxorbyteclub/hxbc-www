@@ -40,9 +40,10 @@
 }
 
 .loading-message {
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'arial-pixel', 'Courier New', Courier, monospace;
 	font-weight: 600;
-	font-size: 1.1rem;
+	font-size: 0.7rem;
+	margin-bottom: 0.3rem;
 }
 
 
@@ -122,6 +123,16 @@ html {
 	border: 1px solid black;
 	position: absolute;
 	box-shadow: inset -1px -1px 0 0 rgba(0, 0, 0, 0.144), inset 1px 1px 0 0 #fff, 5px 5px 0 rgb(128 128 128 / 69%);
+}
+
+.title-bar {
+	height: 28px;
+	padding: 0;
+	margin: 0;
+	background-repeat: repeat;
+	background-size: auto;
+	background-color: #ffffff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .title-bar button {
@@ -209,6 +220,9 @@ html {
 .title-bar .title {
 	font-size: 1.3rem;
 	font-weight: 100;
+	background: transparent;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
 }
 
 .desktop-icons {

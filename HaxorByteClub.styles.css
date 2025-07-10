@@ -376,7 +376,8 @@ textarea[b-rvka4hpuv4] {
 }
 
 .welcome-image[b-rohz7cw4g7] {
-	height: 50px;
+	width: 95%;
+	margin-left: 0;
 	object-fit: contain;
 	image-rendering: pixelated;
 }
