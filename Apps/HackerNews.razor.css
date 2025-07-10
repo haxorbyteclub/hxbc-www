@@ -9,7 +9,8 @@
 }
 
 .welcome-image {
-	height: 50px;
+	width: 95%;
+	margin-left: 0;
 	object-fit: contain;
 	image-rendering: pixelated;
 }

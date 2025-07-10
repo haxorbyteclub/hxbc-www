@@ -15,7 +15,7 @@
 
 	<div class="text-sm window-pane">
 		<div class="max-h-[400px] overflow-y-auto">
-			<img class="welcome-image mx-auto" src="img/hn.png" alt="Welcome" />
+			<img class="welcome-image mx-auto" src="img/hn-header.png" alt="Welcome" />
 			@if (articles != null)
 			{
 				@foreach (var article in articles)
@@ -23,7 +23,7 @@
 					<div class="standard-dialog center scale-down text-xs w-11/12 mx-auto my-2">
 						<h1 class="dialog-text mb-2"><span>@article.Title</span></h1>
 						<a class="dialog-text font-black" href="@article.Link" target="_blank">Read More</a>
-						<a class="dialog-text font-black ml-4" href="@article.HNLink" target="_blank">View on Hacker News</a>
+						<a class="dialog-text font-black ml-4" href="@article.HNLink" target="_blank">View on HN</a>
 					</div>
 				}
 			}
