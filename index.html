@@ -75,7 +75,7 @@
 		let messageChangeCounter = 0;
 		const maxMessageChanges = 6;
 
-		const totalDuration = Math.random() * (4500 - 1200) + 1200;
+		const totalDuration = Math.random() * (4000 - 1000) + 1000;
 		const steps = Math.floor(Math.random() * (100 - 30) + 30);
 		let intervalDuration = totalDuration / steps;
 		const baseMessageChangeInterval = Math.floor(steps / maxMessageChanges);
@@ -98,7 +98,7 @@
 			} else {
 				clearInterval(timer);
 
-				setMessage('Welcome to HaxorByteClub');
+				setMessage('Welcome to HaxorByte.Club');
 				setTimeout(() => {
 					progress.style.display = 'none';
 					progressText.style.display = 'none';

@@ -179,6 +179,7 @@ html {
 .window {
 	margin: 0;
 	border-radius: 7px;
+	max-width: 95%;
 }
 
 .window-pane {
