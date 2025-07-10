@@ -6,7 +6,7 @@
 
 <div class="window app-component draggable" id="@AppId">
 	<div class="title-bar">
-		<button aria-label="Close" class="close" @onclick="Remove"></button>
+		<button aria-label="Close" class="close" @onclick="Remove">✕</button>
 		<h1 class="title">Guestbook</h1>
 		<button aria-label="Resize" disabled class="hidden"></button>
 	</div>
@@ -32,26 +32,26 @@
 	</div>
 </div>
 @code {
-    List<Message>? _messages;
-    protected override void OnInitialized()
-    {
-        _guestBookService.MessagesChanged += OnMessagesChanged;
-    }
+	List<Message>? _messages;
+	protected override void OnInitialized()
+	{
+		_guestBookService.MessagesChanged += OnMessagesChanged;
+	}
 
-    private async void OnMessagesChanged(object sender, NotifyCollectionChangedEventArgs e)
-    {
-        _messages = await _guestBookService.GetMessages();
-        InvokeAsync(StateHasChanged);
-    }
+	private async void OnMessagesChanged(object sender, NotifyCollectionChangedEventArgs e)
+	{
+		_messages = await _guestBookService.GetMessages();
+		InvokeAsync(StateHasChanged);
+	}
 
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        base.OnAfterRenderAsync(firstRender);
-        if (firstRender)
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		base.OnAfterRenderAsync(firstRender);
+		if (firstRender)
 		{
-		    _messages = await _guestBookService.GetMessages(true);
-		    await InvokeAsync(StateHasChanged);
+			_messages = await _guestBookService.GetMessages(true);
+			await InvokeAsync(StateHasChanged);
 		}
 	}
 }
