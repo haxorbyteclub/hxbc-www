@@ -19,7 +19,8 @@
 				{
 					<div class="standard-dialog center scale-down text-xs w-11/12 mx-auto my-2">
 						<h1 class="dialog-text uppercase"><span class="font-black">@message.User</span> -
-							@message.Date.ToShortDateString()</h1>
+							<span class="guest-book-date font-geneva">@message.Date.ToShortDateString()</span>
+						</h1>
 						<p class="dialog-text">@message.Text</p>
 					</div>
 				}
