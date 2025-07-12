@@ -176,6 +176,11 @@ html {
 	margin: 0 2px;
 }
 
+.separator {
+	border-top: .05rem solid var(--secondary);
+	border-width: .05rem 0;
+}
+
 .window {
 	margin: 0;
 	border-radius: 7px;
