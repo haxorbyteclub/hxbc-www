@@ -4,10 +4,40 @@
 
 .window-pane {
 	height: auto;
+	overflow: hidden;
+	/* Hide scrollbars and overflow */
 }
 
 .welcome-image {
 	max-width: 100%;
 	height: auto;
 	object-fit: contain;
+	transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Scale on hover (desktop) */
+.welcome-image[src="img/osimg.png"]:hover,
+.welcome-image[src="img/osimg.png"]:active {
+	transform: scale(3.2) translateY(20px) translateX(-8px);
+	z-index: 2;
+}
+
+/* Optional: keep scaling centered */
+.welcome-image[src="img/osimg.png"] {
+	transform-origin: center center;
+}
+
+/* Fade and raise z-index for the div below the image */
+.window-pane .welcome-details {
+	transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1), z-index 0s;
+	z-index: 3;
+	transform: translateY(0);
+	position: relative;
+}
+
+.welcome-image[src="img/osimg.png"]:hover~.welcome-details,
+.welcome-image[src="img/osimg.png"]:active~.welcome-details {
+	/* translate the div down to avoid overlap */
+	transform: translateY(400px);
+	z-index: 3;
 }
