@@ -5,12 +5,42 @@
 
 .window-pane[b-brlvsxtko6] {
 	height: auto;
+	overflow: hidden;
+	/* Hide scrollbars and overflow */
 }
 
 .welcome-image[b-brlvsxtko6] {
 	max-width: 100%;
 	height: auto;
 	object-fit: contain;
+	transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Scale on hover (desktop) */
+.welcome-image[src="img/osimg.png"]:hover[b-brlvsxtko6],
+.welcome-image[src="img/osimg.png"]:active[b-brlvsxtko6] {
+	transform: scale(3.2) translateY(20px) translateX(-8px);
+	z-index: 2;
+}
+
+/* Optional: keep scaling centered */
+.welcome-image[src="img/osimg.png"][b-brlvsxtko6] {
+	transform-origin: center center;
+}
+
+/* Fade and raise z-index for the div below the image */
+.window-pane .welcome-details[b-brlvsxtko6] {
+	transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1), z-index 0s;
+	z-index: 3;
+	transform: translateY(0);
+	position: relative;
+}
+
+.welcome-image[src="img/osimg.png"]:hover~.welcome-details[b-brlvsxtko6],
+.welcome-image[src="img/osimg.png"]:active~.welcome-details[b-brlvsxtko6] {
+	/* translate the div down to avoid overlap */
+	transform: translateY(400px);
+	z-index: 3;
 }
 /* /Apps/AudioPlayer.razor.rz.scp.css */
 .window[b-c8zjyqt9ej] {
