@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "wzkw6YU1",
+  "version": "Tt5Ztmxn",
   "assets": [
     {
-      "hash": "sha256-kp+n6Ahgm8gJ80tcfa8deXw4dXYYyuYMfg7tvNNhyk0=",
+      "hash": "sha256-gWN8f3oMnYyVS13aFvc69JgykF+pXFQC/dvWYqAr3Ug=",
       "url": "**/*.json"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.nwswmf6axp.wasm"
     },
     {
-      "hash": "sha256-dX7PruAV1W/33gg9d2gfuVJcWtc6qQ22g2ZsmIZl3zI=",
-      "url": "_framework/HaxorByteClub.7h28jgd3bg.wasm"
+      "hash": "sha256-Ea8k+hgxeIJdKZSCc+3RXSiXj32sJ4m6t+X6WoKS6fg=",
+      "url": "_framework/HaxorByteClub.x03fe9mwsl.wasm"
     },
     {
       "hash": "sha256-r1XWxESEG7OrRQQBmqUTmWyhi+5Us2YKxI4EzWCDGL0=",
@@ -194,7 +194,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-7WVbhytiyv0/KjXmIrI8a79lx83WV/eqf9Mctf21LUg=",
+      "hash": "sha256-JoGSovhV8G+DsLajbhTRgWHLxdwhk9wFdHMo63OTRTI=",
       "url": "_framework/dotnet.js"
     },
     {
@@ -222,7 +222,7 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.lfu7j35m59.dat"
     },
     {
-      "hash": "sha256-ULP6S5GZwZaKXtavyDdW+OOgk4dTZTNCfvETsrt5dRk=",
+      "hash": "sha256-WiM4NHBhdbRn9ioRZZeZWYQZuXC8EeoKYF3Em0S2RzU=",
       "url": "css/app.css"
     },
     {
@@ -230,7 +230,7 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-0b4OnxjxDyYRLhxBhyS6jVGhncTPkPefYnzJr1EPxPE=",
+      "hash": "sha256-ane34SH5QRtTZVqZ5jqlcoJXl1bovhzIjpeDcKtDQZU=",
       "url": "css/tw.min.css"
     },
     {
@@ -302,6 +302,10 @@ self.assetsManifest = {
       "url": "img/hn.png"
     },
     {
+      "hash": "sha256-igwZF6JHZRaIB1bSX+lblFOCzM0cJurLUB3EYiJqlOk=",
+      "url": "img/hxos.png"
+    },
+    {
       "hash": "sha256-MYKJ6r1JtVg9YgaKEIga4QfFyaIBR+ehFXDrq14Wca8=",
       "url": "img/icon-bg.png"
     },
@@ -324,6 +328,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-0R4ksSNiVq4QFWII6uuCrG2sIz1eAt5aawjkq9cNnn8=",
       "url": "img/next.svg"
+    },
+    {
+      "hash": "sha256-l8si8L2yyPfBmGkNIyT1ooaYOI4XzjhZ+i9FmtcM3es=",
+      "url": "img/osimg.png"
     },
     {
       "hash": "sha256-WVauvqlD2BUrJrCDK6u3Z2cGHpDK5CkmaIiTVHfb/HQ=",
