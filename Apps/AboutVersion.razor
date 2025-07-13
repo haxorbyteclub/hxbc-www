@@ -10,27 +10,23 @@
 	</div>
 	<div class="separator"></div>
 	<div class="window-pane flex flex-col items-center">
-		<p class="text-center font-geneva mb-3">
-			Welcome to HaxorByte OS!
-		</p>
-		<img class="welcome-image w-[110px]" src="img/logo-bg.png" alt="Welcome" />
-		<div class="">
-			<p class="leading-[1.2] mt-3 font-chicago_pixel">
-				Version:
-				<a class="font-bold" href="https://github.com/nor0x/haxorbyteclub-www/releases/tag/v###VERSION###"
-					target="_blank">###VERSION###</a>
-				<br />
-				Commit:
-				<a class="font-bold" href="https://github.com/nor0x/haxorbyteclub-www/commit/###COMMIT###"
-					target="_blank">
-					@("###COMMIT###".Substring(0, 7))
+
+		<img class="welcome-image w-full rounded-sm" src="img/osimg.png" alt="Welcome" />
+		<div>
+			<p class="leading-[1.2] mt-3 mx-auto text-center">
+				<img class="welcome-image w-[80%] mx-auto rounded-sm" src="img/hxos.png" alt="Welcome" />
+
+				<a class="font-arial-pixel text-[11px]"
+					href="https://github.com/nor0x/haxorbyteclub-www/releases/tag/v###VERSION###"
+					target="_blank">###VERSION###</a> <a class="font-arial-pixel text-[11px]"
+					href="https://github.com/nor0x/haxorbyteclub-www/commit/###COMMIT###" target="_blank">
+					(@("###COMMIT###".Substring(0, 7)))
 				</a>
-				<br />
+			</p>
 			<div class="mt-2 text-center">
-				<a class="font-bold cursor-pointer" @onclick="ShowCreditsEditor">Credits</a>
+				<a class="font-arial-pixel cursor-pointer text-[11px]" @onclick="ShowCreditsEditor">Credits</a>
 				<br />
 			</div>
-			</p>
 		</div>
 	</div>
 </div>
