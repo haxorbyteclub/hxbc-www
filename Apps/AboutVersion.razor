@@ -1,5 +1,4 @@
-﻿@inject IJSRuntime _js
-@inherits AppBase
+﻿@inherits AppBase
 
 
 <div class="window app-component draggable" id="@AppId">
@@ -11,7 +10,7 @@
 	<div class="separator"></div>
 	<div class="window-pane flex flex-col items-center">
 
-		<img class="welcome-image w-full rounded-sm" src="img/osimg.png" alt="Welcome" />
+		<img class="welcome-image w-full rounded-sm" src="img/osimg.png" alt="Welcome" @onclick="ToggleImageScale" />
 		<div class="welcome-details">
 			<p class="leading-[1.2] mt-3 mx-auto text-center">
 				<img class="welcome-image w-[80%] mx-auto rounded-sm" src="img/hxos.png" alt="Welcome" />
@@ -32,6 +31,16 @@
 </div>
 
 @code {
+
+	async Task ToggleImageScale()
+	{
+		await _js.InvokeVoidAsync("eval", @"
+const img = document.querySelector('.welcome-image[src=""img/osimg.png""]');
+if (img) {
+img.classList.toggle('clicked');
+}
+");
+	}
 
 	void ShowCreditsEditor()
 	{
