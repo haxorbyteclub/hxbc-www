@@ -16,10 +16,16 @@
 }
 
 /* Scale on hover (desktop) */
-.welcome-image[src="img/osimg.png"]:hover,
-.welcome-image[src="img/osimg.png"]:active {
+.welcome-image[src="img/osimg.png"]:hover {
 	transform: scale(3.2) translateY(20px) translateX(-8px);
 	z-index: 2;
+}
+
+/* Return to normal scale when clicked/tapped */
+.welcome-image[src="img/osimg.png"]:active,
+.welcome-image[src="img/osimg.png"].clicked {
+	transform: scale(1) translateY(0) translateX(0);
+	z-index: 1;
 }
 
 /* Optional: keep scaling centered */
@@ -35,9 +41,15 @@
 	position: relative;
 }
 
-.welcome-image[src="img/osimg.png"]:hover~.welcome-details,
-.welcome-image[src="img/osimg.png"]:active~.welcome-details {
+.welcome-image[src="img/osimg.png"]:hover~.welcome-details {
 	/* translate the div down to avoid overlap */
 	transform: translateY(400px);
+	z-index: 3;
+}
+
+/* Return welcome-details to normal position when image is clicked */
+.welcome-image[src="img/osimg.png"]:active~.welcome-details,
+.welcome-image[src="img/osimg.png"].clicked~.welcome-details {
+	transform: translateY(0);
 	z-index: 3;
 }
