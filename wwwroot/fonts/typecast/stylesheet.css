@@ -1,0 +1,40 @@
+@font-face {
+	font-family: 'Typecast';
+	src: url('Typecast.woff2') format('woff2'),
+		url('Typecast.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Typecast';
+	src: url('Typecast-Italic.woff2') format('woff2'),
+		url('Typecast-Italic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Typecast';
+	src: url('Typecast-Bold.woff2') format('woff2'),
+		url('Typecast-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-typecast {
+	font-family: 'Typecast', sans-serif;
+}
+
+.font-typecast-italic {
+	font-family: 'Typecast', sans-serif;
+	font-style: italic;
+}
+
+.font-typecast-bold {
+	font-family: 'Typecast', sans-serif;
+	font-weight: bold;
+}

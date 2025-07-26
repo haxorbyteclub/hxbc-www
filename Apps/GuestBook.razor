@@ -18,10 +18,10 @@
 				@foreach (var message in _messages.OrderByDescending(m => m.Date))
 				{
 					<div class="standard-dialog center scale-down text-xs w-11/12 mx-auto my-2">
-						<h1 class="dialog-text uppercase"><span class="font-black">@message.User</span> -
-							<span class="guest-book-date font-geneva">@message.Date.ToShortDateString()</span>
-						</h1>
-						<p class="dialog-text">@message.Text</p>
+						<p class="text-base"><span class="font-black uppercase text-md">@message.User</span> -
+							<span class="guest-book-date font-typecast text-md">@message.Date.ToShortDateString()</span>
+						</p>
+						<p class="dialog-text text-base leading-none">@message.Text</p>
 					</div>
 				}
 			}
