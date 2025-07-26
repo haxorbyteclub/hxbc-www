@@ -147,6 +147,11 @@ html {
 	background: none;
 }
 
+.title-bar .title {
+	font-family: 'Ishmeria';
+	font-size: 1.2rem;
+}
+
 .header {
 	color: #FFF;
 	display: flex;

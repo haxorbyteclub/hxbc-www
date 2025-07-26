@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "uOdqh8Bw",
+  "version": "HZQ1vw92",
   "assets": [
     {
-      "hash": "sha256-NUIynkPRoYFlXOvf4435vvvoq4gKNED0FAMI3UGeJEQ=",
+      "hash": "sha256-BzUFhawtr5Nf8N0WFMcjVC0AGvjin0OhJSg2s2TEvEo=",
       "url": "**/*.json"
     },
     {
@@ -18,8 +18,8 @@ self.assetsManifest = {
       "url": "_framework/CommunityToolkit.Mvvm.nwswmf6axp.wasm"
     },
     {
-      "hash": "sha256-oP1R6Yy4sR4bpiv83GIappc/P9aUyhA/kTfRtHTtiV4=",
-      "url": "_framework/HaxorByteClub.4373vyjdkg.wasm"
+      "hash": "sha256-Vw5vLGGh/Ag5CPV47ClJYdOw4a+rI32j4k+nowgXd9Y=",
+      "url": "_framework/HaxorByteClub.35qoc2m1vb.wasm"
     },
     {
       "hash": "sha256-r1XWxESEG7OrRQQBmqUTmWyhi+5Us2YKxI4EzWCDGL0=",
@@ -198,7 +198,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-OmhgZnqHp1FZiR6JQ3ms6hJ4ybTPHz18YxEado5mSak=",
+      "hash": "sha256-5Op/keaM/b/1DbHoDSrj5x1TYj8+txRo4VTWH9Blb6M=",
       "url": "_framework/dotnet.js"
     },
     {
@@ -226,7 +226,7 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.lfu7j35m59.dat"
     },
     {
-      "hash": "sha256-WiM4NHBhdbRn9ioRZZeZWYQZuXC8EeoKYF3Em0S2RzU=",
+      "hash": "sha256-cYyLjzPMYP2SvJNudhVe/WQqH4twm6XZgyqnyVqFxnI=",
       "url": "css/app.css"
     },
     {
@@ -234,7 +234,7 @@ self.assetsManifest = {
       "url": "css/tw.css"
     },
     {
-      "hash": "sha256-ane34SH5QRtTZVqZ5jqlcoJXl1bovhzIjpeDcKtDQZU=",
+      "hash": "sha256-7O0VlBNEm6csssI7GNMzsy4R8gND/tlk58Yx/y4BeJw=",
       "url": "css/tw.min.css"
     },
     {
@@ -252,6 +252,58 @@ self.assetsManifest = {
     {
       "hash": "sha256-neKr5VvjdQAIYCXdSsRgFr88Dlz9oW/qEqhGoOOfEYo=",
       "url": "fonts/digital-7.woff2"
+    },
+    {
+      "hash": "sha256-z4SI3pp5rAUGGcrZ7oDElGbhOBUxSE56W1dQD8Mn9vs=",
+      "url": "fonts/ishimeria/Ishmeria.eot"
+    },
+    {
+      "hash": "sha256-TcHJFLDla2ofsElcGBblzkyFU+bWGZBwXtM/ILOI398=",
+      "url": "fonts/ishimeria/Ishmeria.otf"
+    },
+    {
+      "hash": "sha256-axG36LPZ8TGUVsViArFd2EAXGu19YHpOIUMwmqv7zuw=",
+      "url": "fonts/ishimeria/Ishmeria.svg"
+    },
+    {
+      "hash": "sha256-moWqptf0nOjF+47UgiYzl9pqkmKp7wF4mqqbenhv5YI=",
+      "url": "fonts/ishimeria/Ishmeria.ttf"
+    },
+    {
+      "hash": "sha256-OBMPac4QicsV+dWwNmxX/VvYB1sZeXFkAo40+mY0QRA=",
+      "url": "fonts/ishimeria/Ishmeria.woff"
+    },
+    {
+      "hash": "sha256-V6Lel2xN7bOiuDPgQ++oG595DJWNe7QyO1w1WOmFPtM=",
+      "url": "fonts/ishimeria/webfont.css"
+    },
+    {
+      "hash": "sha256-u5SU/WAyrF9Ia+wqLRyWFy99t2zKyjLJIeYL8U7Fi5w=",
+      "url": "fonts/typecast/Typecast-Bold.woff"
+    },
+    {
+      "hash": "sha256-j1dQlVYmLfJsNmiITBfZnQo0oF9Awk0rLX2FZf1xS4g=",
+      "url": "fonts/typecast/Typecast-Bold.woff2"
+    },
+    {
+      "hash": "sha256-XYmOvMV6CkdnqfehTOBcfs2HA1ONGo0Vfy0ozYTK3t8=",
+      "url": "fonts/typecast/Typecast-Italic.woff"
+    },
+    {
+      "hash": "sha256-ns1JNdXXjWV3b2eTotQHj2bZT58HZ/w2y+p0uMwhDuw=",
+      "url": "fonts/typecast/Typecast-Italic.woff2"
+    },
+    {
+      "hash": "sha256-ThtpwikRwltdG9kGBfheCLdmH27l4Z5HixI/aZCbxZ0=",
+      "url": "fonts/typecast/Typecast.woff"
+    },
+    {
+      "hash": "sha256-0mtOZ6oQqeuWYwfjVYymQV5iJ4oOC5Tmm+ndusM4uRs=",
+      "url": "fonts/typecast/Typecast.woff2"
+    },
+    {
+      "hash": "sha256-EVIVD6QNJZC673awSp4+LcXSA9MuADnHWNelrItFcng=",
+      "url": "fonts/typecast/stylesheet.css"
     },
     {
       "hash": "sha256-DeRx2kfQKlRqJP5nAl4xctUPz8N6g9qKjDv23u+kVAM=",
@@ -394,7 +446,7 @@ self.assetsManifest = {
       "url": "img/welcome.jpg"
     },
     {
-      "hash": "sha256-hBu+FcwIhi4pwe+hd/UsNmfUMR3NqN6jEeYjiiVlBy4=",
+      "hash": "sha256-cQMs1LdcYiKEruBMAeI2HoTwoeycpug3AiV3SYlAmqw=",
       "url": "index.html"
     },
     {
@@ -634,7 +686,7 @@ self.assetsManifest = {
       "url": "systemcss/style.css"
     },
     {
-      "hash": "sha256-7X4Fm1XRqDLUvpKFHjyoOOx2auA6jsv7aOMycv9+6ec=",
+      "hash": "sha256-Tzg35LfOCxI6xfOvvWJivqBPzwW4ThQmL+MTYty4kUI=",
       "url": "systemcss/style.min.css"
     }
   ]
