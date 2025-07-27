@@ -15,15 +15,22 @@
 
 	<div class="text-sm window-pane">
 		<div class="max-h-[400px] overflow-y-auto">
-			<img class="welcome-image mx-auto" src="img/hn-header.png" alt="Welcome" />
+			<img class="welcome-image mx-auto rounded-sm mt-2" src="img/hn-reader-header.jpg" alt="Welcome" />
+			<div class="flex items-center justify-end my-2 gap-1 font-typecast justify-self-center">
+				<p class="text-center text-lg">powered by <a href="https://news.ycombinator.com" target="_blank">Hacker
+						News<img class="mx-auto h-[20px] inline-block ml-2" src="img/hn.png"
+							alt="Hacker News Logo" /></a></p>
+			</div>
 			@if (articles != null)
 			{
 				@foreach (var article in articles)
 				{
 					<div class="standard-dialog center scale-down text-xs w-11/12 mx-auto my-2">
-						<h1 class="dialog-text mb-2"><span>@article.Title</span></h1>
-						<a class="dialog-text font-black" href="@article.Link" target="_blank">Read More</a>
-						<a class="dialog-text font-black ml-4" href="@article.HNLink" target="_blank">View on HN</a>
+						<p class="text-base mb-2 leading-none"><span>@article.Title</span></p>
+						<a class="font-thin font-typecast text-xl" href="@article.Link" target="_blank">Read More</a>
+						<a class="font-thin ml-4 font-typecast text-xl" href="@article.HNLink" target="_blank">View
+							on
+							HN</a>
 					</div>
 				}
 			}
