@@ -408,7 +408,7 @@ textarea[b-rvka4hpuv4] {
 }
 /* /Apps/HackerNews.razor.rz.scp.css */
 .window[b-rohz7cw4g7] {
-	width: 290px;
+	width: 370px;
 }
 
 .window-pane[b-rohz7cw4g7] {
@@ -418,10 +418,10 @@ textarea[b-rvka4hpuv4] {
 }
 
 .welcome-image[b-rohz7cw4g7] {
-	width: 95%;
-	margin-left: 0;
+	width: 91%;
 	object-fit: contain;
 	image-rendering: pixelated;
+	box-shadow: var(--box-shadow);
 }
 /* /Apps/Welcome.razor.rz.scp.css */
 .window[b-878u4gjg4v] {
