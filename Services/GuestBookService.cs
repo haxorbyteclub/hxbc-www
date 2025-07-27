@@ -17,7 +17,7 @@ namespace HaxorByteClub.Services;
 
 public class GuestBookService
 {
-	private readonly ObservableCollection<Message> _messages = new ObservableCollection<Message>();
+	private ObservableCollection<Message> _messages = new ObservableCollection<Message>();
 
 	public event NotifyCollectionChangedEventHandler MessagesChanged
 	{
@@ -47,10 +47,7 @@ public class GuestBookService
 		{
 			var guestbook = await GetGuestbook();
 			_messages.Clear();
-			foreach (var message in guestbook)
-			{
-				_messages.Add(message);
-			}
+			_messages = new ObservableCollection<Message>(guestbook);
 		}
 		return _messages.ToList();
 	}
