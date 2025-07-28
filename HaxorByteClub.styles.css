@@ -406,6 +406,13 @@ textarea[b-rvka4hpuv4] {
 .window-pane[b-rvka4hpuv4] {
 	padding: 0;
 }
+
+.header-image[b-rvka4hpuv4] {
+	width: 91%;
+	object-fit: contain;
+	image-rendering: pixelated;
+	box-shadow: var(--box-shadow);
+}
 /* /Apps/HackerNews.razor.rz.scp.css */
 .window[b-rohz7cw4g7] {
 	width: 370px;
@@ -417,7 +424,7 @@ textarea[b-rvka4hpuv4] {
 	max-height: 500px;
 }
 
-.welcome-image[b-rohz7cw4g7] {
+.header-image[b-rohz7cw4g7] {
 	width: 91%;
 	object-fit: contain;
 	image-rendering: pixelated;
