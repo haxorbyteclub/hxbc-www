@@ -8,7 +8,7 @@
 	max-height: 500px;
 }
 
-.welcome-image {
+.header-image {
 	width: 91%;
 	object-fit: contain;
 	image-rendering: pixelated;

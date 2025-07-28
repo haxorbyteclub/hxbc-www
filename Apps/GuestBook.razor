@@ -13,6 +13,9 @@
 	<div class="separator"></div>
 	<div class=" text-sm window-pane">
 		<div class="max-h-[400px] overflow-y-auto">
+			<img class="header-image mx-auto rounded-sm mt-2" src="img/guestbook-header.jpg"
+				alt="Photo of a bear paw writing the word 'Guestbook' on a retro crt monitor" />
+
 			@if (_messages is not null)
 			{
 				@foreach (var message in _messages.OrderByDescending(m => m.Date))
