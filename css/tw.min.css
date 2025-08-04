@@ -653,6 +653,9 @@
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
+  .justify-self-center {
+    justify-self: center;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
@@ -668,6 +671,9 @@
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
   }
   .text-center {
     text-align: center;
