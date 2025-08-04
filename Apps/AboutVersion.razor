@@ -10,7 +10,7 @@
 	<div class="separator"></div>
 	<div class="window-pane flex flex-col items-center">
 
-		<img class="welcome-image w-full rounded-sm" src="img/osimg.png" alt="Welcome" @onclick="ToggleImageScale" />
+		<img class="welcome-image w-full rounded-sm" src="img/osimg.jpg" alt="Welcome" @onclick="ToggleImageScale" />
 		<div class="welcome-details">
 			<p class="leading-[1.2] mt-3 mx-auto text-center">
 				<img class="welcome-image w-[80%] mx-auto rounded-sm" src="img/hxos.png" alt="Welcome" />
@@ -35,7 +35,7 @@
 	async Task ToggleImageScale()
 	{
 		await _js.InvokeVoidAsync("eval", @"
-const img = document.querySelector('.welcome-image[src=""img/osimg.png""]');
+const img = document.querySelector('.welcome-image[src=""img/osimg.jpg""]');
 if (img) {
 img.classList.toggle('clicked');
 }
