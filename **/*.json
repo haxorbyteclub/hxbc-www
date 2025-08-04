@@ -1,129 +1,122 @@
-let audioPlayerRef,zIndex=100;function updateTimeAndDate(){const e=document.getElementById("currentDate"),t=document.getElementById("currentTime"),n=new Date;e.textContent=n.toLocaleDateString(),t.textContent=n.toLocaleTimeString()}window.setupDragElement=function(e){var t=document.getElementById(e),n=0,o=0,a=0,i=0,r=t.querySelector(".title-bar");r.onmousedown=s;const d=window.innerWidth-400,l=window.innerHeight-400,u=Math.floor(Math.random()*Math.max(1,d)),c=Math.floor(Math.random()*Math.max(1,l));function s(e){if(e.target.closest('button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])'))return;e.preventDefault(),t.style.zIndex=zIndex++,"touchstart"===e.type?(n=e.touches[0].clientX,o=e.touches[0].clientY):(n=e.clientX,o=e.clientY);let r=getComputedStyle(t).transform;if("none"!==r){let e=new DOMMatrixReadOnly(r);a=e.m41,i=e.m42}document.onmouseup=h,document.onmousemove=m}function m(e){let r,d;e.preventDefault(),"touchmove"===e.type?(r=e.touches[0].clientX,d=e.touches[0].clientY):(r=e.clientX,d=e.clientY);let l=a+(r-n),u=i+(d-o);l=Math.max(0,Math.min(l,window.innerWidth-t.offsetWidth)),u=Math.max(0,Math.min(u,window.innerHeight-t.offsetHeight)),t.style.transform=`translate(${l}px, ${u}px)`}function h(){document.onmouseup=null,document.onmousemove=null,document.ontouchend=null,document.ontouchmove=null}t.style.transform=`translate(${u}px, ${c}px)`,r.addEventListener("touchstart",s),r.addEventListener("touchmove",m),r.addEventListener("touchend",h)},window.bringToFront=function(e){document.getElementById(e).style.zIndex=zIndex++},document.addEventListener("click",function(e){if(e.target.classList.contains("draggable")||e.target.closest(".draggable")){e.target.closest(".draggable").style.zIndex=zIndex++}},!0),window.setupClock=function(){setInterval(updateTimeAndDate,1e3),updateTimeAndDate()},window.initializeAudioPlayer=function(e){audioPlayerRef=e},window.playAudio=function(e){stopEqualizer(),document.querySelector("audio")&&document.querySelector("audio").remove();var t=document.createElement("audio");t.src=e,t.autoplay=!0,t.loop=!1,t.style.display="none",document.body.appendChild(t),t.addEventListener("timeupdate",function(){var e=document.querySelector(".progress"),n=0;t.currentTime>0&&(n=Math.floor(100/t.duration*t.currentTime));var o=document.querySelector(".audio-current-time");o&&(o.textContent=("0"+Math.floor(t.currentTime/60)).slice(-2)+":"+("0"+Math.floor(t.currentTime%60)).slice(-2)),e&&(e.style.width=n+"%")}),t.addEventListener("ended",function(){audioPlayerRef&&audioPlayerRef.invokeMethodAsync("PlayNext")}),setTimeout(function(){animateEqualizer()},500)},window.stopAudio=function(){stopEqualizer(),document.querySelector("audio")&&document.querySelector("audio").remove()},window.playPauseAudio=function(){var e=document.querySelector("audio");e.paused?(e.play(),animateEqualizer()):(e.pause(),stopEqualizer())};var intervalIds=[];function animateEqualizer(){intervalIds.forEach(clearInterval),intervalIds=[],document.querySelectorAll(".bar").forEach(function(e){var t=setInterval(function(){e.style.height=Math.floor(100*Math.random())+"%"},Math.floor(800*Math.random()));intervalIds.push(t)})}function stopEqualizer(){intervalIds.forEach(clearInterval),intervalIds=[],document.querySelectorAll(".bar").forEach(function(e){e.style.height="0%"})}window.addEventListener("resize",function(){document.querySelectorAll(".draggable").forEach(e=>{let t=getComputedStyle(e).transform;if("none"!==t){let n=new DOMMatrixReadOnly(t),o=n.m41,a=n.m42,i=Math.min(o,window.innerWidth-e.offsetWidth),r=Math.min(a,window.innerHeight-e.offsetHeight);e.style.transform=`translate(${i}px, ${r}px)`}})}),window.changeBackground=function(e){var t=document.getElementById("wallpaper");t.classList="",t.classList.add(e)},window.triggerDownload=function(e){const t=document.createElement("a");t.href=e,t.download=e.substring(e.lastIndexOf("/")+1),document.body.appendChild(t),t.click(),document.body.removeChild(t)},window.setupIconDrag=function(){const e=document.querySelectorAll(".desktop-icon"),t=[];e.forEach(e=>{let n=!1;const o=(e,n,o,a)=>t.some(t=>e<t.x+t.width&&e+o>t.x&&n<t.y+t.height&&n+a>t.y),a=window.innerWidth-e.offsetWidth,i=window.innerHeight-e.offsetHeight-50;let r,d;do{r=Math.floor(Math.random()*Math.max(1,a)),d=Math.floor(Math.random()*Math.max(1,i))+50}while(o(r,d,e.offsetWidth,e.offsetHeight));t.push({x:r,y:d,width:e.offsetWidth,height:e.offsetHeight}),e.style.position="absolute",e.style.left=`${r}px`,e.style.top=`${d}px`,e.style.cursor="grab",e.addEventListener("mousedown",t=>{n=!1,e.style.cursor="grabbing";let o=t.clientX-e.getBoundingClientRect().left,a=t.clientY-e.getBoundingClientRect().top;const i=t=>{((t,i)=>{n=!0;let r=Math.max(0,Math.min(t-o,window.innerWidth-e.offsetWidth)),d=Math.max(50,Math.min(i-a,window.innerHeight-e.offsetHeight));e.style.left=`${r}px`,e.style.top=`${d}px`})(t.pageX,t.pageY)};document.addEventListener("mousemove",i),e.addEventListener("mouseup",()=>{document.removeEventListener("mousemove",i),e.style.cursor="grab"},{once:!0})}),e.addEventListener("click",e=>{n&&e.stopImmediatePropagation()}),e.ondragstart=()=>!1})};() {
-	intervalIds.forEach(clearInterval);
-	intervalIds = [];
-	var bars = document.querySelectorAll('.bar');
-	bars.forEach(function (bar) {
-		bar.style.height = '0%';
-	});
+:root {
+	--box-shadow: 2px 2px;
+	--element-spacing: 8px;
+	--grouped-element-spacing: 6px;
+	--radio-width: 12px;
+	--checkbox-width: 13px;
+	--radio-label-spacing: 6px;
+	--radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
+	--radio-total-width: calc(var(--radio-total-width-precalc));
+	--radio-left: calc(-1 * var(--radio-total-width-precalc));
+	--radio-dot-width: 6px;
+	--radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
+	--radio-dot-left: calc(-1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(--radio-dot-width) / 2);
+	--checkbox-total-width-precalc: var(--checkbox-width) + var(--radio-label-spacing);
+	--checkbox-total-width: calc(var(--checkbox-total-width-precalc));
+	--checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
+	--checkmark-width: 12px;
+	--checkmark-top: 2px;
+	--checkmark-left: 2px;
+	--sys-color-white: #FFFFFF;
+	--sys-color-black: #000000;
+	--sys-color-grey: #A5A5A5;
+	--sys-color-darkgrey: #B6B7B8;
+	--primary: var(--sys-color-white);
+	--secondary: var(--sys-color-black);
+	--tertiary: var(--sys-color-grey);
+	--disabled: var(--sys-color-darkgrey)
 }
 
-
-// Handle window resize
-window.addEventListener('resize', function () {
-	const draggableElements = document.querySelectorAll('.draggable');
-	draggableElements.forEach(elmnt => {
-		let transform = getComputedStyle(elmnt).transform;
-		if (transform !== 'none') {
-			let matrix = new DOMMatrixReadOnly(transform);
-			let currentX = matrix.m41;
-			let currentY = matrix.m42;
-
-			let newX = Math.min(currentX, window.innerWidth - elmnt.offsetWidth);
-			let newY = Math.min(currentY, window.innerHeight - elmnt.offsetHeight);
-
-			elmnt.style.transform = `translate(${newX}px, ${newY}px)`;
-		}
-	});
-});
-
-
-window.changeBackground = function (cssClass) {
-	var wallpaper = document.getElementById('wallpaper');
-	wallpaper.classList = '';
-	wallpaper.classList.add(cssClass);
+@font-face {
+	font-family: Chicago;
+	src: url(fonts/ChiKareGo2.woff) format("woff");
+	src: url(fonts/ChiKareGo2.woff2) format("woff2")
 }
 
-window.triggerDownload = function (url) {
-	const link = document.createElement('a');
-	link.href = url;
-	link.download = url.substring(url.lastIndexOf('/') + 1);
-	document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
+@font-face {
+	font-family: Monaco;
+	src: url(fonts/monaco.woff) format("woff");
+	src: url(fonts/monaco.woff2) format("woff2")
 }
 
+@font-face {
+	font-family: Chicago_12;
+	src: url(fonts/ChiKareGo2.woff) format("woff");
+	src: url(fonts/ChiKareGo2.woff2) format("woff2")
+}
 
+@font-face {
+	font-family: Geneva_9;
+	src: url(fonts/FindersKeepers.woff) format("woff");
+	src: url(fonts/FindersKeepers.woff2) format("woff2")
+}
 
-window.setupIconDrag = function () {
-	const icons = document.querySelectorAll(".desktop-icon");
-	const occupiedPositions = []; // Array to store occupied positions
+::-webkit-scrollbar {
+	width: 22px;
+	background-color: var(--primary)
+}
 
-	icons.forEach(icon => {
-		let isDragging = false; // Flag to track dragging
+::-webkit-scrollbar-track {
+	background: linear-gradient(45deg, var(--secondary) 25%, transparent 25%, transparent 75%, var(--secondary) 75%, var(--secondary)), linear-gradient(45deg, var(--secondary) 25%, transparent 25%, transparent 75%, var(--secondary) 75%, var(--secondary));
+	background-color: var(--primary);
+	background-size: 4px 4px;
+	background-position: 0 0, 2px 2px;
+	width: 10px;
+	border-left: 3px solid var(--secondary)
+}
 
-		// Function to check if a position overlaps with existing icons
-		const isOverlapping = (x, y, width, height) => {
-			return occupiedPositions.some(pos => {
-				return (
-					x < pos.x + pos.width &&
-					x + width > pos.x &&
-					y < pos.y + pos.height &&
-					y + height > pos.y
-				);
-			});
-		};
+::-webkit-scrollbar-thumb {
+	width: 20px;
+	box-sizing: content-box;
+	background-color: var(--primary);
+	border: 2px solid var(--secondary);
+	border-right: none
+}
 
-		// Set random initial positions for the icons
-		const maxX = window.innerWidth - icon.offsetWidth; // Ensure the icon stays within the screen width
-		const maxY = window.innerHeight - icon.offsetHeight - 50; // Subtract 50px for the top bar height
-		let randomX, randomY;
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement {
+	display: block
+}
 
-		// Keep generating random positions until no overlap is found
-		do {
-			randomX = Math.floor(Math.random() * Math.max(1, maxX));
-			randomY = Math.floor(Math.random() * Math.max(1, maxY)) + 50; // Ensure it starts below the top bar
-		} while (isOverlapping(randomX, randomY, icon.offsetWidth, icon.offsetHeight));
+::-webkit-scrollbar-button:vertical:start {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23000' d='M.5.5h21v22.375H.5z'/%3E%3Cpath fill='%23000' d='M1 23h20v-2H1zM1.375 12.375h5.5V11h-5.5zM6.875 17.875h6.875V16.5H6.875zM6.875 17.875v-5.5H5.5v5.5zM9.625 5.5V4.125H8.25V5.5zM11 4.125V2.75H9.625v1.375zM19.25 12.375V11h-1.375v1.375zM17.875 11V9.625H16.5V11zM16.5 9.625V8.25h-1.375v1.375zM15.125 8.25V6.875H13.75V8.25zM13.75 6.875V5.5h-1.375v1.375zM12.375 5.5V4.125H11V5.5zM8.25 6.875V5.5H6.875v1.375zM6.875 8.25V6.875H5.5V8.25zM5.5 9.625V8.25H4.125v1.375zM4.125 11V9.625H2.75V11z'/%3E%3Cpath fill='%23000' d='M2.75 12.375V11H1.375v1.375zM15.125 17.875v-5.5H13.75v5.5zM13.75 12.375h5.5V11h-5.5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	height: 23.38px
+}
 
-		// Store the position as occupied
-		occupiedPositions.push({
-			x: randomX,
-			y: randomY,
-			width: icon.offsetWidth,
-			height: icon.offsetHeight
-		});
+::-webkit-scrollbar-button:vertical:start:active {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23000' d='M.5.5h21v22.38H.5z'/%3E%3Cpath fill='%23000' d='M1 23.005h20v-2H1zM1.375 12.378h5.5v-1.375h-5.5zM6.875 17.879h6.875V6.877H6.875zM6.875 17.879v-5.501H5.5v5.5zM9.625 5.501V4.126H8.25v1.375zM11 4.126V2.75H9.625v1.375zM19.25 12.378v-1.375h-1.375v1.375zM17.875 11.002V9.627H13.75v1.375zM16.5 9.627V8.252h-2.75v1.375zM15.125 8.252V6.877H13.75v1.375zM13.75 6.876V5.501h-1.375v1.375zM12.375 5.501V4.126h-2.75v1.375zM12.375 6.876V5.501h-5.5v1.375zM6.875 8.252V6.877H5.5v1.375zM6.875 9.627V8.252h-2.75v1.375zM6.875 11.002V9.627H2.75v1.375z'/%3E%3Cpath fill='%23000' d='M2.75 12.378v-1.375H1.375v1.375zM15.125 17.879v-5.501H13.75v5.5zM13.75 12.378h5.5v-1.375h-5.5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	height: 23.38px
+}
 
-		icon.style.position = "absolute";
-		icon.style.left = `${randomX}px`;
-		icon.style.top = `${randomY}px`;
-		icon.style.cursor = "grab";
+::-webkit-scrollbar-button:vertical:end {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23000' d='M.5 22.875h21V.5H.5z'/%3E%3Cpath fill='%23000' d='M1 .375h20v2H1zM1.375 11h5.5v1.375h-5.5zM6.875 5.5h6.875v1.375H6.875zM6.875 5.5V11H5.5V5.5zM9.625 17.875v1.375H8.25v-1.375zM11 19.25v1.375H9.625V19.25zM19.25 11v1.375h-1.375V11zM17.875 12.375v1.375H16.5v-1.375zM16.5 13.75v1.375h-1.375V13.75zM15.125 15.125V16.5H13.75v-1.375zM13.75 16.5v1.375h-1.375V16.5zM12.375 17.875v1.375H11v-1.375zM8.25 16.5v1.375H6.875V16.5zM6.875 15.125V16.5H5.5v-1.375zM5.5 13.75v1.375H4.125V13.75zM4.125 12.375v1.375H2.75v-1.375z'/%3E%3Cpath fill='%23000' d='M2.75 11v1.375H1.375V11zM15.125 5.5V11H13.75V5.5zM13.75 11h5.5v1.375h-5.5z'/%3E%3C/svg%3E");
+	height: 23.38px
+}
 
-		// Add drag-and-drop functionality
-		icon.addEventListener("mousedown", (e) => {
-			isDragging = false; // Reset dragging flag
-			icon.style.cursor = "grabbing";
-			let shiftX = e.clientX - icon.getBoundingClientRect().left;
-			let shiftY = e.clientY - icon.getBoundingClientRect().top;
+::-webkit-scrollbar-button:vertical:end:active {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23000' d='M.5 22.88h21V.5H.5z'/%3E%3Cpath fill='%23000' d='M1 .375h20v2H1zM1.375 11.002h5.5v1.375h-5.5zM6.875 5.501h6.875v11.002H6.875zM6.875 5.501v5.501H5.5v-5.5zM9.625 17.879v1.375H8.25v-1.375zM11 19.254v1.375H9.625v-1.375zM19.25 11.002v1.375h-1.375v-1.375zM17.875 12.378v1.375H13.75v-1.375zM16.5 13.753v1.375h-2.75v-1.375zM15.125 15.128v1.375H13.75v-1.375zM13.75 16.503v1.375h-1.375v-1.375zM12.375 17.879v1.375h-2.75v-1.375zM12.375 16.503v1.375h-5.5v-1.375zM6.875 15.128v1.375H5.5v-1.375zM6.875 13.753v1.375h-2.75v-1.375zM6.875 12.378v1.375H2.75v-1.375z'/%3E%3Cpath fill='%23000' d='M2.75 11.002v1.375H1.375v-1.375zM15.125 5.501v5.501H13.75v-5.5zM13.75 11.002h5.5v1.375h-5.5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	height: 23.38px
+}
 
-			const moveAt = (pageX, pageY) => {
-				isDragging = true; // Set dragging flag
-				let newX = Math.max(0, Math.min(pageX - shiftX, window.innerWidth - icon.offsetWidth));
-				let newY = Math.max(50, Math.min(pageY - shiftY, window.innerHeight - icon.offsetHeight)); // Prevent moving into the top bar
-				icon.style.left = `${newX}px`;
-				icon.style.top = `${newY}px`;
-			};
+::-webkit-scrollbar-button:horizontal:start {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23000' d='M.813 22.187v-21h22.375v21z'/%3E%3Cpath fill='%23000' d='M23.313 21.688v-20h-2v20zM12.688 21.313v-5.5h-1.376v5.5zM18.188 15.813V8.936h-1.375v6.876z'/%3E%3Cpath fill='%23000' d='M18.188 15.813h-5.5v1.374h5.5zM5.813 13.063H4.438v1.374h1.375zM4.438 11.688H3.063v1.374h1.374zM12.688 3.438h-1.376v1.374h1.376zM11.313 4.813H9.937v1.375h1.376zM9.938 6.188H8.562v1.375h1.376zM8.563 7.563H7.187v1.375h1.375zM7.188 8.938H5.813v1.374h1.375zM5.813 10.313H4.438v1.374h1.375zM7.188 14.438H5.813v1.374h1.375zM8.563 15.813H7.187v1.374h1.375zM9.938 17.188H8.562v1.375h1.376zM11.313 18.563H9.937v1.375h1.376zM12.688 19.938h-1.376v1.375h1.376zM18.188 7.563h-5.5v1.375h5.5z'/%3E%3Cpath fill='%23000' d='M12.688 8.938v-5.5h-1.376v5.5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	height: 23.38px
+}
 
-			const onMouseMove = (e) => {
-				moveAt(e.pageX, e.pageY);
-			};
+::-webkit-scrollbar-button:horizontal:start:active {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23000' d='M.81 22.19v-21h22.38v21z'/%3E%3Cpath fill='%23000' d='M23.315 21.69v-20h-2v20zM12.688 21.315v-5.5h-1.375v5.5zM18.189 15.815V8.94H7.187v6.875z'/%3E%3Cpath fill='%23000' d='M18.189 15.815h-5.501v1.375h5.5zM5.811 13.065H4.436v1.375h1.375zM4.436 11.69H3.06v1.375h1.375zM12.688 3.44h-1.375v1.375h1.375zM11.312 4.815H9.937V8.94h1.375zM9.937 6.19H8.562v2.75h1.375z'/%3E%3Cpath fill='%23000' d='M8.562 7.565H7.187V8.94h1.375zM7.186 8.94H5.811v1.375h1.375zM5.811 10.315H4.436v2.75h1.375zM7.186 10.315H5.811v5.5h1.375zM8.562 15.815H7.187v1.375h1.375z'/%3E%3Cpath fill='%23000' d='M9.937 15.815H8.562v2.75h1.375zM11.312 15.815H9.937v4.125h1.375zM12.688 19.94h-1.375v1.375h1.375zM18.189 7.565h-5.501V8.94h5.5z'/%3E%3Cpath fill='%23000' d='M12.688 8.94v-5.5h-1.375v5.5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	height: 23.38px
+}
 
-			document.addEventListener("mousemove", onMouseMove);
-
-			icon.addEventListener("mouseup", () => {
-				document.removeEventListener("mousemove", onMouseMove);
-				icon.style.cursor = "grab";
-			}, { once: true });
-		});
-
-		// Prevent @onclick from firing if the icon was dragged
-		icon.addEventListener("click", (e) => {
-			if (isDragging) {
-				e.stopImmediatePropagation(); // Prevent the click event from propagating
-			}
-		});
-
-		icon.ondragstart = () => false; // Disable default drag behavior
-	});
-};38h1.375v1.375h-1.375zM15.438 15.813h1.375v1.375h-1.375zM14.063 17.188h1.375v1.375h-1.375zM12.688 18.563h1.375v1.375h-1.375z'/%3E%3Cpath fill='%23000' d='M11.313 19.938h1.375v1.375h-1.375zM5.813 7.563h5.5v1.375h-5.5zM11.313 8.937v-5.5h1.375v5.5z'/%3E%3C/svg%3E");
+::-webkit-scrollbar-button:horizontal:end {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23000' d='M23.188 22.188v-21H.813v21z'/%3E%3Cpath fill='%23000' d='M.688 21.687v-20h2v20zM11.313 21.312v-5.5h1.375v5.5zM5.813 15.812V8.937h1.375v6.875zM5.813 15.813h5.5v1.375h-5.5zM18.188 13.063h1.375v1.375h-1.375zM19.563 11.688h1.375v1.375h-1.375zM11.313 3.438h1.375v1.375h-1.375zM12.688 4.813h1.375v1.375h-1.375zM14.063 6.188h1.375v1.375h-1.375zM15.438 7.563h1.375v1.375h-1.375zM16.813 8.938h1.375v1.375h-1.375zM18.188 10.313h1.375v1.375h-1.375zM16.813 14.438h1.375v1.375h-1.375zM15.438 15.813h1.375v1.375h-1.375zM14.063 17.188h1.375v1.375h-1.375zM12.688 18.563h1.375v1.375h-1.375z'/%3E%3Cpath fill='%23000' d='M11.313 19.938h1.375v1.375h-1.375zM5.813 7.563h5.5v1.375h-5.5zM11.313 8.937v-5.5h1.375v5.5z'/%3E%3C/svg%3E");
 	height: 23.38px
 }
 
@@ -748,10 +741,7 @@ ul [role="menu-item"].divider::after {
 /* styles specific to demo page */
 .menu-items>li {
 	margin-bottom: 1rem;
-} }
-  .text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
+}line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
