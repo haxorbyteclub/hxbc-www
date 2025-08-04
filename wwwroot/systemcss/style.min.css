@@ -314,7 +314,7 @@ h2 {
 	overflow: hidden;
 	background-color: var(--primary);
 	border: .1em solid var(--secondary);
-	font-family: Inconsolata, Menlo, Chicago, Geneva
+	font-family: Chicago, Geneva
 }
 
 .window-pane {
@@ -578,7 +578,7 @@ input[type=checkbox][disabled]:checked+label::after {
 }
 
 form {
-	font-family: Inconsolata, Menlo, Chicago, Geneva;
+	font-family: Chicago, Geneva;
 	font-size: 14px
 }
 
