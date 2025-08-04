@@ -649,6 +649,9 @@
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
+  .justify-self-center {
+    justify-self: center;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
