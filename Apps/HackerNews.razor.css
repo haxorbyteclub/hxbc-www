@@ -1,5 +1,5 @@
 ﻿.window {
-	width: 290px;
+	width: 370px;
 }
 
 .window-pane {
@@ -8,9 +8,9 @@
 	max-height: 500px;
 }
 
-.welcome-image {
-	width: 95%;
-	margin-left: 0;
+.header-image {
+	width: 91%;
 	object-fit: contain;
 	image-rendering: pixelated;
+	box-shadow: var(--box-shadow);
 }

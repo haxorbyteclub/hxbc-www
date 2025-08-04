@@ -41,3 +41,10 @@ textarea {
 .window-pane {
 	padding: 0;
 }
+
+.header-image {
+	width: 91%;
+	object-fit: contain;
+	image-rendering: pixelated;
+	box-shadow: var(--box-shadow);
+}
