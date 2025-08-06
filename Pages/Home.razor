@@ -50,6 +50,10 @@
 		<img src="img/editor-icon.png" alt="editor icon">
 		<span>Editor</span>
 	</div>
+	<div id="terminal-icon" class="desktop-icon" @onclick="ToggleTerminal">
+		<img src="img/editor-icon.png" alt="terminal icon">
+		<span>Terminal</span>
+	</div>
 </div>
 
 @foreach (var app in _apps)
@@ -89,6 +93,10 @@
 	else if (app is Editor editor)
 	{
 		<Editor AppId="@app.AppId" Text="@editor.Text" Title="@editor.Title" />
+	}
+	else if (app is Terminal terminal)
+	{
+		<Terminal AppId="@app.AppId" />
 	}
 }
 
@@ -215,6 +223,20 @@
 		StateHasChanged();
 	}
 
+	void ToggleTerminal()
+	{
+		if (_apps.Any(a => a is Terminal))
+		{
+			var app = _apps.FirstOrDefault(a => a is Terminal);
+			BringToFront(app.AppId).SafeFireAndForget();
+		}
+		else
+		{
+			_apps.Add(new Terminal() { AppId = Guid.NewGuid().ToString() });
+		}
+		StateHasChanged();
+	}
+
 
 	async Task BringToFront(string id)
 	{
@@ -258,6 +280,9 @@
 				break;
 			case AppType.Editor:
 				ToggleEditor();
+				break;
+			case AppType.Terminal:
+				ToggleTerminal();
 				break;
 			default:
 				break;

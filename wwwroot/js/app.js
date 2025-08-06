@@ -23,7 +23,7 @@ window.setupDragElement = function (id) {
 		if (e.target.closest('button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])')) {
 			return;
 		}
-		
+
 		e.preventDefault();
 		// Bring the current window to the front
 		elmnt.style.zIndex = zIndex++;
@@ -310,4 +310,17 @@ window.setupIconDrag = function () {
 
 		icon.ondragstart = () => false; // Disable default drag behavior
 	});
+};
+
+// Terminal-specific functions
+window.focusElement = function (element) {
+	if (element) {
+		element.focus();
+	}
+};
+
+window.scrollToBottom = function (element) {
+	if (element) {
+		element.scrollTop = element.scrollHeight;
+	}
 };

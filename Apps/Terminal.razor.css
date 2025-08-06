@@ -1,0 +1,135 @@
+.window {
+	width: 600px;
+	height: 400px;
+	background-color: #1a1a1a;
+	border: 1px solid #333;
+}
+
+.window.resizable {
+	resize: both;
+	overflow: hidden;
+}
+
+.terminal-container {
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 30px);
+	background-color: #0c0c0c;
+	color: #00ff00;
+	font-family: 'Courier New', monospace;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.terminal-output {
+	flex-grow: 1;
+	overflow-y: auto;
+	padding-bottom: 10px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.terminal-line {
+	margin-bottom: 2px;
+	line-height: 1.4;
+}
+
+.terminal-input-container {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid #333;
+	padding-top: 8px;
+}
+
+.prompt {
+	color: #00ff00;
+	font-weight: bold;
+	margin-right: 5px;
+	white-space: nowrap;
+}
+
+.command-text {
+	color: #ffffff;
+}
+
+.output-text {
+	color: #cccccc;
+}
+
+.terminal-input {
+	flex-grow: 1;
+	background: transparent;
+	border: none;
+	color: #ffffff;
+	font-family: 'Courier New', monospace;
+	font-size: 14px;
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
+
+.terminal-input::placeholder {
+	color: #666;
+}
+
+/* Scrollbar styling for dark theme */
+.terminal-output::-webkit-scrollbar {
+	width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+	background: #1a1a1a;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+	background: #444;
+	border-radius: 4px;
+}
+
+.terminal-output::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* ASCII art and special formatting */
+.output-text {
+	font-family: 'Courier New', monospace;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+
+	0%,
+	50% {
+		opacity: 1;
+	}
+
+	51%,
+	100% {
+		opacity: 0;
+	}
+}
+
+.terminal-input:focus+.cursor {
+	animation: blink 1s infinite;
+}
+
+/* Matrix-like effect for some outputs */
+.matrix-text {
+	color: #00ff41;
+	text-shadow: 0 0 5px #00ff41;
+}
+
+/* Error text styling */
+.error-text {
+	color: #ff4444;
+}
+
+/* Success text styling */
+.success-text {
+	color: #44ff44;
+}
+
+/* Warning text styling */
+.warning-text {
+	color: #ffff44;
+}

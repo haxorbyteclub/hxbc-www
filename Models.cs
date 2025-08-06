@@ -20,5 +20,6 @@ public enum AppType
 	ContactForm,
 	Editor,
 	Welcome,
-	AboutVersion
+	AboutVersion,
+	Terminal
 }
