@@ -430,6 +430,125 @@ textarea[b-rvka4hpuv4] {
 	image-rendering: pixelated;
 	box-shadow: var(--box-shadow);
 }
+/* /Apps/Terminal.razor.rz.scp.css */
+.window[b-3vr4mltuuz] {
+	width: 600px;
+	height: 400px;
+	background-color: #1a1a1a;
+	border: 1px solid #333;
+}
+
+.window.resizable[b-3vr4mltuuz] {
+	resize: both;
+	overflow: hidden;
+}
+
+.terminal-container[b-3vr4mltuuz] {
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 30px);
+	background-color: #0c0c0c;
+	color: #00ff00;
+	font-family: 'Courier New', monospace;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.terminal-output[b-3vr4mltuuz] {
+	flex-grow: 1;
+	overflow-y: auto;
+	padding-bottom: 10px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.terminal-line[b-3vr4mltuuz] {
+	margin-bottom: 2px;
+	line-height: 1.4;
+}
+
+.terminal-input-container[b-3vr4mltuuz] {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid #333;
+	padding-top: 8px;
+}
+
+.prompt[b-3vr4mltuuz] {
+	color: #00ff00;
+	font-weight: bold;
+	margin-right: 5px;
+	white-space: nowrap;
+}
+
+.command-text[b-3vr4mltuuz] {
+	color: #ffffff;
+}
+
+.output-text[b-3vr4mltuuz] {
+	color: #cccccc;
+}
+
+.terminal-input[b-3vr4mltuuz] {
+	flex-grow: 1;
+	background: transparent;
+	border: none;
+	color: #ffffff;
+	font-family: 'Courier New', monospace;
+	font-size: 14px;
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
+
+.terminal-input[b-3vr4mltuuz]::placeholder {
+	color: #666;
+}
+
+
+/* ASCII art and special formatting */
+.output-text[b-3vr4mltuuz] {
+	font-family: 'Courier New', monospace;
+}
+
+/* Blinking cursor effect */
+@keyframes blink-b-3vr4mltuuz {
+
+	0%,
+	50% {
+		opacity: 1;
+	}
+
+	51%,
+	100% {
+		opacity: 0;
+	}
+}
+
+.terminal-input:focus+.cursor[b-3vr4mltuuz] {
+	animation: blink-b-3vr4mltuuz 1s infinite;
+}
+
+/* Matrix-like effect for some outputs */
+.matrix-text[b-3vr4mltuuz] {
+	color: #00ff41;
+	text-shadow: 0 0 5px #00ff41;
+}
+
+/* Error text styling */
+.error-text[b-3vr4mltuuz] {
+	color: #ff4444;
+}
+
+/* Success text styling */
+.success-text[b-3vr4mltuuz] {
+	color: #44ff44;
+}
+
+/* Warning text styling */
+.warning-text[b-3vr4mltuuz] {
+	color: #ffff44;
+}
 /* /Apps/Welcome.razor.rz.scp.css */
 .window[b-878u4gjg4v] {
 	width: 420px;
