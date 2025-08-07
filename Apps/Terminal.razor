@@ -1,0 +1,409 @@
+@inherits AppBase
+
+<div class="window app-component draggable resizable" id="@AppId">
+	<div class="title-bar">
+		<button aria-label="Close" class="close" @onclick="Remove">✕</button>
+		<h1 class="title">Terminal</h1>
+		<button aria-label="Resize" disabled class="hidden"></button>
+	</div>
+	<div class="separator"></div>
+	<div class="terminal-container">
+		<div class="terminal-output" @ref="outputRef">
+			@foreach (var line in _outputLines)
+			{
+				<div class="terminal-line">
+					@if (line.IsCommand)
+					{
+						<span class="prompt">user@haxorbyte:~$ </span><span class="command-text">@line.Text</span>
+					}
+					else
+					{
+						<span class="output-text">@((MarkupString)line.Text)</span>
+					}
+				</div>
+			}
+		</div>
+		<div class="terminal-input-container">
+			<span class="prompt">user@haxorbyte:~$ </span>
+			<input @ref="inputRef" 
+				   @bind="_currentCommand" 
+				   @onkeypress="HandleKeyPress" 
+				   class="terminal-input" 
+				   placeholder="Type a command..." 
+				   autofocus />
+		</div>
+	</div>
+</div>
+
+@code {
+	private ElementReference inputRef;
+	private ElementReference outputRef;
+	private string _currentCommand = string.Empty;
+	private List<TerminalLine> _outputLines = new();
+	private List<string> _commandHistory = new();
+	private int _historyIndex = -1;
+
+	public class TerminalLine
+	{
+		public string Text { get; set; } = string.Empty;
+		public bool IsCommand { get; set; }
+	}
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		AddWelcomeMessage();
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		await base.OnAfterRenderAsync(firstRender);
+		if (firstRender)
+		{
+			await _js.InvokeVoidAsync("focusElement", inputRef);
+		}
+		await ScrollToBottom();
+	}
+
+	private void AddWelcomeMessage()
+	{
+		_outputLines.Add(new TerminalLine { Text = "Welcome to HaxorByte Terminal v1.0", IsCommand = false });
+		_outputLines.Add(new TerminalLine { Text = "Type 'help' to see available commands.", IsCommand = false });
+		_outputLines.Add(new TerminalLine { Text = "", IsCommand = false });
+	}
+
+	private async Task HandleKeyPress(KeyboardEventArgs e)
+	{
+		if (e.Key == "Enter")
+		{
+			await ExecuteCommand();
+		}
+		else if (e.Key == "ArrowUp")
+		{
+			NavigateHistory(-1);
+		}
+		else if (e.Key == "ArrowDown")
+		{
+			NavigateHistory(1);
+		}
+	}
+
+	private void NavigateHistory(int direction)
+	{
+		if (_commandHistory.Count == 0) return;
+
+		_historyIndex += direction;
+		_historyIndex = Math.Max(-1, Math.Min(_historyIndex, _commandHistory.Count - 1));
+
+		if (_historyIndex == -1)
+		{
+			_currentCommand = string.Empty;
+		}
+		else
+		{
+			_currentCommand = _commandHistory[_historyIndex];
+		}
+		StateHasChanged();
+	}
+
+	private async Task ExecuteCommand()
+	{
+		var command = _currentCommand.Trim();
+		if (string.IsNullOrEmpty(command)) return;
+
+		// Add command to output
+		_outputLines.Add(new TerminalLine { Text = command, IsCommand = true });
+
+		// Add to history
+		if (!string.IsNullOrEmpty(command) && (_commandHistory.Count == 0 || _commandHistory.Last() != command))
+		{
+			_commandHistory.Add(command);
+		}
+		_historyIndex = -1;
+
+		// Process command
+		var output = ProcessCommand(command);
+		if (!string.IsNullOrEmpty(output))
+		{
+			var lines = output.Split('\n');
+			foreach (var line in lines)
+			{
+				_outputLines.Add(new TerminalLine { Text = line, IsCommand = false });
+			}
+		}
+
+		// Clear input
+		_currentCommand = string.Empty;
+		StateHasChanged();
+
+		// Focus input and scroll to bottom
+		await _js.InvokeVoidAsync("focusElement", inputRef);
+		await ScrollToBottom();
+	}
+
+	private async Task ScrollToBottom()
+	{
+		await _js.InvokeVoidAsync("scrollToBottom", outputRef);
+	}
+
+	private string ProcessCommand(string command)
+	{
+		var parts = command.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+		if (parts.Length == 0) return string.Empty;
+
+		var cmd = parts[0].ToLower();
+		var args = parts.Skip(1).ToArray();
+
+		return cmd switch
+		{
+			"help" => GetHelpText(),
+			"clear" => HandleClear(),
+			"ls" => HandleLs(args),
+			"pwd" => "/home/user",
+			"whoami" => "user",
+			"date" => DateTime.Now.ToString("ddd MMM dd HH:mm:ss UTC yyyy"),
+			"uptime" => $"up {Random.Shared.Next(1, 30)} days, {Random.Shared.Next(1, 24)} hours",
+			"ps" => HandlePs(),
+			"top" => "PID  COMMAND      %CPU %MEM\n1337 haxorbyte    99.9  0.1\n42   terminal     0.1  0.5",
+			"cat" => HandleCat(args),
+			"echo" => string.Join(" ", args),
+			"fortune" => GetRandomFortune(),
+			"cowsay" => HandleCowsay(args),
+			"lolcat" => "🌈 Everything is colorful! 🌈",
+			"sl" => GetTrainArt(),
+			"matrix" => GetMatrixEffect(),
+			"hack" => GetHackingSimulation(),
+			"coffee" => GetCoffeeArt(),
+			"weather" => GetWeatherInfo(),
+			"joke" => GetRandomJoke(),
+			"exit" or "quit" => "Goodbye! 👋",
+			"shop" or "swag" or "store" or "merch" or "buy" => LaunchStore(),
+			"sudo" => HandleSudo(args),
+			"rm" => "rm: cannot remove files (safety mode enabled)",
+			"chmod" => "chmod: permissions changed",
+			"mkdir" => args.Length > 0 ? $"Directory '{args[0]}' created" : "mkdir: missing operand",
+			"cd" => $"Directory changed to '{(args.Length > 0 ? args[0] : "/")}'",
+			"history" => string.Join("\n", _commandHistory.Select((h, i) => $"{i + 1}  {h}")),
+			"version" => "HaxorByte Terminal v1.0 - Built with Blazor",
+			"about" => "HaxorByte Club - Where hackers meet! 🚀",
+			"secret" => "🎉 You found a secret command! Here's a cookie: 🍪",
+			"42" => "The Answer to the Ultimate Question of Life, the Universe, and Everything",
+			"konami" => "↑↑↓↓←→←→BA - Cheat code activated!",
+			"xyzzy" => "Nothing happens.",
+			"plugh" => "A hollow voice says 'Plugh'.",
+			"hello" => "Hello there! 👋 Welcome to the terminal!",
+			"ping" => "PING google.com: 64 bytes from 142.250.191.14: icmp_seq=1 ttl=115 time=12.3 ms",
+			"nmap" => "Starting Nmap 7.80 ( https://nmap.org )\nHost is up (0.012s latency).\nAll ports are closed",
+			"netstat" => "Active Internet connections:\ntcp  0.0.0.0:80   LISTEN\ntcp  0.0.0.0:443  LISTEN",
+			"ifconfig" => "eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>\n      inet 192.168.1.100  netmask 255.255.255.0",
+			_ => $"Command '{command}' not found. Type 'help' for available commands."
+		};
+	}
+
+	private string HandleClear()
+	{
+		_outputLines.Clear();
+		AddWelcomeMessage();
+		return string.Empty;
+	}
+
+	private string HandleLs(string[] args)
+	{
+		var files = new[] { "readme.txt", "secrets.dat", "config.json", "backup.tar.gz", "script.sh", "data.csv" };
+		var folders = new[] { "Documents/", "Downloads/", "Projects/", "Music/", "Pictures/" };
+		
+		if (args.Contains("-la") || args.Contains("-al"))
+		{
+			return "drwxr-xr-x  2 user user 4096 Aug  6 12:00 .\n" +
+				   "drwxr-xr-x  3 user user 4096 Aug  6 11:00 ..\n" +
+				   string.Join("\n", folders.Select(f => $"drwxr-xr-x  2 user user 4096 Aug  6 12:00 {f}")) + "\n" +
+				   string.Join("\n", files.Select(f => $"-rw-r--r--  1 user user {Random.Shared.Next(1000, 9999)} Aug  6 12:00 {f}"));
+		}
+		
+		return string.Join("  ", folders.Concat(files));
+	}
+
+	private string HandlePs()
+	{
+		return "PID   TTY      TIME CMD\n" +
+			   "1337  pts/0    00:00:01 bash\n" +
+			   "1338  pts/0    00:00:00 terminal\n" +
+			   "1339  pts/0    00:00:00 ps";
+	}
+
+	private string HandleCat(string[] args)
+	{
+		if (args.Length == 0) return "cat: missing file operand";
+		
+		var filename = args[0];
+		return filename.ToLower() switch
+		{
+			"readme.txt" => "Welcome to HaxorByte Club!\n\nThis is a secret file with important information.\nKeep exploring! 🕵️",
+			"secrets.dat" => "01001000 01100001 01111000 01101111 01110010\n(Binary for 'Haxor')",
+			"config.json" => "{\n  \"theme\": \"dark\",\n  \"hacker_mode\": true,\n  \"secret_level\": 9001\n}",
+			_ => $"cat: {filename}: No such file or directory"
+		};
+	}
+
+	private string HandleCowsay(string[] args)
+	{
+		var message = args.Length > 0 ? string.Join(" ", args) : "Moo!";
+		return $@" {new string('_', message.Length + 2)}
+< {message} >
+ {new string('-', message.Length + 2)}
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||";
+	}
+
+	private string LaunchStore()
+	{
+		_js.InvokeVoidAsync("open", "http://hxbc-shop.fourthwall.com", "_blank").SafeFireAndForget();
+		return "Opening HXBC Store...";
+	}
+
+	private string HandleSudo(string[] args)
+	{
+		if (args.Length == 0) return "sudo: a command is required";
+		
+		var command = string.Join(" ", args);
+		return $"[sudo] password for user: ****\nExecuting with elevated privileges: {command}\n(Just kidding 😜 you don't have sudo access!)";
+	}
+
+	private string GetHelpText()
+	{
+		return @"Available commands:
+Basic Commands:
+  help          - Show this help message
+  clear         - Clear the terminal
+  ls [-la]      - List directory contents
+  pwd           - Print working directory
+  whoami        - Current user
+  cat <file>    - Display file contents
+  echo <text>   - Display text
+  date          - Show current date and time
+  uptime        - System uptime
+  ps            - Show running processes
+  history       - Show command history
+  
+Fun Commands:
+  fortune       - Random fortune cookie
+  cowsay <text> - ASCII cow saying something
+  matrix        - Matrix effect
+  hack          - Hacking simulation
+  coffee        - ASCII coffee art
+  weather       - Weather info
+  joke          - Random joke
+  
+Easter Eggs:
+  42            - The answer to everything
+  secret        - Find the secret
+  konami        - Try the Konami code
+  xyzzy         - Adventure game reference
+  sl            - Steam locomotive
+
+Network Commands:
+  ping          - Test network connectivity
+  netstat       - Show network connections
+  ifconfig      - Network interface info
+
+Type any command to get started!";
+	}
+
+	private string GetRandomFortune()
+	{
+		var fortunes = new[]
+		{
+			"The best way to predict the future is to invent it.",
+			"Code is poetry written in logic.",
+			"There are only 10 types of people: those who understand binary and those who don't.",
+			"A bug is never just a mistake. It represents something bigger.",
+			"Programs must be written for people to read, and only incidentally for machines to execute.",
+			"The most disastrous thing that you can ever learn is your first programming language.",
+			"Debugging is twice as hard as writing the code in the first place."
+		};
+		return fortunes[Random.Shared.Next(fortunes.Length)];
+	}
+
+	private string GetTrainArt()
+	{
+		return @"    ====        ________                ___________
+   _D _|  |_______/        \__I_I_____===__|_________|
+    |(_)---  |   H\________/ |   |        =|___ ___|  
+    /     |  |   H  |  |     |   |         ||_| |_||  
+   |      |  |   H  |__--------------------| [___] |  
+   | ________|___H__/__|_____/[][]~\_______|       |  
+   |/ |   |-----------I_____I [][] []  D   |=======|__
+ __/ =| o |=-~~\  /~~\  /~~\  /~~\ ____Y___________|__|
+  |/-=|___|=    ||    ||    ||    |_____/~\___/        
+   \_/      \O=====O=====O=====O_/      \_/            ";
+	}
+
+	private string GetMatrixEffect()
+	{
+		return @"01001000 01100001 01111000 01101111 01110010
+11010000 11000001 11110000 11001111 11000101
+01000010 01111001 01110100 01100101 00100000
+11000011 11101100 11110101 11100010 00100000
+Wake up, Neo... 🕶️";
+	}
+
+	private string GetHackingSimulation()
+	{
+		return @"[HACKING SIMULATION INITIATED]
+> Scanning networks...        [████████████] 100%
+> Cracking passwords...       [████████████] 100% 
+> Bypassing firewalls...      [████████████] 100%
+> Accessing mainframe...      [████████████] 100%
+> Downloading files...        [████████████] 100%
+
+🎭 HACK COMPLETE! 🎭
+(This is just for fun, no actual hacking occurred!)";
+	}
+
+	private string GetCoffeeArt()
+	{
+		return @"      )  (
+     (   ) )
+      ) ( (
+    _______)_
+ .-'---------|  
+( C|/\/\/\/\/|
+ '-./\/\/\/\/|
+   '_________'
+    '-------'
+☕ Coffee break time! ☕";
+	}
+
+	private string GetWeatherInfo()
+	{
+		var conditions = new[] { "Sunny ☀️", "Cloudy ☁️", "Rainy 🌧️", "Snowy ❄️", "Stormy ⛈️" };
+		var temp = Random.Shared.Next(-10, 35);
+		var condition = conditions[Random.Shared.Next(conditions.Length)];
+		
+		return $@"Weather Report for HaxorByte City:
+Temperature: {temp}°C
+Condition: {condition}
+Humidity: {Random.Shared.Next(30, 90)}%
+Wind: {Random.Shared.Next(5, 25)} km/h
+
+Perfect weather for coding! 💻";
+	}
+
+	private string GetRandomJoke()
+	{
+		var jokes = new[]
+		{
+			"Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
+			"How many programmers does it take to change a light bulb? None, that's a hardware problem! 💡",
+			"Why don't programmers like nature? It has too many bugs! 🌿",
+			"What's a programmer's favorite hangout place? Foo Bar! 🍺",
+			"Why do Java developers wear glasses? Because they can't C# ! 🤓",
+			"What do you call a programmer from Finland? Nerdic! 🇫🇮",
+			"Why did the programmer quit his job? He didn't get arrays! 📊"
+		};
+		return jokes[Random.Shared.Next(jokes.Length)];
+	}
+}
