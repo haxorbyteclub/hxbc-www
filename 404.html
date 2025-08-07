@@ -2,15 +2,18 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>HaxorByteClub</title>
 	<base href="/" />
-	<link rel="stylesheet" href="systemcss/style.min.css" />
-	<link rel="stylesheet" href="fonts/ishimeria/webfont.css" />
-	<link rel="stylesheet" href="fonts/typecast/stylesheet.css" />
-	<link rel="stylesheet" href="css/tw.min.css" />
-	<link rel="stylesheet" href="css/app.css" />
+	<link rel="stylesheet" href="systemcss/style.min.3e9dbe19.css" />
+	<link rel="stylesheet" href="fonts/ishimeria/webfont.57a2de97.css" />
+	<link rel="stylesheet" href="fonts/typecast/stylesheet.1152150f.css" />
+	<link rel="stylesheet" href="css/tw.min.e94a4e42.css" />
+	<link rel="stylesheet" href="css/app.718c8b8f.css" />
 	<link href="HaxorByteClub.styles.css" rel="stylesheet" />
 
 	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
@@ -18,6 +21,25 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 	<link rel="manifest" href="icons/site.webmanifest">
 
+	<!-- Prevent caching of index.html -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<!-- Add timestamp to prevent caching -->
+	<script>
+		// Force reload of cached resources
+		if (performance.navigation.type === 1) {
+			// Page was refreshed, clear cache
+			if ('caches' in window) {
+				caches.keys().then(names => {
+					names.forEach(name => {
+						caches.delete(name);
+					});
+				});
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -38,9 +60,9 @@
 		<a href="." class="reload">Reload</a>
 		<span class="dismiss">🗙</span>
 	</div>
-	<script src="js/app.min.js"></script>
+	<script src="js/app.min.6d88a240.js"></script>
 	<script src="_framework/blazor.webassembly.js" autostart="false"></script>
-	<script>navigator.serviceWorker.register('service-worker.js');</script>
+	<script>navigator.serviceWorker.register('service-worker.9d83da11.js');</script>
 	<script>
 		const messages = [
 			"Booting up the flux capacitor...",
