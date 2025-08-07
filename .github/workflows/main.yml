@@ -56,8 +56,40 @@ jobs:
       - name: Add build hash to all css, js and json files
         run: |
           npm install -D hashmark
-          npx hashmark ./wwwroot/**/*.css ./wwwroot/**/*.js ./wwwroot/**/*.json
+          # Generate hashed filenames and get the mapping
+          find ./wwwroot -name "*.css" -o -name "*.js" -o -name "*.json" | while read file; do
+            hash=$(sha256sum "$file" | cut -d' ' -f1 | cut -c1-8)
+            dir=$(dirname "$file")
+            filename=$(basename "$file")
+            name="${filename%.*}"
+            ext="${filename##*.}"
+            newname="${name}.${hash}.${ext}"
+            mv "$file" "${dir}/${newname}"
+            echo "Renamed $file to ${dir}/${newname}"
+          done
 
+      - name: Update references in HTML files to use hashed filenames
+        run: |
+          # Update CSS references
+          for css in $(find ./wwwroot -name "*.*.css"); do
+            filename=$(basename "$css")
+            original_name=$(echo "$filename" | sed 's/\.[^.]*\.css$/.css/')
+            find ./wwwroot -name "*.html" -exec sed -i "s|$original_name|$filename|g" {} +
+          done
+          
+          # Update JS references  
+          for js in $(find ./wwwroot -name "*.*.js"); do
+            filename=$(basename "$js")
+            original_name=$(echo "$filename" | sed 's/\.[^.]*\.js$/.js/')
+            find ./wwwroot -name "*.html" -exec sed -i "s|$original_name|$filename|g" {} +
+          done
+
+      - name: Add cache-busting headers to index.html
+        run: |
+          # Add meta tag to prevent caching of index.html itself
+          sed -i '/<head>/a\    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n    <meta http-equiv="Pragma" content="no-cache">\n    <meta http-equiv="Expires" content="0">' wwwroot/index.html
+
+      # Restore NuGet packages
       - name: Restore NuGet packages
         run: dotnet restore HaxorByteClub.sln
 
