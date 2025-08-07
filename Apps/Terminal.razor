@@ -177,22 +177,23 @@
 			"weather" => GetWeatherInfo(),
 			"joke" => GetRandomJoke(),
 			"exit" or "quit" => "Goodbye! 👋",
+			"shop" or "swag" or "store" or "merch" or "buy" => LaunchStore(),
 			"sudo" => HandleSudo(args),
 			"rm" => "rm: cannot remove files (safety mode enabled)",
-			"chmod" => "chmod: permissions changed (not really)",
-			"mkdir" => args.Length > 0 ? $"Directory '{args[0]}' created (virtually)" : "mkdir: missing operand",
-			"cd" => "Directory changed (you're still here though)",
+			"chmod" => "chmod: permissions changed",
+			"mkdir" => args.Length > 0 ? $"Directory '{args[0]}' created" : "mkdir: missing operand",
+			"cd" => $"Directory changed to '{(args.Length > 0 ? args[0] : "/")}'",
 			"history" => string.Join("\n", _commandHistory.Select((h, i) => $"{i + 1}  {h}")),
 			"version" => "HaxorByte Terminal v1.0 - Built with Blazor",
 			"about" => "HaxorByte Club - Where hackers meet! 🚀",
 			"secret" => "🎉 You found a secret command! Here's a cookie: 🍪",
 			"42" => "The Answer to the Ultimate Question of Life, the Universe, and Everything",
-			"konami" => "↑↑↓↓←→←→BA - Cheat code activated! (Not really)",
+			"konami" => "↑↑↓↓←→←→BA - Cheat code activated!",
 			"xyzzy" => "Nothing happens.",
 			"plugh" => "A hollow voice says 'Plugh'.",
 			"hello" => "Hello there! 👋 Welcome to the terminal!",
 			"ping" => "PING google.com: 64 bytes from 142.250.191.14: icmp_seq=1 ttl=115 time=12.3 ms",
-			"nmap" => "Starting Nmap 7.80 ( https://nmap.org )\nHost is up (0.012s latency).\nAll ports are closed (just kidding!)",
+			"nmap" => "Starting Nmap 7.80 ( https://nmap.org )\nHost is up (0.012s latency).\nAll ports are closed",
 			"netstat" => "Active Internet connections:\ntcp  0.0.0.0:80   LISTEN\ntcp  0.0.0.0:443  LISTEN",
 			"ifconfig" => "eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>\n      inet 192.168.1.100  netmask 255.255.255.0",
 			_ => $"Command '{command}' not found. Type 'help' for available commands."
@@ -257,12 +258,18 @@
                 ||     ||";
 	}
 
+	private string LaunchStore()
+	{
+		_js.InvokeVoidAsync("open", "http://hxbc-shop.fourthwall.com", "_blank").SafeFireAndForget();
+		return "Opening HXBC Store...";
+	}
+
 	private string HandleSudo(string[] args)
 	{
 		if (args.Length == 0) return "sudo: a command is required";
 		
 		var command = string.Join(" ", args);
-		return $"[sudo] password for user: ****\nExecuting with elevated privileges: {command}\n(Just kidding, you don't have sudo access! 😄)";
+		return $"[sudo] password for user: ****\nExecuting with elevated privileges: {command}\n(Just kidding 😜 you don't have sudo access!)";
 	}
 
 	private string GetHelpText()
