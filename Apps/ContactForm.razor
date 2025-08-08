@@ -15,15 +15,7 @@
 	<div class=" text-sm window-pane">
 
 		<div class="content flex flex-col gap-3">
-
-			<div class="standard-dialog center scale-down text-xs w-9/12 mx-auto">
-				<h1 class="dialog-text uppercase font-black">Get in touch</h1>
-				<p class="dialog-text font-geneva">Let's talk! Your messages are collected in our
-					<span class="cursor-pointer underline" @onclick="ShowGuestBook">
-						guestbook
-					</span>.
-				</p>
-			</div>
+			<img class="header-image mx-auto rounded-sm mt-2" src="img/contact.png" alt="" />
 
 
 			<div class="message-form">
@@ -34,7 +26,13 @@
 					<label class="mt-2" for="text_message">Message</label>
 					<textarea id="text_message" type="text" class="w-full" placeholder="hello world..." @bind="Message"
 						autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+
 					<button class="btn mt-2" @onclick="Submit">Send it!</button>
+					<p class="italic text-sm">Messages are collected in our
+						<span class="cursor-pointer underline" @onclick="ShowGuestBook">
+							guestbook
+						</span>.
+					</p>
 				</div>
 			</div>
 		</div>

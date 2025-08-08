@@ -5,11 +5,12 @@
 .window-pane {
 	height: auto;
 	max-height: 500px;
+	padding: 0.5rem;
 }
 
 textarea {
 	border: 1.5px solid #000;
-	height: 160px;
+	height: 80px;
 }
 
 .info-box {
