@@ -15,7 +15,7 @@
 
 			<div class="screen-container">
 				<div class="display-image-wrapper">
-					<img class="display-image w-[250px]" src="img/screen.png" alt="Welcome" />
+					<img class="display-image w-[250px]" src="@_screenImageSrc" alt="Welcome" />
 					@if (_selectedWallpaper is not null)
 					{
 						<div class="wallpaper-image w-[250px]"
@@ -38,7 +38,7 @@
 						}
 						else
 						{
-							<div class="wallpaper-item" @onclick="() => _selectedWallpaper = wallpaper">@wallpaper.Name</div>
+							<div class="wallpaper-item" @onclick="() => SelectWallpaper(wallpaper)">@wallpaper.Name</div>
 						}
 					}
 				}
@@ -54,11 +54,32 @@
 @code {
 	List<Wallpaper>? _wallpapers;
 	Wallpaper? _selectedWallpaper;
+	string _screenImageSrc = "img/screen.png";
 
 	protected override async Task OnInitializedAsync()
 	{
 		_wallpapers = await _wallpaperService.GetWallpapers();
 		_selectedWallpaper = _wallpapers.FirstOrDefault();
+	}
+
+	async Task SelectWallpaper(Wallpaper wallpaper)
+	{
+		_selectedWallpaper = wallpaper;
+
+		// Trigger screen blink effect
+		_screenImageSrc = "img/screen_blink.png";
+		StateHasChanged();
+
+		// Wait 100ms then change back
+		await Task.Delay(100);
+		_screenImageSrc = "img/screen.png";
+		StateHasChanged();
+		await Task.Delay(100);
+		_screenImageSrc = "img/screen_blink.png";
+		StateHasChanged();
+		await Task.Delay(100);
+		_screenImageSrc = "img/screen.png";
+		StateHasChanged();
 	}
 
 	async Task Apply()

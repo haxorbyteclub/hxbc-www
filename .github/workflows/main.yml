@@ -68,6 +68,17 @@ jobs:
             echo "Renamed $file to ${dir}/${newname}"
           done
 
+      - name: change img/wallpapers/data.json in Constants to the new hashed filename
+        run: |
+          # Find the new hashed filename for data.json
+          new_data_json=$(find ./wwwroot/img/wallpapers -name "data.*.json" | head -n 1)
+          if [ -n "$new_data_json" ]; then
+            new_data_json_name=$(basename "$new_data_json")
+            sed -i "s|img/wallpapers/data.json|img/wallpapers/${new_data_json_name}|g" Constants.cs
+          else
+            echo "No hashed data.json file found."
+          fi
+
       - name: Update references in HTML files to use hashed filenames
         run: |
           # Update CSS references

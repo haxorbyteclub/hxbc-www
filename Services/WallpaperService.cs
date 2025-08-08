@@ -14,7 +14,7 @@ public class WallpaperService
 	{
 		if (_wallpapers.Count == 0)
 		{
-			_wallpapers = await _httpClient.GetFromJsonAsync<List<Wallpaper>>("img/wallpapers/data.json");
+			_wallpapers = await _httpClient.GetFromJsonAsync<List<Wallpaper>>(Constants.WallpapersEndpoint);
 		}
 		return _wallpapers;
 	}
