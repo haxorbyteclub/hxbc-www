@@ -65,7 +65,8 @@ html {
 #wallpaper {
 	content: "";
 	background: white;
-	background-image: url("../img/wallpapers/modular-brickwork.png");
+	background-image: url("../img/wallpapers/sketchybear.png");
+	background-size: 300px;
 	height: 100%;
 	position: fixed;
 	width: 100%;

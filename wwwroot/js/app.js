@@ -48,6 +48,7 @@ window.setupDragElement = function (id) {
 	}
 
 	function elementDrag(e) {
+
 		e.preventDefault();
 		let clientX, clientY;
 		if (e.type === 'touchmove') {
@@ -231,86 +232,91 @@ window.triggerDownload = function (url) {
 
 
 
+
 window.setupIconDrag = function () {
 	const icons = document.querySelectorAll(".desktop-icon");
-	const occupiedPositions = []; // Array to store occupied positions
+	const columns = 2;
+	const topPadding = 30;   // safe area at the top
+	const edgePadding = 20;  // left/right/bottom padding
+	const gutter = 10;       // spacing between rows/columns
 
-	icons.forEach(icon => {
-		let isDragging = false; // Flag to track dragging
+	// Determine a consistent cell size so the grid aligns nicely
+	const sizes = Array.from(icons).map(icon => ({
+		w: icon.offsetWidth,
+		h: icon.offsetHeight
+	}));
+	const cellWidth = Math.max(...sizes.map(s => s.w), 0);
+	const cellHeight = Math.max(...sizes.map(s => s.h), 0);
 
-		// Function to check if a position overlaps with existing icons
-		const isOverlapping = (x, y, width, height) => {
-			return occupiedPositions.some(pos => {
-				return (
-					x < pos.x + pos.width &&
-					x + width > pos.x &&
-					y < pos.y + pos.height &&
-					y + height > pos.y
-				);
-			});
-		};
+	const shuffledIcons = Array.from(icons);
+	for (let i = shuffledIcons.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[shuffledIcons[i], shuffledIcons[j]] = [shuffledIcons[j], shuffledIcons[i]];
+	}
 
-		// Set random initial positions for the icons
-		const maxX = window.innerWidth - icon.offsetWidth; // Ensure the icon stays within the screen width
-		const maxY = window.innerHeight - icon.offsetHeight - 50; // Subtract 50px for the top bar height
-		let randomX, randomY;
+	shuffledIcons.forEach((icon, i) => {
+		let isDragging = false;
 
-		// Keep generating random positions until no overlap is found
-		do {
-			randomX = Math.floor(Math.random() * Math.max(1, maxX));
-			randomY = Math.floor(Math.random() * Math.max(1, maxY)) + 50; // Ensure it starts below the top bar
-		} while (isOverlapping(randomX, randomY, icon.offsetWidth, icon.offsetHeight));
+		const col = i % columns;
+		const row = Math.floor(i / columns);
 
-		// Store the position as occupied
-		occupiedPositions.push({
-			x: randomX,
-			y: randomY,
-			width: icon.offsetWidth,
-			height: icon.offsetHeight
-		});
+		// Compute desired grid position
+		const desiredLeft = edgePadding + col * (cellWidth + gutter);
+		const desiredTop = topPadding + row * (cellHeight + gutter);
+
+		// Keep inside viewport with edge padding
+		const maxLeft = Math.max(edgePadding, window.innerWidth - icon.offsetWidth - edgePadding);
+		const maxTop = Math.max(topPadding, window.innerHeight - icon.offsetHeight - edgePadding);
+
+		const left = Math.min(desiredLeft, maxLeft);
+		const top = Math.min(desiredTop, maxTop);
 
 		icon.style.position = "absolute";
-		icon.style.left = `${randomX}px`;
-		icon.style.top = `${randomY}px`;
-		icon.style.cursor = "grab";
+		icon.style.left = `${left}px`;
+		icon.style.top = `${top}px`;
+		icon.style.cursor = "pointer";
 
-		// Add drag-and-drop functionality
+		// Drag-and-drop
 		icon.addEventListener("mousedown", (e) => {
-			isDragging = false; // Reset dragging flag
-			icon.style.cursor = "grabbing";
+			isDragging = false;
+
+			icon.style.cursor = "grab";
+
 			let shiftX = e.clientX - icon.getBoundingClientRect().left;
 			let shiftY = e.clientY - icon.getBoundingClientRect().top;
 
 			const moveAt = (pageX, pageY) => {
-				isDragging = true; // Set dragging flag
-				let newX = Math.max(0, Math.min(pageX - shiftX, window.innerWidth - icon.offsetWidth));
-				let newY = Math.max(50, Math.min(pageY - shiftY, window.innerHeight - icon.offsetHeight)); // Prevent moving into the top bar
+				isDragging = true;
+				const newX = Math.max(edgePadding, Math.min(pageX - shiftX, window.innerWidth - icon.offsetWidth - edgePadding));
+				const newY = Math.max(topPadding, Math.min(pageY - shiftY, window.innerHeight - icon.offsetHeight - edgePadding));
 				icon.style.left = `${newX}px`;
 				icon.style.top = `${newY}px`;
 			};
 
 			const onMouseMove = (e) => {
+				icon.style.cursor = "grabbing";
 				moveAt(e.pageX, e.pageY);
 			};
 
-			document.addEventListener("mousemove", onMouseMove);
-
-			icon.addEventListener("mouseup", () => {
+			const onMouseUp = () => {
 				document.removeEventListener("mousemove", onMouseMove);
-				icon.style.cursor = "grab";
-			}, { once: true });
+				document.removeEventListener("mouseup", onMouseUp);
+				icon.style.cursor = "pointer";
+			};
+
+			document.addEventListener("mousemove", onMouseMove);
+			document.addEventListener("mouseup", onMouseUp);
 		});
 
-		// Prevent @onclick from firing if the icon was dragged
+		// Prevent click after drag
 		icon.addEventListener("click", (e) => {
-			if (isDragging) {
-				e.stopImmediatePropagation(); // Prevent the click event from propagating
-			}
+			if (isDragging) e.stopImmediatePropagation();
 		});
 
-		icon.ondragstart = () => false; // Disable default drag behavior
+		icon.ondragstart = () => false;
 	});
 };
+
 
 // Terminal-specific functions
 window.focusElement = function (element) {
