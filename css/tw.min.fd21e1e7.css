@@ -603,9 +603,6 @@
   .w-0 {
     width: calc(var(--spacing) * 0);
   }
-  .w-9\/12 {
-    width: calc(9/12 * 100%);
-  }
   .w-11\/12 {
     width: calc(11/12 * 100%);
   }
@@ -736,6 +733,9 @@
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .italic {
+    font-style: italic;
   }
   .underline {
     text-decoration-line: underline;
