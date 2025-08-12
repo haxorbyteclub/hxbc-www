@@ -656,9 +656,6 @@
   .gap-1 {
     gap: calc(var(--spacing) * 1);
   }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
   .justify-self-center {
     justify-self: center;
   }
