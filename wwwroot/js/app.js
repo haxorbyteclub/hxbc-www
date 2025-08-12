@@ -115,6 +115,7 @@ window.initializeAudioPlayer = function (dotNetRef) {
 
 window.playAudio = function (url) {
 	stopEqualizer();
+	stopReels();
 	if (document.querySelector('audio')) {
 		document.querySelector('audio').remove();
 	}
@@ -148,11 +149,13 @@ window.playAudio = function (url) {
 
 	setTimeout(function () {
 		animateEqualizer();
+		startReels();
 	}, 500);
 };
 
 window.stopAudio = function () {
 	stopEqualizer();
+	stopReels();
 	if (document.querySelector('audio')) {
 		document.querySelector('audio').remove();
 	}
@@ -163,10 +166,11 @@ window.playPauseAudio = function () {
 	if (audio.paused) {
 		audio.play();
 		animateEqualizer();
-
+		startReels();
 	} else {
 		audio.pause();
 		stopEqualizer();
+		stopReels();
 	}
 }
 
@@ -192,6 +196,20 @@ function stopEqualizer() {
 	var bars = document.querySelectorAll('.bar');
 	bars.forEach(function (bar) {
 		bar.style.height = '0%';
+	});
+}
+
+function startReels() {
+	var reels = document.querySelectorAll('.reel');
+	reels.forEach(function (reel) {
+		reel.classList.add('spinning');
+	});
+}
+
+function stopReels() {
+	var reels = document.querySelectorAll('.reel');
+	reels.forEach(function (reel) {
+		reel.classList.remove('spinning');
 	});
 }
 

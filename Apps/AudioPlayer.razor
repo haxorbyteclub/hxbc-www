@@ -10,69 +10,111 @@
 	</div>
 	<div class="separator"></div>
 	<div class="window-pane">
-
 		<div class="content">
-			<div class="media-player">
-				<div class="display">
-					<div>
-						@if (_currentTrack is not null)
-						{
-							<div class="track-info font-[600]">
-								<span>@_currentTrack?.Name by @_currentTrack.Artist</span>
+			<!-- Cassette Player -->
+			<div class="cassette-player" style="--track-color: @GetTrackColor(_currentTrack)">
+
+				<!-- Cassette Tape -->
+				<div class="cassette-body">
+					<div class="cassette-top">
+						<!-- Left Reel -->
+						<div class="reel-container">
+							<div class="reel @(_isPlaying ? "spinning" : "")">
+								<div class="reel-center"></div>
+								<div class="reel-spokes">
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+								</div>
 							</div>
-							<div class="track-subtitle">
-								<span class="scrolling-text">@string.Join(" • ", _currentTrack?.Genres)</span>
+						</div>
+
+						<!-- Track Info Display -->
+						<div class="cassette-display">
+							@if (_currentTrack is not null)
+							{
+								<div class="track-name">@_currentTrack.Name</div>
+								<div class="track-artist">@_currentTrack.Artist</div>
+								<!-- Visualizer -->
+								<div class="visualizer">
+									<div class="bar"></div>
+									<div class="bar"></div>
+									<div class="bar"></div>
+									<div class="bar"></div>
+									<div class="bar"></div>
+									<div class="bar"></div>
+									<div class="bar"></div>
+									<div class="bar"></div>
+								</div>
+							}
+						</div>
+
+						<!-- Right Reel -->
+						<div class="reel-container">
+							<div class="reel @(_isPlaying ? "spinning" : "")">
+								<div class="reel-center"></div>
+								<div class="reel-spokes">
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+									<div class="spoke"></div>
+								</div>
 							</div>
-						}
-						<div class="track-details">
-							<span class="audio-current-time">00:00</span>
 						</div>
 					</div>
-					<!-- 4 random euqalizer bars -->
-					<div class="equalizer">
-						<div class="bar"></div>
-						<div class="bar"></div>
-						<div class="bar"></div>
-						<div class="bar"></div>
-						<div class="bar"></div>
+
+					<!-- Tape -->
+					<div class="tape-section">
+						<div class="tape-window">
+							<div class="progress-bar">
+								<div class="progress"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Controls -->
+					<div class="cassette-controls">
+						<button class="control-btn prev-btn" @onclick="PlayPrevious">
+							<img src="img/prev.svg" />
+						</button>
+						<button class="control-btn play-btn" @onclick="PlayPause">
+							@if (_isPlaying)
+							{
+								<img src="img/pause.svg" />
+							}
+							else
+							{
+								<img src="img/play.svg" />
+							}
+						</button>
+						<button class="control-btn next-btn" @onclick="PlayNext">
+							<img src="img/next.svg" />
+						</button>
 					</div>
 				</div>
-				<div class="controls">
 
-					<button class="btn prev" @onclick="PlayPrevious">
-						<img src="img/prev.svg" />
-					</button>
-					<button class="btn play" @onclick="PlayPause">
-						@if (_isPlaying)
-						{
-							<img src="img/pause.svg" />
-						}
-						else
-						{
-							<img src="img/play.svg" />
-						}
-					</button>
-					<button class="btn next" @onclick="PlayNext">
-						<img src="img/next.svg" />
-					</button>
-				</div>
-				<div class="progress-bar">
-					<div class="progress"></div>
-				</div>
-				<div class="track-list">
+			</div>
 
-					@foreach (var track in _tracks)
-					{
-						@if (_currentTrack == track)
-						{
-							<div class="track selected">@track.Name</div>
-						}
-						else
-						{
-							<div class="track" @onclick="() => SelectTrack(track)">@track.Name</div>
-						}
-					}
-				</div>
+			<!-- Track List -->
+			<div class="track-list">
+				@for (int i = 0; i < _tracks.Count; i++)
+				{
+					var track = _tracks[i];
+					var trackColor = GetTrackColorByIndex(i);
+					<div class="track @(_currentTrack == track ? "selected" : "")" style="--track-color: @trackColor"
+						@onclick="() => SelectTrack(track)">
+						<div class="track-color-indicator"></div>
+						<div class="track-info">
+							<div class="track-title">@track.Name</div>
+							<div class="track-subtitle">@track.Artist • @string.Join(", ", track.Genres)</div>
+						</div>
+					</div>
+				}
 			</div>
 		</div>
 	</div>
@@ -181,5 +223,24 @@
 		_dotNetRef?.Dispose();
 		base.Remove();
 		StateHasChanged();
+	}
+
+	private string GetTrackColor(Track? track)
+	{
+		if (track == null) return "#333";
+		var index = _tracks.IndexOf(track);
+		return GetTrackColorByIndex(index);
+	}
+
+	private string GetTrackColorByIndex(int index)
+	{
+		var colors = new[]
+		{
+"#ff6b6b", "#4ecdc4", "#45b7d1", "#96ceb4", "#feca57",
+"#ff9ff3", "#54a0ff", "#5f27cd", "#00d2d3", "#ff9f43",
+"#74b9ff", "#0984e3", "#6c5ce7", "#a29bfe", "#fd79a8",
+"#fdcb6e", "#e17055", "#81ecec", "#fab1a0", "#ff7675"
+};
+		return colors[index % colors.Length];
 	}
 }
